@@ -615,32 +615,73 @@ namespace MyCpu1805_05
                     int posDp = line.Original.IndexOf(":");
                     int posChrs = line.Original.ToUpper().IndexOf("CHRS");
                     int posHk1 = line.Original.IndexOf("\"");
-                    int posHk2 = line.Original.LastIndexOf("\"");
+                    int posHk2 = line.Original.LastIndexOf("\"")+1;
                     int posSl = line.Original.IndexOf("/");
 
                     // JumpMark?
                     if (posDp > 0 && posDp < posChrs)
-                        line.LeftJump = line.Original[..posDp];
+                        line.LeftJump = line.Original[..posDp].Trim();
 
                     // korrekte CHRS-Zeile
                     if (posChrs < posHk1 && posHk1 < posHk2)
                     {
                         line.OpCodeLeft = "CHRS";
                         line.OpCodeRight = line.Original[posHk1..posHk2];
-                        line.ByteLen = line.OpCodeRight.Length;
+                        line.ByteLen = line.OpCodeRight.Length-2;
                         line.Byte2 = line.OpCodeRight;
                         // CommentRight?
                         if (posSl > posHk1)
                         {
                             line.commentRight = line.Original[posSl..];
                         }
-                        continue;
+                     
                     }
                     else
                     {
                         line.ErrLine = "Syntax CHRS falsch - richtig zB CHRS \"abcd\" ";
                         continue;
                     }
+
+                }
+                if (line.Original.ToUpper().Contains("CHRX"))
+                {
+                    int chrxPos = line.Original.ToUpper().IndexOf("CHRX");
+
+                    string val = line.Original.ToUpper()[(chrxPos + 5)..].Trim();
+
+                    int posSlash = val.IndexOf("/");
+                    string cmdRight = "";
+
+                    if (posSlash > 0)
+                    {
+                       cmdRight = val[posSlash..];
+                       val = val[0..posSlash].Trim();
+                       
+                    }
+                    
+
+        
+
+                    if (val.Length % 2 != 0)
+                    {
+                        line.ErrLine = "Hex-Zahlen müssen geradzahlige Länge haben";
+                        continue;
+                    }
+                    for (int n = 0; n < val.Length; n++)
+                    {
+                        if (!CStat.IsHex(val[n].ToString()))
+                        {
+                            line.ErrLine = "Hex-Wert falsch -  nur 0..99 A..F erlaubt";
+                            continue;
+                        }
+                    }
+
+                    line.OpCodeLeft = "CHRX";
+                    line.OpCodeRight = val.ToUpper();
+                    line.ByteLen = line.OpCodeRight.Length / 2;
+                    line.Byte2 = val;
+                    line.commentRight = cmdRight;
+
 
                 }
 
@@ -687,6 +728,9 @@ namespace MyCpu1805_05
 
 
                         opCodeTerm = line.Original[(posDp + 1)..].Trim();
+
+                        if (opCodeTerm.ToUpper().StartsWith("CHR"))
+                            continue;
                     }
                 }
 
@@ -877,8 +921,14 @@ namespace MyCpu1805_05
                     }
                     if (foundOpCode != null)
                     {
-                        line.ByteLen = foundOpCode.Bytes;
+
                         line.OpCodeLeft = opCodeTermSplit2[0];
+                        if (!foundOpCode.Short.StartsWith("CHR"))
+                            line.ByteLen = foundOpCode.Bytes;
+                        else
+                            continue;
+
+
                     }
                     else
                     {
@@ -1076,36 +1126,7 @@ namespace MyCpu1805_05
 
 
                     }
-                    if (line.ByteLen == 255)
-                    {
-
-                        if (opCodeTerm.ToUpper().StartsWith("CHRX"))
-                        {
-                            string s = opCodeTerm[5..].ToUpper();
-
-                            if (s.Length % 2 != 0)
-                            {
-                                line.ErrLine = "Hex-Zahlen müssen geradzahlige Länge haben";
-                                continue;
-                            }
-                            for (int n = 0; n < s.Length; n++)
-                            {
-                                if (!CStat.IsHex(s[n].ToString()))
-                                {
-                                    line.ErrLine = "Hex-Wert falsch -  nur 0..99 A..F erlaubt";
-                                    continue;
-                                }
-                            }
-
-                            line.OpCodeLeft = "CHRX";
-                            line.OpCodeRight = s.ToUpper();
-                            line.ByteLen = s.Length / 2;
-                            line.Byte2 = s;
-                            continue;
-
-                        }
-
-                    }
+                 
                 }
 
             }

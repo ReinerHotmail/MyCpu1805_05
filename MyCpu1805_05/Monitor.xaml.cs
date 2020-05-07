@@ -95,7 +95,7 @@ namespace MyCpu1805_05
         }
 
 
-        public void SetText()
+        public void SetText(string monString) 
         {
             int i = 0;
 

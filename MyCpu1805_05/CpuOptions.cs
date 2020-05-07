@@ -151,7 +151,7 @@ namespace MyCpu1805_05
                 }
             }
 
-            MyMonitor.SetText();
+            MyMonitor.SetText("asdfgh");
 
             TestBool = !TestBool;
 

@@ -389,10 +389,11 @@ namespace MyCpu1805_05
                     }
                     string result = builder.ToString();
                     //ToDo Monitor
-                    // MyMonitor.SetText(-1,-1,result);
+                    //MyMonitor.SetText(result);
 
                     //string result = new string(CStat.DmaValues);
-                    var b = s;
+                    //var b = s;
+                    MyMonitor.SetText(result);
                 }
             }
 

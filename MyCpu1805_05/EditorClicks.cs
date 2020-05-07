@@ -164,23 +164,56 @@ namespace MyCpu1805_05
                 {
                     int adr = Convert.ToInt32(ListEditLines[i].Adr, 16);
 
-                    int len = allBytes.Length / 2;
 
-                    for (int b = 0; b < len; b++)
+
+                    if (allBytes.StartsWith("\""))
+                    {
+                        allBytes = allBytes[1..^1];
+                        int len = allBytes.Length;
+
+
+                        for (int b = 0; b < len; b++)
+                        {
+
+
+
+                            M[adr] = (byte)allBytes[0];
+
+
+                            if (adrFirst < 0)
+                                adrFirst = adr;
+
+                            if (allBytes.Length > 1)
+                            {
+                                allBytes = allBytes[1..];
+                                adr++;
+                            }
+
+                        }
+
+                    }
+                    else
                     {
 
 
-                        M[adr] = (byte)Convert.ToInt32(allBytes[0..2], 16);
+                        int len = allBytes.Length / 2;
 
-                        if (adrFirst < 0)
-                            adrFirst = adr;
-
-                        if (allBytes.Length > 1)
+                        for (int b = 0; b < len; b++)
                         {
-                            allBytes = allBytes[2..];
-                            adr++;
-                        }
 
+
+                            M[adr] = (byte)Convert.ToInt32(allBytes[0..2], 16);
+
+                            if (adrFirst < 0)
+                                adrFirst = adr;
+
+                            if (allBytes.Length > 1)
+                            {
+                                allBytes = allBytes[2..];
+                                adr++;
+                            }
+
+                        }
                     }
                 }
             }
