@@ -148,8 +148,8 @@
                 <RowDefinition Height="77*"/>
                 <RowDefinition Height="43*"/>
             </Grid.RowDefinitions>
-            <Label x:Name="LabelMonitorOnOff" Content=""  Background="LightPink" Margin="20,5,20,5"/>
-            <Label x:Name="LabelMonitorDma" Content="DMA"  Grid.Row="2" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="5,0,5,0" Background="LightGreen" HorizontalContentAlignment="Center" />
+            <Label x:Name="LabelMonitorOnOff" Content=""  Background="LightGreen" Margin="20,5,20,5"/>
+            <Label x:Name="LabelMonitorDma" Content="DMA"  Grid.Row="2" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="5,0,5,0" Background="LightPink" HorizontalContentAlignment="Center" />
         </Grid>
 
     </Grid>

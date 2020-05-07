@@ -97,23 +97,7 @@ namespace MyCpu1805_05
                     DmaValues[i] = ' ';
                 }
 
-                //for (int col = 0; col < COL; col++)
-                //{
-                //    field = new Label();
-                //    field.Background = Brushes.Black;
-                //    field.FontSize = 14;
-                //    field.FontFamily = new FontFamily("CourierNew");
-                //    field.FontWeight = FontWeights.Bold;
-                //    field.Foreground = Brushes.White;
-                //    field.Margin = new Thickness(0);
-                //    field.Padding = new Thickness(0);
-                //    //field.Content = col.ToString()[0];
-                //    Fields[row, col] = field;
-                //    GridMonitor.Children.Add(field);
-                //    Grid.SetColumn(field, col);
-                //    Grid.SetRow(field, row);
 
-                //}
             }
 
         }
@@ -154,12 +138,12 @@ namespace MyCpu1805_05
         {
             if (on)
             {
-                LabelMonitorOnOff.Background = Brushes.LightGreen;
+                LabelMonitorDma.Background = Brushes.LightGreen;
                 DmaOutActive = true;
             }
             else
             {
-                LabelMonitorOnOff.Background = Brushes.LightPink;
+                LabelMonitorDma.Background = Brushes.LightPink;
                 DmaOutActive = false;
             }
 
