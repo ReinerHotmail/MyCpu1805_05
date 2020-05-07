@@ -18,13 +18,18 @@ namespace MyCpu1805_05
     public partial class Monitor : Window
     {
         public static int ROW = 24;
-        public static int COL = 48;
-        public static bool Active = false;
+        public static  int COL = 48;
+        public static bool DmaOutActive = false;
         public static bool On = false;
 
-        Label[,] Fields = new Label[ROW, COL];
-        int FieldNumNow = 0;
+        //Label[,] Fields = new Label[ROW, COL];
+        Label[] ScreenLines = new Label[ROW];
 
+        //int FieldNumNow = 0;
+
+        public int DmaPointer = 0;
+
+        public  char[] DmaValues = new char[ROW * COL];
 
         #region PIXL
         //Rectangle[,] Pixl = new Rectangle[64, 128];
@@ -68,44 +73,61 @@ namespace MyCpu1805_05
             double monitorHeight = GridMonitor.ActualHeight;
 
 
-
-            Label field = null;
+            //Label field = null;
+            Label label = null;
 
             for (int row = 0; row < ROW; row++)
             {
-                for (int col = 0; col < COL; col++)
-                {
-                    field = new Label();
-                    field.Background = Brushes.Black;
-                    field.FontSize = 14;
-                    field.FontFamily = new FontFamily("CourierNew");
-                    field.FontWeight = FontWeights.Bold;
-                    field.Foreground = Brushes.White;
-                    field.Margin = new Thickness(0);
-                    field.Padding = new Thickness(0);
-                    //field.Content = col.ToString()[0];
-                    Fields[row, col] = field;
-                    GridMonitor.Children.Add(field);
-                    Grid.SetColumn(field, col);
-                    Grid.SetRow(field, row);
 
+                label = new Label();
+                label.Background = Brushes.Black;
+                label.FontSize = 14;
+                label.FontFamily = new FontFamily("CourierNew");
+                label.FontWeight = FontWeights.Bold;
+                label.Foreground = Brushes.White;
+                label.Margin = new Thickness(0);
+                label.Padding = new Thickness(0);
+                ScreenLines[row] = label;
+                GridMonitor.Children.Add(label);
+                Grid.SetColumn(label,0);
+                Grid.SetRow(label, row);
+
+                for (int i = 0; i < COL; i++)
+                {
+                    DmaValues[i] = ' ';
                 }
+
+                //for (int col = 0; col < COL; col++)
+                //{
+                //    field = new Label();
+                //    field.Background = Brushes.Black;
+                //    field.FontSize = 14;
+                //    field.FontFamily = new FontFamily("CourierNew");
+                //    field.FontWeight = FontWeights.Bold;
+                //    field.Foreground = Brushes.White;
+                //    field.Margin = new Thickness(0);
+                //    field.Padding = new Thickness(0);
+                //    //field.Content = col.ToString()[0];
+                //    Fields[row, col] = field;
+                //    GridMonitor.Children.Add(field);
+                //    Grid.SetColumn(field, col);
+                //    Grid.SetRow(field, row);
+
+                //}
             }
 
         }
 
 
-        public void SetText(string monString) 
+        public void SetText() 
         {
-            int i = 0;
+            string lines = new string(DmaValues); 
 
 
             for (int row = 0; row < ROW; row++)
             {
-                for (int col = 0; col < COL; col++)
-                {
-                    Fields[row, col].Content = CStat.DmaValues[i++];
-                }
+                ScreenLines[row].Content = lines.Substring(row * COL, COL);//.Replace("_","-");
+
             }
 
 
@@ -113,33 +135,35 @@ namespace MyCpu1805_05
 
         private void ScrollMonitor()
         {
-            for (int r = 1; r < ROW; r++)
-            {
-                for (int c = 0; c < COL; c++)
-                {
-                    Fields[r - 1, c].Content = Fields[r, c].Content;
-                }
-            }
-            for (int c = 0; c < COL; c++)
-            {
-                //Fields[31, c].Content = "";
-                Fields[(ROW - 1), c].Content = "";
-            }
+            //for (int r = 1; r < ROW; r++)
+            //{
+            //    for (int c = 0; c < COL; c++)
+            //    {
+            //        Fields[r - 1, c].Content = Fields[r, c].Content;
+            //    }
+            //}
+            //for (int c = 0; c < COL; c++)
+            //{
+            //    //Fields[31, c].Content = "";
+            //    Fields[(ROW - 1), c].Content = "";
+            //}
         }
 
-        public void MonitorOnOff(bool on)
+
+        public void DmaOutOnOff(bool on)
         {
             if (on)
             {
                 LabelMonitorOnOff.Background = Brushes.LightGreen;
+                DmaOutActive = true;
             }
             else
             {
                 LabelMonitorOnOff.Background = Brushes.LightPink;
+                DmaOutActive = false;
             }
 
         }
-
 
         #region PIXL
         ////#DAAADF	 0   
@@ -262,13 +286,13 @@ namespace MyCpu1805_05
 
         private void WindowMonitor_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Monitor.Active = false;
-            Monitor.On = false;
+            DmaOutActive = false;
+            On = false;
         }
 
         private void WindowMonitor_Activated(object sender, EventArgs e)
         {
-            Monitor.Active = true;
+         
         }
     }
 

@@ -231,16 +231,17 @@ namespace MyCpu1805_05
         private void CheckBoxDmaOut_Click(object sender, RoutedEventArgs e)
         {
             MonitorOnOff();
+         
 
         }
 
 
         private void CheckBoxDmaOut_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (!Monitor.Active && CheckBoxDmaOut.IsChecked == true)
+            if (!Monitor.DmaOutActive && CheckBoxDmaOut.IsChecked == true)
             {
-                LabelDmaOut.Background = Brushes.White;
-                CheckBoxDmaOut.IsChecked = false;
+                //LabelDmaOut.Background = Brushes.White;
+                //CheckBoxDmaOut.IsChecked = false;
             }
         }
     }

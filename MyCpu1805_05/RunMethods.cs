@@ -115,7 +115,7 @@ namespace MyCpu1805_05
         /// <param name="e"></param>
         private void TimerExe_Tick(object sender, EventArgs e)
         {
-            ShowCpuExeData();
+           
 
             DoExeLoop(ExeStop);
 
@@ -367,36 +367,8 @@ namespace MyCpu1805_05
 
             ShowIntrBits();
 
-
-
-
             if (Monitor.On)
-            {
-                MyMonitor.MonitorOnOff(Monitor.On);
-
-                string s = CStat.DmaValues.ToString();
-
-                if (s != null)
-                {
-                    StringBuilder builder = new StringBuilder();
-                    foreach (char value in CStat.DmaValues)
-                    {
-                        if ((int)value != 0)
-                        {
-                            builder.Append(value.ToString());
-                        }
-
-                    }
-                    string result = builder.ToString();
-                    //ToDo Monitor
-                    //MyMonitor.SetText(result);
-
-                    //string result = new string(CStat.DmaValues);
-                    //var b = s;
-                    MyMonitor.SetText(result);
-                }
-            }
-
+                MyMonitor.SetText();
         }
 
         private void InterruptStart()
@@ -530,6 +502,8 @@ namespace MyCpu1805_05
                 case OpCode.IDL:
                     #region 00: WAIT FOR DMA OR INTERRUPT;  M(R(0)) -> BUS
                     R[P]--;
+                    //ToDo  Monitor DMA-Aus
+                    Monitor.DmaOutActive = false;
                     #endregion
                     break;
                 case OpCode.LDN1:
@@ -1383,10 +1357,10 @@ namespace MyCpu1805_05
                     M[R[X]] = (byte)INP[1];
                     D = M[R[X]];
 
-                    if (Monitor.Active)
+                    if (Monitor.On)
                     {
-                        CStat.DmaPointer = 0;
-                        Monitor.On = true;
+                        MyMonitor.DmaPointer = 0;
+                        MyMonitor.DmaOutOnOff(true);
                     }
 
 
@@ -2581,33 +2555,26 @@ namespace MyCpu1805_05
 
         private void DoDmaOut()
         {
-            if (Monitor.On)
+            if (Monitor.DmaOutActive)
             {
                 int maxDmaByte = Monitor.ROW * Monitor.COL;
 
 
                 for (int i = 0; i < 8; i++)
                 {
-                    if ((CStat.DmaPointer + i) >= maxDmaByte)
-                    {
-                        CStat.DmaPointer = 0;
-                        i = 0;
-                    }
-                    else
-                    {
-                        CStat.DmaPointer += 1;
-                    }
-
                     if (M[R[0]] >= 0x20 && M[R[0]] <= 127)
-                        CStat.DmaValues[CStat.DmaPointer] = (char)M[R[0]];
+                        MyMonitor.DmaValues[MyMonitor.DmaPointer] = (char)M[R[0]];
                     else
-                        CStat.DmaValues[CStat.DmaPointer] = ' ';
+                        MyMonitor.DmaValues[MyMonitor.DmaPointer] = ' ';
 
-
+                    MyMonitor.DmaPointer += 1;
                     R[0]++;
                 }
 
-
+                if ((MyMonitor.DmaPointer) >= maxDmaByte)
+                {
+                    MyMonitor.DmaPointer = 0;
+                }
             }
         }
 
@@ -3309,23 +3276,32 @@ namespace MyCpu1805_05
 
         private void MonitorOnOff()
         {
+
             if (CheckBoxDmaOut.IsChecked == true)
             {
                 MyMonitor = null;
                 MyMonitor = new Monitor();
 
                 MyMonitor.Show();
-
+                Monitor.On = true;
                 LabelDmaOut.Background = Brushes.LightGreen;
             }
             else
             {
                 MyMonitor.Close();
                 MyMonitor = null;
-
+                Monitor.On = false;
                 LabelDmaOut.Background = Brushes.White;
             }
         }
+
+
+ 
+
+
+
+
+
 
     }
 }

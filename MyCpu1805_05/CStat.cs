@@ -14,9 +14,7 @@ namespace MyCpu1805_05
 
 
 
-        public static int DmaPointer = 0;
-
-        public static char[] DmaValues = new char[Monitor.ROW * Monitor.COL];
+    
 
 
 
