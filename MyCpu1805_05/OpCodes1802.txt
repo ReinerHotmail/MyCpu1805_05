@@ -1,0 +1,285 @@
+0|IDLE |IDL |00|IDL|0|1||(Note 3) WAIT FOR DMA OR INTERRUPT;  M(R(0)) -> BUS||98
+1|LOAD VIA N |LDN|01  |LDN 1|0|1||M(R(1)) -> D ||3
+2|LOAD VIA N |LDN|02 |LDN 2|0|1||M(R(2)) -> D ||
+3|LOAD VIA N |LDN|03 |LDN 3|0|1||M(R(3)) -> D ||
+4|LOAD VIA N |LDN|04|LDN 4|0|1||M(R(4)) -> D ||
+5|LOAD VIA N |LDN|05|LDN 5|0|1||M(R(5)) -> D ||
+6|LOAD VIA N |LDN|06|LDN 6|0|1||M(R(6)) -> D ||
+7|LOAD VIA N |LDN|07|LDN 7|0|1||M(R(7)) -> D ||
+8|LOAD VIA N |LDN|08|LDN 8|0|1||M(R(8)) -> D ||
+9|LOAD VIA N |LDN|09|LDN 9|0|1||M(R(9)) -> D||
+10|LOAD VIA N |LDN|0A|LDN A|0|1||M(R(A)) -> D||
+11|LOAD VIA N |LDN|0B|LDN B|0|1||M(R(B)) -> D ||
+12|LOAD VIA N |LDN|0C|LDN C|0|1||M(R(C)) -> D ||
+13|LOAD VIA N |LDN|0D|LDN D|0|1||M(R(D)) -> D ||
+14|LOAD VIA N |LDN|0E|LDN E|0|1||M(R(E)) -> D ||
+15|LOAD VIA N |LDN|0F|LDN F|0|1||M(R(F)) -> D ||
+16|INCREMENT REG N  |INC |10 |INC 0|0|1||R(0) + 1 -> R(0)||12
+17|INCREMENT REG N  |INC |11 |INC 1|0|1||R(1) + 1 -> R(1)||
+18|INCREMENT REG N  |INC |12 |INC 2|0|1||R(2) + 1 -> R(2)||
+19|INCREMENT REG N  |INC |13 |INC 3|0|1||R(3) + 1 -> R(3)||
+20|INCREMENT REG N  |INC |14 |INC 4|0|1||R(4) + 1 -> R(4)||
+21|INCREMENT REG N  |INC |15 |INC 5|0|1||R(5) + 1 -> R(5)||
+22|INCREMENT REG N  |INC |16|INC 6|0|1||R(6) + 1 -> R(6)||
+23|INCREMENT REG N  |INC |17 |INC 7|0|1||R(7) + 1 -> R(7)||
+24|INCREMENT REG N  |INC |18 |INC 8|0|1||R(8) + 1 -> R(8)||
+25|INCREMENT REG N  |INC |19 |INC 9|0|1||R(9) + 1 -> R(9)||
+26|INCREMENT REG N  |INC |1A |INC A|0|1||R(A) + 1 -> R(A)||
+27|INCREMENT REG N  |INC |1B |INC B|0|1||R(B) + 1 -> R(B)||
+28|INCREMENT REG N  |INC |1C  |INC C|0|1||R(C) + 1 -> R(C)||
+29|INCREMENT REG N  |INC |1D |INC D|0|1||R(D) + 1 -> R(D)||
+30|INCREMENT REG N  |INC |1E |INC E|0|1||R(E) + 1 -> R(E)||
+31|INCREMENT REG N  |INC |1F |INC F|0|1||R(F) + 1 -> R(F)||
+32|DECREMENT REG 0|DEC |20 |DEC 0|0|1||R(0) - 1 -> R(0)||13
+33|DECREMENT REG 1|DEC |21|DEC 1|0|1||R(1) - 1 -> R(1)||
+34|DECREMENT REG 2|DEC |22|DEC 2|0|1||R(2) - 1 -> R(2)||
+35|DECREMENT REG 3|DEC |23 |DEC 3|0|1||R(3) - 1 -> R(3)||
+36|DECREMENT REG 4|DEC |24 |DEC 4|0|1||R(4) - 1 -> R(4)||
+37|DECREMENT REG 5|DEC |25 |DEC 5|0|1||R(5) - 1 -> R(5)||
+38|DECREMENT REG 6|DEC |26 |DEC 6|0|1||R(6) - 1 -> R(6)||
+39|DECREMENT REG 7|DEC |27 |DEC 7|0|1||R(7) - 1 -> R(7)||
+40|DECREMENT REG 8|DEC |28 |DEC 8|0|1||R(8) - 1 -> R(8)||
+41|DECREMENT REG 9|DEC |29|DEC 9|0|1||R(9) - 1 -> R(9)||
+42|DECREMENT REG A|DEC |2A |DEC A|0|1||R(A) - 1 -> R(A)||
+43|DECREMENT REG B |DEC |2B |DEC B|0|1||R(B) - 1 -> R(B)||
+44|DECREMENT REG C |DEC |2C |DEC C|0|1||R(C) - 1 -> R(C)||
+45|DECREMENT REG D |DEC |2D |DEC D|0|1||R(D) - 1 -> R(D)||
+46|DECREMENT REG E |DEC |2E |DEC E|0|1||R(E) - 1 -> R(E)||
+47|DECREMENT REG F |DEC |2F |DEC F|0|1||R(F) - 1 -> R(F)||
+48|SHORT BRANCH  |BR  |30|BR|0|2|-|M(R(P)) -> R(P).0||56
+49|SHORT BRANCH IF Q = 1  |BQ  |31|BQ|0|2|-|IF Q = 1, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||66
+50|SHORT BRANCH IF D = 0  |BZ  |32|BZ|0|2|-|IF D = 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||58
+51|SHORT BRANCH IF DF = 1 |BDF |33|BDF|2|2|-|IF DF = 1, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P) (Note 2)||60
+52|SHORT BRANCH IF EF1 = 1 (EF1 = VSS)|B1  |34|B1|0|2|-|IF EF1 =1, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||68
+53|SHORT BRANCH IF EF2 = 1 (EF2 = VSS)|B2  |35|B2|0|2|-|IF EF2 = 1, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||70
+54|SHORT BRANCH IF EF3 = 1 (EF3 = VSS)|B3  |36|B3|0|2|-|IF EF3 = 1, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||72
+55|SHORT BRANCH IF EF4 = 1 (EF4 = VSS)|B4  |37|B4|0|2|-|IF EF4 = 1, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||74
+56|NO SHORT BRANCH (See SKP) |NBR |38|NBR|1|1||R(P) + 1 -> R(P) (Note 2)||57
+57|SHORT BRANCH IF Q = 0  |BNQ |39|BNQ|0|2|-|IF Q = 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||67
+58|SHORT BRANCH IF D NOT 0|BNZ |3A  |BNZ |0|2|-|IF D NOT 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||59
+59|SHORT BRANCH IF DF = 0 |BNF |3B  |BNF |2|2|-|IF DF = 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P) (Note 2)||63
+60|SHORT BRANCH IF EF1 = 0 (EF1 = VCC)|BN1 |3C  |BN1|0|2|-|IF EF1 = 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||69
+61|SHORT BRANCH IF EF2 = 0 (EF2 = VCC)|BN2 |3D  |BN2|0|2|-|IF EF2 = 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||71
+62|SHORT BRANCH IF EF3 = 0 (EF3 = VCC)|BN3 |3E  |BN3|0|2|-|IF EF3 = 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||73
+63|SHORT BRANCH IF EF4 = 0 (EF4 = VCC)|BN4 |3F  |BN4|0|2|-|IF EF4 = 0, M(R(P)) -> R(P).0, ELSE R(P) + 1 -> R(P)||75
+64|LOAD ADVANCE  |LDA |40 |LDA 0|0|1||M(R(0)) -> D ;  R(0) + 1 -> R(0)||4
+65|LOAD ADVANCE  |LDA |41|LDA 1|0|1||M(R(1)) -> D ;  R(1) + 1 -> R(1)||
+66|LOAD ADVANCE  |LDA |42 |LDA 2|0|1||M(R(2)) -> D ;  R(2) + 1 -> R(2)||
+67|LOAD ADVANCE  |LDA |43 |LDA 3|0|1||M(R(3)) -> D ;  R(3) + 1 -> R(3)||
+68|LOAD ADVANCE  |LDA |44 |LDA 4|0|1||M(R(4)) -> D ;  R(4) + 1 -> R(4)||
+69|LOAD ADVANCE  |LDA |45|LDA 5|0|1||M(R(5)) -> D ;  R(5) + 1 -> R(5)||
+70|LOAD ADVANCE  |LDA |46|LDA 6|0|1||M(R(6)) -> D ;  R(6) + 1 -> R(6)||
+71|LOAD ADVANCE  |LDA |47 |LDA 7|0|1||M(R(7)) -> D ;  R(7) + 1 -> R(7)||
+72|LOAD ADVANCE  |LDA |48 |LDA 8|0|1||M(R(8)) -> D ;  R(8) + 1 -> R(8)||
+73|LOAD ADVANCE  |LDA |49 |LDA 9|0|1||M(R(9)) -> D ;  R(9) + 1 -> R(9)||
+74|LOAD ADVANCE  |LDA |4A|LDA A|0|1||M(R(A)) -> D ;  R(A) + 1 -> R(A)||
+75|LOAD ADVANCE  |LDA |4B |LDA B|0|1||M(R(B)) -> D ;  R(B) + 1 -> R(B)||
+76|LOAD ADVANCE  |LDA |4C |LDA C|0|1||M(R(C)) -> D ;  R(C) + 1 -> R(C)||
+77|LOAD ADVANCE  |LDA |4D |LDA D|0|1||M(R(D)) -> D ;  R(D) + 1 -> R(D)||
+78|LOAD ADVANCE  |LDA |4E|LDA E|0|1||M(R(E)) -> D ;  R(E) + 1 -> R(E)||
+79|LOAD ADVANCE  |LDA |4F |LDA F|0|1||M(R(F)) -> D ;  R(F) + 1 -> R(F)||
+80|STORE VIA RN|STR |50  |STR 0|0|1||D -> M(R(0))||8
+81|STORE VIA RN|STR |51  |STR 1|0|1||D -> M(R(1))||
+82|STORE VIA RN|STR |52  |STR 2|0|1||D -> M(R(2))||
+83|STORE VIA RN|STR |53  |STR 3|0|1||D -> M(R(3))||
+84|STORE VIA RN|STR |54  |STR 4|0|1||D -> M(R(4))||
+85|STORE VIA RN|STR |55  |STR 5|0|1||D -> M(R(5))||
+86|STORE VIA RN|STR |56  |STR 6|0|1||D -> M(R(6))||
+87|STORE VIA RN|STR |57 |STR 7|0|1||D -> M(R(7))||
+88|STORE VIA RN|STR |58 |STR 8|0|1||D -> M(R(8))||
+89|STORE VIA RN|STR |59  |STR 9|0|1||D -> M(R(9))||
+90|STORE VIA RN|STR |5A  |STR A|0|1||D -> M(R(A))||
+91|STORE VIA RN|STR |5B  |STR B|0|1||D -> M(R(B))||
+92|STORE VIA RN|STR |5C |STR C|0|1||D -> M(R(C))||
+93|STORE VIA RN|STR |5D  |STR D|0|1||D -> M(R(D))||
+94|STORE VIA RN|STR |5E  |STR E|0|1||D -> M(R(E))||
+95|STORE VIA RN|STR |5F |STR F|0|1||D -> M(R(F))||
+96|INCREMENT REG X  |IRX|60|IRX |0|1||R(X) + 1 -> R(X)||15
+97|OUTPUT 1|OUT  |61|OUT 1|0|1||M(R(X)) -> BUS ; R(X) + 1 -> R(X) ;N LINES = 1||127
+98|OUTPUT 2|OUT  |62|OUT 2|0|1||M(R(X)) -> BUS ; R(X) + 1 -> R(X) ;N LINES = 2||128
+99|OUTPUT 3|OUT |63|OUT 3|0|1||M(R(X)) -> BUS ; R(X) + 1 -> R(X) ;N LINES = 3||129
+100|OUTPUT 4|OUT  |64|OUT 4|0|1||M(R(X)) -> BUS ; R(X) + 1 -> R(X) ;N LINES = 4||130
+101|OUTPUT 5|OUT  |65|OUT 5|0|1||M(R(X)) -> BUS ; R(X) + 1 -> R(X) ;N LINES = 5||131
+102|OUTPUT 6|OUT  |66|OUT 6|0|1||M(R(X)) -> BUS ; R(X) + 1 -> R(X) ;N LINES = 6||132
+103|OUTPUT 7|OUT  |67|OUT 7|0|1||M(R(X)) -> BUS ; R(X) + 1 -> R(X) ;N LINES = 1||133
+104|0|0|68|0|0|1||0||
+105|INPUT 1 |INP  |69|INP 1  |0|1||BUS -> M(R(X)) ; BUS -> D ; N LINES = 1||134
+106|INPUT 2 |INP  |6A  |INP 2  |0|1||BUS -> M(R(X)) ; BUS -> D ; N LINES = 2||135
+107|INPUT 3 |INP  |6B  |INP 3  |0|1||BUS -> M(R(X)) ; BUS -> D ; N LINES = 3||136
+108|INPUT 4 |INP  |6C  |INP 4  |0|1||BUS -> M(R(X)) ; BUS -> D ; N LINES = 4||137
+109|INPUT 5 |INP  |6D  |INP 5 |0|1||BUS -> M(R(X)) ; BUS -> D ; N LINES = 5||138
+110|INPUT 6 |INP  |6E  |INP 6  |0|1||BUS -> M(R(X)) ; BUS -> D ; N LINES = 6||139
+111|INPUT 7 |INP  |6F  |INP 7 |0|1||BUS -> M(R(X)) ; BUS -> D ; N LINES = 7||140
+112|RETURN  |RET |70|RET |0|1||M(R(X)) -> (X, P) ;  R(X) + 1 -> R(X), 1 -> IE||122
+113|DISABLE |DIS |71|DIS|0|1||M(R(X)) -> (X, P) ;  R(X) + 1 -> R(X), 0 -> IE||123
+114|LOAD VIA X AND ADVANCE |LDXA|72|LDXA|0|1||M(R(X)) -> D ;  R(X) + 1 -> R(X)||6
+115|STORE VIA X AND DECREMENT |STXD|73|STXD|0|1||D -> M(R(X)) ; R(X) - 1 -> R(X)||9
+116|ADD WITH CARRY|ADC |74|ADC|0|1||M(R(X)) + D + DF -> DF, D||39
+117|SUBTRACT D WITH BORROW |SDB |75|SDB|0|1||M(R(X)) - D - (NOT DF) -> DF, D||45
+118|SHIFT RIGHT WITH CARRY |SHRC|76|SHRC|1|1||SHIFT D RIGHT, LSB(D) -> DF, DF -> MSB(D) (Note 2)||29
+119|SUBTRACT MEMORY WITH BORROW  |SMB |77|SMB|0|1||D-M(R(X))-(NOT DF) -> DF, D||51
+120|SAVE |SAV |78|SAVE|0|1||T -> M(R(X))||124
+121|PUSH X, P TO STACK  |MARK|79|MARK|0|1|| (X, P)-> M(R(2)), THEN P-> X ; R(2) - 1-> R(2)||104
+122|RESET Q |REQ |7A  |REQ|0|1||0 -> Q||103
+123|SET Q|SEQ |7B  |SEQ|0|1||1 -> Q||102
+124|ADD WITH CARRY, IMMEDIATE |ADCI|7C  |ADCI|0|2|-|M(R(P)) + D + DF -> DF, D ; R(P) + 1 -> R(P)||41
+125|SUBTRACT D WITH BORROW, IMMEDIATE  |SDBI|7D  |SDBI|0|2|-|M(R(P)) - D - (Not DF) -> DF, D  ; R(P) + 1 -> R(P)||46
+126|SHIFT LEFT WITH CARRY  |SHLC|7E  |SHLC|1|1||SHIFT D LEFT, MSB(D) -> DF, DF -> LSB(D) (Note 2)||32
+127|SUBTRACT MEMORY WITH BORROW, IMMEDIATE|SMBI|7F  |SMBI|0|2|-|D-M(R(P))-(NOT DF) -> DF, D  ;  R(P) + 1 -> R(P)||53
+128|GET LOW REG N |GLO |80 |GLO 0|0|1||R(0).0 -> D||16
+129|GET LOW REG N |GLO |81|GLO 1|0|1||R(1).0 -> D||
+130|GET LOW REG N |GLO |82 |GLO 2|0|1||R(2).0 -> D||
+131|GET LOW REG N |GLO |83 |GLO 3|0|1||R(3).0 -> D||
+132|GET LOW REG N |GLO |84|GLO 4|0|1||R(4).0 -> D||
+133|GET LOW REG N |GLO |85 |GLO 5|0|1||R(5).0 -> D||
+134|GET LOW REG N |GLO |86 |GLO 6|0|1||R(6).0 -> D||
+135|GET LOW REG N |GLO |87 |GLO 7|0|1||R(7).0 -> D||
+136|GET LOW REG N |GLO |88 |GLO 8|0|1||R(8).0 -> D||
+137|GET LOW REG N |GLO |89 |GLO 9|0|1||R(9).0 -> D||
+138|GET LOW REG N |GLO |8A |GLO A|0|1||R(A).0 -> D||
+139|GET LOW REG N |GLO |8B |GLO B|0|1||R(B).0 -> D||
+140|GET LOW REG N |GLO |8C |GLO C|0|1||R(C).0 -> D||
+141|GET LOW REG N |GLO |8D |GLO D|0|1||R(D).0 -> D||
+142|GET LOW REG N |GLO |8E |GLO E|0|1||R(E).0 -> D||
+143|GET LOW REG N |GLO |8F|GLO F|0|1||R(F).0 -> D||
+144|GET HIGH REG N|GHI |90 |GHI 0|0|1||R(0).1 -> D||18
+145|GET HIGH REG N |GHI |91|GHI 1|0|1||R(1).1 -> D||
+146|GET HIGH REG N |GHI |92 |GHI 2|0|1||R(2).1 -> D||
+147|GET HIGH REG N |GHI |93 |GHI 3|0|1||R(3).1 -> D||
+148|GET HIGH REG N |GHI |94|GHI 4|0|1||R(4).1 -> D||
+149|GET HIGH REG N |GHI  |95 |GHI 5|0|1||R(5).1 -> D||
+150|GET HIGH REG N |GHI |96 |GHI 6|0|1||R(6).1 -> D||
+151|GET HIGH REG N |GHI |97 |GHI 7|0|1||R(7).1 -> D||
+152|GET HIGH REG N |GHI |98|GHI 8|0|1||R(8).1 -> D||
+153|GET HIGH REG N |GHI |99 |GHI 9|0|1||R(9).1 -> D||
+154|GET HIGH REG N |GHI |9A |GHI A|0|1||R(A).1 -> D||
+155|GET HIGH REG N |GHI |9B |GHI B|0|1||R(B).1 -> D||
+156|GET HIGH REG N |GHI |9C |GHI C|0|1||R(C).1 -> D||
+157|GET HIGH REG N |GHI |9D |GHI D|0|1||R(D).1 -> D||
+158|GET HIGH REG N |GHI |9E |GHI E|0|1||R(E).1 -> D||
+159|GET HIGH REG N |GHI |9F|GHI F|0|1||R(F).1 -> D||
+160|PUT LOW REG N |PLO |A0 |PLO 0|0|1||D -> R(0).0||17
+161|PUT LOW REG N |PLO |A1|PLO 1|0|1||D -> R(1).0||
+162|PUT LOW REG N |PLO |A2 |PLO 2|0|1||D -> R(2).0||
+163|PUT LOW REG N |PLO |A3 |PLO 3|0|1||D -> R(3).0||
+164|PUT LOW REG N |PLO |A4|PLO 4|0|1||D -> R(4).0||
+165|PUT LOW REG N |PLO |A5 |PLO 5|0|1||D -> R(5).0||
+166|PUT LOW REG N |PLO |A6 |PLO 6|0|1||D -> R(6).0||
+167|PUT LOW REG N |PLO |A7 |PLO 7|0|1||D -> R(7).0||
+168|PUT LOW REG N |PLO |A8 |PLO 8|0|1||D -> R(8).0||
+169|PUT LOW REG N |PLO |A9 |PLO 9|0|1||D -> R(9).0||
+170|PUT LOW REG N |PLO |AA|PLO A|0|1||D -> R(A).0||
+171|PUT LOW REG N |PLO |AB |PLO B|0|1||D -> R(B).0||
+172|PUT LOW REG N |PLO |AC |PLO C|0|1||D -> R(C).0||
+173|PUT LOW REG N |PLO |AD |PLO D|0|1||D -> R(D).0||
+174|PUT LOW REG N |PLO |AE |PLO E|0|1||D -> R(E).0||
+175|PUT LOW REG N |PLO |AF |PLO F|0|1||D -> R(F).0||
+176|PUT HIGH REG N|PHI |B0 |PHI 0|0|1||D -> R(0).1||19
+177|PUT HIGH REG N|PHI |B1 |PHI 1|0|1||D -> R(1).1||
+178|PUT HIGH REG N|PHI |B2 |PHI 2|0|1||D -> R(2).1||
+179|PUT HIGH REG N|PHI |B3 |PHI 3|0|1||D -> R(3).1||
+180|PUT HIGH REG N|PHI |B4 |PHI 4|0|1||D -> R(4).1||
+181|PUT HIGH REG N|PHI |B5 |PHI 5|0|1||D -> R(5).1||
+182|PUT HIGH REG N|PHI |B6 |PHI 6|0|1||D -> R(6).1||
+183|PUT HIGH REG N|PHI |B7 |PHI 7|0|1||D -> R(7).1||
+184|PUT HIGH REG N|PHI |B8 |PHI 8|0|1||D -> R(8).1||
+185|PUT HIGH REG N|PHI |B9 |PHI 9|0|1||D -> R(9).1||
+186|PUT HIGH REG N|PHI |BA |PHI A|0|1||D -> R(A).1||
+187|PUT HIGH REG N|PHI |BB |PHI B|0|1||D -> R(B).1||
+188|PUT HIGH REG N|PHI |BC |PHI C|0|1||D -> RC).1||
+189|PUT HIGH REG N|PHI |BD|PHI D|0|1||D -> R(D).1||
+190|PUT HIGH REG N|PHI |BE |PHI E|0|1||D -> R(E).1||
+191|PUT HIGH REG N|PHI |BF |PHI F|0|1||D -> R(F).1||
+192|LONG BRANCH|LBR |C0  |LBR|0|3|-|M(R(P)) -> R(P). 1, M(R(P) + 1) -> R(P).0||79
+193|LONG BRANCH IF Q = 1|LBQ |C1  |LBQ|0|3|-|IF Q = 1, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P)||85
+194|LONG BRANCH IF D = 0|LBZ |C2  |LBZ|0|3|-|IF D = 0, M(R(P)) -> R(P).1, M(R(P) +1) -> R(P).0, ELSE R(P) + 2 -> R(P)||81
+195|LONG BRANCH IF DF = 1  |LBDF|C3  |LBDF|0|3|-|IF DF = 1, M(R(P))-> R(P).1, M(R(P) + 1)-> R(P).0, ELSE R(P) + 2 -> R(P)||83
+196|NO OPERATION  |NOP |C4  |NOP|0|1||CONTINUE||99
+197|LONG SKIP IF Q = 0  |LSNQ|C5  |LSNQ|0|1||IF Q = 0, R(P) + 2 -> R(P), ELSE CONTINUE||95
+198|LONG SKIP IF D NOT 0|LSNZ|C6  |LSNZ|0|1||IF D Not 0, R(P) + 2 -> R(P), ELSE CONTINUE||91
+199|LONG SKIP IF DF = 0 |LSNF|C7  |LSNF|0|1||IF DF = 0, R(P) + 2 -> R(P), ELSE CONTINUE||93
+200|NO LONG BRANCH (See LSKP) |NLBR|C8  |NLBR|1|1||R(P) = 2 -> R(P) (Note 2)||80
+201|LONG BRANCH IF Q = 0|LBNQ|C9  |LBNQ|0|3|-|IF Q = 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0 EISE R(P) + 2 -> R(P)||86
+202|LONG BRANCH IF D NOT 0 |LBNZ|CA  |LBNZ|0|3|-|IF D Not 0, M(R(P))-> R(P).1, M(R(P) + 1)-> R(P).0, ELSE R(P) + 2 -> R(P)||82
+203|LONG BRANCH IF DF = 0  |LBNF|CB  |LBNF|0|3|-|IF DF = 0, M(R(P))-> R(P).1, M(R(P) + 1)-> R(P).0, ELSE R(P) + 2 -> R(P)||84
+204|LONG SKIP IF IE = 1 |LSIE|CC  |LSIE|0|1||IF IE = 1, R(P) + 2 -> R(P), ELSE CONTINUE||96
+205|LONG SKIP IF Q = 1  |LSQ |CD  |LSQ|0|1||IF Q = 1, R(P) + 2 -> R(P), ELSE CONTINUE||94
+206|LONG SKIP IF D = 0  |LSZ |CE  |LSZ|0|1||IF D = 0, R(P) + 2 -> R(P), ELSE CONTINUE||90
+207|LONG SKIP IF DF = 1 |LSDF|CF  |LSDF|0|1||IF DF = 1, R(P) + 2 -> R(P), ELSE CONTINUE||92
+208|SET P|SEP |D0  |SEP 0|0|1||0 -> P||100
+209|SET P|SEP |D1  |SEP 1|0|1||1 -> P||
+210|SET P|SEP |D2 |SEP 2|0|1||2 -> P||
+211|SET P|SEP |D3  |SEP 3|0|1||3 -> P||
+212|SET P|SEP |D4  |SEP 4|0|1||4 -> P||
+213|SET P|SEP |D5  |SEP 5|0|1||5 -> P||
+214|SET P|SEP |D6 |SEP 6|0|1||6 -> P||
+215|SET P|SEP |D7  |SEP 7|0|1||7 -> P||
+216|SET P|SEP |D8 |SEP 8|0|1||8 -> P||
+217|SET P|SEP |D9  |SEP 9|0|1||9 -> P||
+218|SET P|SEP |DA  |SEP A|0|1||A -> P||
+219|SET P|SEP |DB  |SEP B|0|1||B -> P||
+220|SET P|SEP |DC |SEP C|0|1||C -> P||
+221|SET P|SEP |DD  |SEP D|0|1||D -> P||
+222|SET P|SEP |DE  |SEP E|0|1||E- > P||
+223|SET P|SEP |DF  |SEP F|0|1||F -> P||
+224|SET X|SEX |E0  |SEX 0|0|1||0 -> X||101
+225|SET X|SEX |E1  |SEX 1|0|1||1 -> X||
+226|SET X|SEX |E2 |SEX 2|0|1||2 -> X||
+227|SET X|SEX |E3  |SEX 3|0|1||3 -> X||
+228|SET X|SEX |E4  |SEX 4|0|1||4 -> X||
+229|SET X|SEX |E5  |SEX 5|0|1||5 -> X||
+230|SET X|SEX |E6 |SEX 6|0|1||6 -> X||
+231|SET X|SEX |E7  |SEX 7|0|1||7 -> X||
+232|SET X|SEX |E8 |SEX 8|0|1||8 -> X||
+233|SET X|SEX |E9  |SEX 9|0|1||9 -> X||
+234|SET X|SEX |EA  |SEX A|0|1||A -> X||
+235|SET X|SEX |EB  |SEX B|0|1||B -> X||
+236|SET X|SEX |EC |SEX C|0|1||C -> X||
+237|SET X|SEX |ED  |SEX D|0|1||D -> X||
+238|SET X|SEX |EE  |SEX E|0|1||E- > X||
+239|SET X|SEX |EF  |SEX F|0|1||F -> X||
+240|LOAD VIA X |LDX |F0  |LDX |0|1||M(R(X)) -> D||5
+241|OR|OR  |F1  |OR  |0|1||M(R(X)) OR D -> D||22
+242|AND  |AND |F2  |AND |0|1||M(R(X)) AND D -> D||26
+243|EXCLUSIVE OR  |XOR |F3  |XOR |0|1||M(R(X)) XOR D -> D||24
+244|ADD  |ADD |F4  |ADD |0|1||M(R(X)) + D -> DF, D||35
+245|SUBTRACT D |SD  |F5  |SD  |0|1||M(R(X)) - D -> DF, D||43
+246|SHIFT RIGHT|SHR |F6  |SHR |0|1||SHIFT D RIGHT, LSB(D) -> DF, 0 -> MSB(D)||28
+247|SUBTRACT MEMORY  |SM  |F7  |SM  |0|1||D-M(R(X)) -> DF, D||47
+248|LOAD IMMEDIATE|LDI |F8  |LDI |0|2|-|M(R(P)) -> D ;  R(P) + 1 -> R(P)||1
+249|OR IMMEDIATE  |ORI |F9  |ORI |0|2|-|M(R(P)) OR D -> D   R(P) + 1 -> R(P)||23
+250|AND IMMEDIATE |ANI |FA  |ANI |0|2|-|M(R(P)) AND D -> D   R(P) + 1 -> R(P)||27
+251|EXCLUSIVE OR IMMEDIATE |XRI |FB  |XRI |0|2|-|M(R(P)) XOR D -> D    R(P) + 1 -> R(P)||25
+252|ADD IMMEDIATE |ADI |FC  |ADI |0|2|-|M(R(P)) + D -> DF, D ;  R(P) + 1 -> R(P)||37
+253|SUBTRACT D IMMEDIATE|SDI |FD  |SDI |0|2|-|M(R(P)) - D -> DF, D   R(P) + 1 -> R(P)||44
+254|SHIFT LEFT |SHL |FE  |SHL |0|1||SHIFT D LEFT, MSB(D) -> DF, 0 -> LSB(D)||31
+255|SUBTRACT MEMORY IMMEDIATE |SMI |FF  |SMI |0|2|-|D-M(R(P)) -> DF, D   R(P) + 1 -> R(P)||49
+256|SHORT BRANCH IF POS OR ZERO  |BPZ |33|BPZ|2|2|-|||61
+257|SHORT BRANCH IF EQUAL OR GREATER|BGE |33|BGE|2|2|-|||62
+258|SHORT SKIP (See NBR)|SKP |38|SKP|1|1|-|R(P) + 1 -> R(P) (Note 2)||88
+259|SHORT BRANCH IF MINUS  |BM  |3B  |BM|2|2|-|||64
+260|SHORT BRANCH IF LESS|BL  |3B  |BL|2|2|-|||65
+261|RING SHIFT RIGHT |RSHR|76|RSHR|1|1||SHIFT D RIGHT, LSB(D) -> DF, DF -> MSB(D) (Note 2)||30
+262|RING SHIFT LEFT  |RSHL|7E  |RSHL|1|1||SHIFT D LEFT, MSB(D) -> DF, DF -> LSB(D) (Note 2)||33
+263|LONG SKIP (See NLBR)|LSKP|C8  |LSKP|1|1||(Note 2) R(P) + 2 -> R(P)||89
+264|CHRS|CHRS|00|CHRS|0|255||Zeichenkette String - Compilerbefehl||
+265|CHRX|CHRX|00|CHRX|0|255||Zeichenkette Hex - Compilerbefehl||
+266|CHRD|CHRD|00|CHRD|0|2||Zeichenkette Dezimal - Compilerbefehl||
+267|CHRI|CHRI|00|CHRI|0|2||Zeichenkette bInär - Compilerbefehl||
+268|*|*|00|*|0|1||Befehl  zur Adressermittlung (Compilerbefehl);zB: *Prog2.Start.1 / 1Byte AdrHigh;    *Prog2.Start.0 / 1Byte AdrLow;    *Prog2.Start   / 2Byte AdrHigh und AdrLow||
+269|/|/|00|/|0|0||/Kommentar - Compilerbefehl||
+270|#Prog|#Prog|00|#Prog|0|0||Programmzeile  zB: #Prog TestPrg x1234 - Compilerbefehl||
+271|#Replace|#Replace|00|#Replace|0|0||Begriff ersetzen  zB: #Replace Stack = 2  - Compilerbefehl||
+0|Memory Reference|_|FFFF|_|0|0||||0
+0|Register Operations|_|FFFF|_|0|0||||11
+0|Logic Operations|_|FFFF|_|0|0||||21
+0|Arithmetic Operations|_|FFFF|_|0|0||||34
+0|Branch Instructions – Short Branch|_|FFFF|_|0|0||||55
+0|Branch Instructions – Long Branch|_|FFFF|_|0|0||||78
+0|Skip Instructions|_|FFFF|_|0|0||||87
+0|Control Instructions|_|FFFF|_|0|0||||97
+0|Timer/Counter Instructions|_|FFFF|_|0|0||||105
+0|Interrupt Control|_|FFFF|_|0|0||||117
+0|Input-Output Byte Transfer|_|FFFF|_|0|0||||126
+0|Call and Return|_|FFFF|_|0|0||||141
+0||_|FFFF|_|0|0||||144

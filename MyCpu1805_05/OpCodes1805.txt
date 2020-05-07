@@ -1,0 +1,256 @@
+0|*STOP COUNTER|STPC |6800 |STPC |0|1||STOP CNTR CLOCK; 0 -> ÷ 32 PRESCALER ||108
+1|*DECREMENT TIMER/COUNTER |DTC |6801 |DTC |0|1||CNTR - 1 -> CNTR ||109
+2|*SET PULSE WIDTH MODE 2 AND *START |SPM2 |6802 |SPM2 |0|1||TPA.EF2 -> CNTR CLOCK; EF2 STOPS COUNT ||115
+3|*SET COUNTER MODE 2 AND START |SCM2 |6803 |SCM2 |0|1||EF2 -> CNTR CLOCK ||112
+4|*SET PULSE WIDTH MODE 1 AND *START |SPM1 |6804 |SPM1 |0|1||TPA.EF1 -> CNTR CLOCK; EF1 STOPS COUNT ||113
+5|*SET COUNTER MODE 1 AND START |SCM1 |6805 |SCM1 |0|1||EF1 -> CNTR CLOCK ||111
+6|*LOAD COUNTER |LDC |6806 |LDC |0|1||CNTR STOPPED: D -> CH, CNTR; 0 -> CI. CNTR RUNNING; D -> CH ||106
+7|*SET TIMER MODE AND START |STM |6807 |STM |0|1||TPA ÷ 32 -> CNTR ||110
+8|*GET COUNTER |GEC |6808 |GEC |0|1||CNTR -> D ||107
+9|*ENABLE TOGGLE Q |ETQ |6809 |ETQ |0|1||IF CNTR = 01 • NEXT CNTR CLOCK ; Q -> Q ||116
+10|*EXTERNAL INTERRUPT ENABLE |XIE |680A |XIE |0|1||1 -> XIE ||118
+11|*EXTERNAL INTERRUPT DISABLE |XID |680B |XID |0|1||0 -> XIE ||119
+12|*COUNTER INTERRUPT ENABLE |CIE |680C |CIE |0|1||l -> CIE ||120
+13|*COUNTER INTERRUPT DISABLE |CID |680D |CID |0|1||0 -> CIE ||121
+14|||680E|||||||
+15|||680F|||||||
+16|||6810|||||||
+17|||6811|||||||
+18|||6812|||||||
+19|||6813|||||||
+20|||6814|||||||
+21|||6815|||||||
+22|||6816|||||||
+23|||6817|||||||
+24|||6818|||||||
+25|||6819|||||||
+26|||681A|||||||
+27|||681B|||||||
+28|||681C|||||||
+29|||681D|||||||
+30|||681E|||||||
+31|||681F|||||||
+32|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6820|DBNZ 0|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|14
+33|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6821|DBNZ 1|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+34|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6822|DBNZ 2|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+35|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6823|DBNZ 3|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+36|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6824|DBNZ 4|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+37|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6825|DBNZ 5|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+38|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6826|DBNZ 6|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+39|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6827|DBNZ 7|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+40|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6828|DBNZ 8|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+41|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |6829|DBNZ 9|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+42|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |682A|DBNZ A|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+43|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |682B|DBNZ B|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+44|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |682C|DBNZ C|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+45|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |682D|DBNZ D|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+46|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |682E|DBNZ E|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+47|DECREMENT REG N AND LONG BRANCH IF NOT EQUAL 0 |DBNZ |682F|DBNZ F|0|4||R(N) - 1 -> R(N); IF R(N) NOT 0, M(R(P)) -> R(P).1, M(R(P) + 1) -> R(P).0, ELSE R(P) + 2 -> R(P) |3|
+48|||6830|||||||
+49|||6831|||||||
+50|||6832|||||||
+51|||6833|||||||
+52|||6834|||||||
+53|||6835|||||||
+54|||6836|||||||
+55|||6837|||||||
+56|||6838|||||||
+57|||6839|||||||
+58|||683A|||||||
+59|||683B|||||||
+60|||683C|||||||
+61|||683D|||||||
+62|*SHORT BRANCH ON COUNTER INTERRUPT |BCI |683E |BCI |0|1||IF CI = 1, M(R(P)) -> R(P).0; 0 -> CI ELSE R(P) + 1 -> R(P) ||76
+63|*SHORT BRANCH ON EXTERNAL INTERRUPT |BXI |683F |BXI |0|1||IF XI = 1, M(R(P)) -> R(P).0 ELSE R(P) + 1 -> R(P) ||77
+64|||6840|||||||
+65|||6841|||||||
+66|||6842|||||||
+67|||6843|||||||
+68|||6844|||||||
+69|||6845|||||||
+70|||6846|||||||
+71|||6847|||||||
+72|||6848|||||||
+73|||6849|||||||
+74|||684A|||||||
+75|||684B|||||||
+76|||684C|||||||
+77|||684D|||||||
+78|||684E|||||||
+79|||684F|||||||
+80|||6850|||||||
+81|||6851|||||||
+82|||6852|||||||
+83|||6853|||||||
+84|||6854|||||||
+85|||6855|||||||
+86|||6856|||||||
+87|||6857|||||||
+88|||6858|||||||
+89|||6859|||||||
+90|||685A|||||||
+91|||685B|||||||
+92|||685C|||||||
+93|||685D|||||||
+94|||685E|||||||
+95|||685F|||||||
+96|REGISTER LOAD VIA X AND ADVANCE |RLXA |6860|RLXA 0|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|7
+97|REGISTER LOAD VIA X AND ADVANCE |RLXA |6861|RLXA 1|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+98|REGISTER LOAD VIA X AND ADVANCE |RLXA |6862|RLXA 2|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+99|REGISTER LOAD VIA X AND ADVANCE |RLXA |6863|RLXA 3|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+100|REGISTER LOAD VIA X AND ADVANCE |RLXA |6864|RLXA 4|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+101|REGISTER LOAD VIA X AND ADVANCE |RLXA |6865|RLXA 5|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+102|REGISTER LOAD VIA X AND ADVANCE |RLXA |6866|RLXA 6|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+103|REGISTER LOAD VIA X AND ADVANCE |RLXA |6867|RLXA 7|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+104|REGISTER LOAD VIA X AND ADVANCE |RLXA |6868|RLXA 8|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+105|REGISTER LOAD VIA X AND ADVANCE |RLXA |6869|RLXA 9|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+106|REGISTER LOAD VIA X AND ADVANCE |RLXA |686A|RLXA A|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+107|REGISTER LOAD VIA X AND ADVANCE |RLXA |686B|RLXA B|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+108|REGISTER LOAD VIA X AND ADVANCE |RLXA |686C|RLXA C|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+109|REGISTER LOAD VIA X AND ADVANCE |RLXA |686D|RLXA D|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+110|REGISTER LOAD VIA X AND ADVANCE |RLXA |686E|RLXA E|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+111|REGISTER LOAD VIA X AND ADVANCE |RLXA |686F|RLXA F|0|4||M(R(X)) -> R(N).1; M(R(X) + 1) -> R(N).0; R(X)) + 2 -> R(X) |3|
+112|||6870|||||||
+113|||6871|||||||
+114|||6872|||||||
+115|||6873|||||||
+116|*DECIMAL ADD WITH CARRY |DADC |6874 |DADC |0|4||M(R(X)) + D + DF -> DF, D DECIMAL ADJUST -> DF, D ||40
+117|||6875|||||||
+118|*SAVE T, D, DF |DSAV |6876|DSAV |0|4||R(X) - 1 -> R(X); T -> M(R(X)); R(X) - 1 -> R(X); D -> M (R(X)); R(X) - 1 -> R(X); SHIFT D RIGHT WITH CARRY; D -> M(R(X)) ||125
+119|*DECIMAL SUBTRACT MEMORY WITH BORROW |DSMB |6877 |DSMB |0|4||D - M(R(X)) - (NOT DF) -> DF, D; DECIMAL ADJUST -> DF, D ||52
+120|||6878|||||||
+121|||6879|||||||
+122|||687A|||||||
+123|||687B|||||||
+124|*DECIMAL ADD WITH CARRY, IMMEDIATE |DACI |687C |DACI |0|4||M(R(P)) + D + DF -> DF, D; R(P) + 1 -> R(P), DECIMAL ADJUST -> DF, D ||42
+125|||687D|||||||
+126|||687E|||||||
+127|*DECIMAL SUBTRACT MEMORY WITH BORROW, IMMEDIATE |DSBI |687F |DSBI |0|4||D - M(R(P)) - (NOT DF) -> DF, D R(P) + 1 -> R(P) DECIMAL ADJUST -> DF, D ||54
+128|Standard Call|SCAL|6880|SCAL 0|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N) |8|142
+129|Standard Call|SCAL|6881|SCAL 1|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N) |8|
+130|Standard Call|SCAL|6882|SCAL 2|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N) |8|
+131|Standard Call|SCAL|6883|SCAL 3|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N) |8|
+132|Standard Call|SCAL|6884|SCAL 4|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+133|Standard Call|SCAL|6885|SCAL 5|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+134|Standard Call|SCAL|6886|SCAL 6|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+135|Standard Call|SCAL|6887|SCAL 7|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)) |8|
+136|Standard Call|SCAL|6888|SCAL 8|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+137|Standard Call|SCAL|6889|SCAL 9|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N) |8|
+138|Standard Call|SCAL|688A|SCAL A|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N) |8|
+139|Standard Call|SCAL|688B|SCAL B|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+140|Standard Call|SCAL|688C|SCAL C|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+141|Standard Call|SCAL|688D|SCAL D|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+142|Standard Call|SCAL|688E|SCAL E|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+143|Standard Call|SCAL|688F|SCAL F|0|4||0-1-2:;R(N).0 -> M(R(X)); R(N).1 -> M(R(X) - 1); R(X) - 2 -> R(X);3-4: ;R(P) -> R(N); THEN 5-6-7: ;M(R(N)) -> R(P).1; M(R(N) + 1) -> R(P).0; R(N) + 2 -> R(N)|8|
+144|Standard Return|SRET|6890|SRET 0|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|143
+145|Standard Return|SRET|6891|SRET 1|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+146|Standard Return|SRET|6892|SRET 2|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+147|Standard Return|SRET|6893|SRET 3|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+148|Standard Return|SRET|6894|SRET 4|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+149|Standard Return|SRET|6895|SRET 5|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+150|Standard Return|SRET|6896|SRET 6|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+151|Standard Return|SRET|6897|SRET 7|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+152|Standard Return|SRET|6898|SRET 8|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+153|Standard Return|SRET|6899|SRET 9|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+154|Standard Return|SRET|689A|SRET A|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+155|Standard Return|SRET|689B|SRET B|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+156|Standard Return|SRET|689C|SRET C|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+157|Standard Return|SRET|689D|SRET D|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+158|Standard Return|SRET|689E|SRET E|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+159|Standard Return|SRET|689F|SRET F|0|2||R(N) -> R(P); M(R(X) + 1) -> R(N).1; M(R(X) + 2) -> R(N).0; R(X) + 2 -> R(X) |6|
+160|REGISTER STORE VIA X AND DECREMENT |RSXD |68A0 |RSXD 0|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|10
+161|REGISTER STORE VIA X AND DECREMENT |RSXD |68A1 |RSXD 1|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+162|REGISTER STORE VIA X AND DECREMENT |RSXD |68A2 |RSXD 2|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+163|REGISTER STORE VIA X AND DECREMENT |RSXD |68A3 |RSXD 3|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+164|REGISTER STORE VIA X AND DECREMENT |RSXD |68A4 |RSXD 4|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+165|REGISTER STORE VIA X AND DECREMENT |RSXD |68A5 |RSXD 5|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+166|REGISTER STORE VIA X AND DECREMENT |RSXD |68A6 |RSXD 6|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+167|REGISTER STORE VIA X AND DECREMENT |RSXD |68A7 |RSXD 7|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+168|REGISTER STORE VIA X AND DECREMENT |RSXD |68A8 |RSXD 8|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+169|REGISTER STORE VIA X AND DECREMENT |RSXD |68A9 |RSXD 9|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+170|REGISTER STORE VIA X AND DECREMENT |RSXD |68AA |RSXD A|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+171|REGISTER STORE VIA X AND DECREMENT |RSXD |68AB |RSXD B|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+172|REGISTER STORE VIA X AND DECREMENT |RSXD |68AC |RSXD C|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+173|REGISTER STORE VIA X AND DECREMENT |RSXD |68AD |RSXD D|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+174|REGISTER STORE VIA X AND DECREMENT |RSXD |68AE |RSXD E|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+175|REGISTER STORE VIA X AND DECREMENT |RSXD |68AF |RSXD F|0|2||R(N).0 -> M(R(X)); R(N).1 -> M(R)(X) - 1); R(X) - 2 -> R (X) |3|
+176|*REGISTER N TO REGISTER X COPY |RNX |68B0 |RNX 0|0|4||R(N) -> R(X) ||20
+177|*REGISTER N TO REGISTER X COPY |RNX |68B1 |RNX 1|0|4||R(N) -> R(X) ||
+178|*REGISTER N TO REGISTER X COPY |RNX |68B2 |RNX 2|0|4||R(N) -> R(X) ||
+179|*REGISTER N TO REGISTER X COPY |RNX |68B3 |RNX 3|0|4||R(N) -> R(X) ||
+180|*REGISTER N TO REGISTER X COPY |RNX |68B4 |RNX 4|0|4||R(N) -> R(X) ||
+181|*REGISTER N TO REGISTER X COPY |RNX |68B5 |RNX 5|0|4||R(N) -> R(X) ||
+182|*REGISTER N TO REGISTER X COPY |RNX |68B6 |RNX 6|0|4||R(N) -> R(X) ||
+183|*REGISTER N TO REGISTER X COPY |RNX |68B7 |RNX 7|0|4||R(N) -> R(X) ||
+184|*REGISTER N TO REGISTER X COPY |RNX |68B8 |RNX 8|0|4||R(N) -> R(X) ||
+185|*REGISTER N TO REGISTER X COPY |RNX |68B9 |RNX 9|0|4||R(N) -> R(X) ||
+186|*REGISTER N TO REGISTER X COPY |RNX |68BA |RNX A|0|4||R(N) -> R(X) ||
+187|*REGISTER N TO REGISTER X COPY |RNX |68BB |RNX B|0|4||R(N) -> R(X) ||
+188|*REGISTER N TO REGISTER X COPY |RNX |68BC |RNX C|0|4||R(N) -> R(X) ||
+189|*REGISTER N TO REGISTER X COPY |RNX |68BD |RNX D|0|4||R(N) -> R(X) ||
+190|*REGISTER N TO REGISTER X COPY |RNX |68BE |RNX E|0|4||R(N) -> R(X) ||
+191|REGISTER N TO REGISTER X COPY |RNX |68BF |RNX F|0|4||R(N) -> R(X) ||
+192|REGISTER LOAD IMMEDIATE |RLDI |68C0|RLDI 0|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|2
+193|REGISTER LOAD IMMEDIATE |RLDI |68C1|RLDI 1|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+194|REGISTER LOAD IMMEDIATE |RLDI |68C2|RLDI 2|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+195|REGISTER LOAD IMMEDIATE |RLDI |68C3|RLDI 3|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+196|REGISTER LOAD IMMEDIATE |RLDI |68C4|RLDI 4|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+197|REGISTER LOAD IMMEDIATE |RLDI |68C5|RLDI 5|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+198|REGISTER LOAD IMMEDIATE |RLDI |68C6|RLDI 6|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+199|REGISTER LOAD IMMEDIATE |RLDI |68C7|RLDI 7|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+200|REGISTER LOAD IMMEDIATE |RLDI |68C8|RLDI 8|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+201|REGISTER LOAD IMMEDIATE |RLDI |68C9|RLDI 9|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+202|REGISTER LOAD IMMEDIATE |RLDI |68CA|RLDI A|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+203|REGISTER LOAD IMMEDIATE |RLDI |68CB|RLDI B|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+204|REGISTER LOAD IMMEDIATE |RLDI |68CC|RLDI C|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+205|REGISTER LOAD IMMEDIATE |RLDI |68CD|RLDI D|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+206|REGISTER LOAD IMMEDIATE |RLDI |68CE|RLDI E|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+207|REGISTER LOAD IMMEDIATE |RLDI |68CF|RLDI F|0|4||M(R(P)) -> R(N).1; M(R(P)) + 1 -> R(N).0; R(P) + 2 -> R(P |3|
+208|||68D0|||||||
+209|||68D1|||||||
+210|||68D2|||||||
+211|||68D3|||||||
+212|||68D4|||||||
+213|||68D5|||||||
+214|||68D6|||||||
+215|||68D7|||||||
+216|||68D8|||||||
+217|||68D9|||||||
+218|||68DA|||||||
+219|||68DB|||||||
+220|||68DC|||||||
+221|||68DD|||||||
+222|||68DE|||||||
+223|||68DF|||||||
+224|||68E0|||||||
+225|||68E1|||||||
+226|||68E2|||||||
+227|||68E3|||||||
+228|||68E4|||||||
+229|||68E5|||||||
+230|||68E6|||||||
+231|||68E7|||||||
+232|||68E8|||||||
+233|||68E9|||||||
+234|||68EA|||||||
+235|||68EB|||||||
+236|||68EC|||||||
+237|||68ED|||||||
+238|||68EE|||||||
+239|||68EF|||||||
+240|||68F0|||||||
+241|||68F1|||||||
+242|||68F2|||||||
+243|||68F3|||||||
+244|*DECIMAL ADD |DADD |68F4 |DADD|0|4||M(R(X)) + D -> DF, D DECIMAL ADJUST -> DF, D ||36
+245|||68F5|||||||
+246|||68F6|||||||
+247|*DECIMAL SUBTRACT MEMORY |DSM |68F7 |DSM |0|4||D - M(R(X)) -> DF, D; DECIMAL ADJUST -> DF, D ||48
+248|||68F8|||||||
+249|||68F9|||||||
+250|||68FA|||||||
+251|||68FB|||||||
+252|*DECIMAL ADD IMMEDIATE |DADI |68FC |DADI |0|4||M(R(P)) + D -> DF, D; R(P) + 1 -> R(P) DECIMAL ADJUST -> DF, D ||38
+253|||68FD|||||||
+254|||68FE|||||||
+255|*DECIMAL SUBTRACT MEMORY, IMMEDIATE |DSMI |68FF |DSMI |0|4||D - M(R(P)) -> DF, D; R(P) + 1 -> R(P), DECIMAL ADJUST -> DF, D ||50
