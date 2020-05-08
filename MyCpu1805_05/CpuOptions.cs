@@ -141,12 +141,12 @@ namespace MyCpu1805_05
 
                 if (!TestBool)
                 {
-                    MyMonitor.DmaValues[i] = (char)(iStr[1]);
+                    MyMonitor.DmaValues[i] = (byte)(iStr[1]);
 
                 }
                 else
                 {
-                    MyMonitor.DmaValues[i] = (char)(iStr[2]);
+                    MyMonitor.DmaValues[i] = (byte)(iStr[2]);
 
                 }
             }

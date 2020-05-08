@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,7 +19,7 @@ namespace MyCpu1805_05
     public partial class Monitor : Window
     {
         public static int ROW = 24;
-        public static  int COL = 48;
+        public static int COL = 48;
         public static bool DmaOutActive = false;
         public static bool On = false;
 
@@ -29,7 +30,7 @@ namespace MyCpu1805_05
 
         public int DmaPointer = 0;
 
-        public  char[] DmaValues = new char[ROW * COL];
+        public byte[] DmaValues = new byte[ROW * COL];
 
         #region PIXL
         //Rectangle[,] Pixl = new Rectangle[64, 128];
@@ -83,18 +84,19 @@ namespace MyCpu1805_05
                 label.Background = Brushes.Black;
                 label.FontSize = 14;
                 label.FontFamily = new FontFamily("CourierNew");
-                label.FontWeight = FontWeights.Bold;
+                //label.FontWeight = FontWeights.Bold;
                 label.Foreground = Brushes.White;
                 label.Margin = new Thickness(0);
                 label.Padding = new Thickness(0);
+                label.Margin = new Thickness(10, 0, 10, 0);
                 ScreenLines[row] = label;
                 GridMonitor.Children.Add(label);
-                Grid.SetColumn(label,0);
+                Grid.SetColumn(label, 0);
                 Grid.SetRow(label, row);
 
                 for (int i = 0; i < COL; i++)
                 {
-                    DmaValues[i] = ' ';
+                    DmaValues[i] = 0;
                 }
 
 
@@ -103,16 +105,129 @@ namespace MyCpu1805_05
         }
 
 
-        public void SetText() 
+        public void SetText()
         {
-            string lines = new string(DmaValues); 
+
+            string allText = Encoding.UTF8.GetString(DmaValues);
 
 
-            for (int row = 0; row < ROW; row++)
+            List<string> listLines = new List<string>();
+
+
+            string[] strSplit13 = allText.Split('\u0010');
+
+            /* asdf
+             * kjiojpiopoipipioipo
+             * küölülüpoü
+             * kkökökk
+             * ...
+             * ...
+             * ipoipoipoiopoipoipo
+             *
+             *   ------------   aber auch möglich:
+             *   asdfkjhzutfgiuoiutg7zutpoioüi8zui8uoiuiuoiuiouiuoiuiuoiuiouiouiuiouoiuopi
+             */
+
+
+            foreach (var item in strSplit13)
             {
-                ScreenLines[row].Content = lines.Substring(row * COL, COL);//.Replace("_","-");
+                if (item.Length <= COL)
+                {
+                    listLines.Add(item);
+                }
+                else
+                {
+                    int a = 0;
+                    int b = COL;
+                    string s = item;
+                    do
+                    {
+                        listLines.Add(s[a..b]);
+                        s = s[b..];
+                        if (s.Length > COL)
+                        {
+                            a = 0;
+                            b = COL;
+                        }
+                        else
+                        {
+                            a = 0;
+                            b = s.Length;
+                        }
+                    } while (s.Length != 0);
+
+
+                }
+            }
+
+            int lineE = listLines.Count - 1;
+
+            for (int row = ROW - 1; row >= 0; row--)
+            {
+                ScreenLines[row].Content = listLines[lineE].Replace("_", "__"); //weil 1x'_' unterstreicht
+
+                lineE -= 1;
+            }
+
+
+
+            return;
+
+            string str = "";
+
+            for (int i = 0; i < ROW; i++)
+            {
+                str = allText.Substring(i * COL, COL).Replace("_", "__");
+
+
+
+                foreach (string item in strSplit13)
+                {
+                    listLines.Add(item);
+                }
 
             }
+
+
+            string[] lines = allText.Split((char)13);
+
+            int charEnd = ROW * COL;
+
+            int lineStart = 0;
+            int lineLen = 0;
+
+            for (int i = lines.Length - 1; i >= 0; i--)
+            {
+                if (lines[i].Length == COL)
+                {
+                    lineStart = charEnd - COL;
+                    lineLen = COL;
+                }
+                else
+                {
+
+                }
+
+                lineLen = COL;
+
+                if (lines[i].Length < COL)
+                    lineLen = lines[i].Length;
+
+                for (int row = ROW - 1; row >= 0; row--)
+                {
+                    ScreenLines[row].Content = lines[i].Substring(lineStart, lineLen).Replace("_", "__"); //weil 1x'_' unterstreicht
+                    lineStart += lineLen;
+
+                }
+            }
+
+
+
+            //for (int row = 0; row < ROW; row++)
+            //{
+            //    ScreenLines[row].Content = allText.Substring(row * COL, COL).Replace("_","__"); //weil 1x'_' unterstreicht
+
+            //}
 
 
         }
@@ -276,7 +391,7 @@ namespace MyCpu1805_05
 
         private void WindowMonitor_Activated(object sender, EventArgs e)
         {
-         
+
         }
     }
 

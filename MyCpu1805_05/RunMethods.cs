@@ -2562,10 +2562,10 @@ namespace MyCpu1805_05
 
                 for (int i = 0; i < 8; i++)
                 {
-                    if (M[R[0]] >= 0x20 && M[R[0]] <= 127)
-                        MyMonitor.DmaValues[MyMonitor.DmaPointer] = (char)M[R[0]];
+                    if (M[R[0]] >= 0x10 && M[R[0]] <= 127)
+                        MyMonitor.DmaValues[MyMonitor.DmaPointer] = (byte)M[R[0]];
                     else
-                        MyMonitor.DmaValues[MyMonitor.DmaPointer] = ' ';
+                        MyMonitor.DmaValues[MyMonitor.DmaPointer] = 32;
 
                     MyMonitor.DmaPointer += 1;
                     R[0]++;

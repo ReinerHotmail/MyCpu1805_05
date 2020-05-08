@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCpu1805_05"
         mc:Ignorable="d"
-        Title="Monitor" Height="460" Width="600" Background="Black" Loaded="WindowMonitor_Loaded" Topmost="True" Closing="WindowMonitor_Closing" Activated="WindowMonitor_Activated">
+        Title="Monitor" Height="480" Width="450" Background="Black" Loaded="WindowMonitor_Loaded" Topmost="True" Closing="WindowMonitor_Closing" Activated="WindowMonitor_Activated">
     <Grid Background="DarkGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
@@ -17,7 +17,7 @@
             <RowDefinition Height="500*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <UniformGrid x:Name="UniformGridMonitorTop" Columns="48" Rows="1" Grid.Row="0" Grid.Column="1">
+        <!--<UniformGrid x:Name="UniformGridMonitorTop" Columns="48" Rows="1" Grid.Row="0" Grid.Column="1">
             <Label Background="White"    Content="0" Grid.Column="0" VerticalContentAlignment="Stretch" Padding="0,0,0,0" FontSize="10" HorizontalContentAlignment="Center" />
             <Label Background="LightGray"     Content="" Grid.Column="1" VerticalContentAlignment="Stretch" Padding="0,0,0,0" FontSize="10" HorizontalContentAlignment="Center" />
             <Label Background="White"    Content="2" Grid.Column="2" VerticalContentAlignment="Stretch" Padding="0,0,0,0" FontSize="10" HorizontalContentAlignment="Center" />
@@ -104,8 +104,8 @@
 
  
 
-        </UniformGrid>
-        <Grid x:Name="GridMonitor"  Background="White" Grid.Row="1"   Grid.Column="1" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        </UniformGrid>-->
+        <Grid x:Name="GridMonitor"  Background="Black" Grid.Row="1"   Grid.Column="1"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
 
 
@@ -148,7 +148,7 @@
                 <RowDefinition Height="77*"/>
                 <RowDefinition Height="43*"/>
             </Grid.RowDefinitions>
-            <Label x:Name="LabelMonitorOnOff" Content=""  Background="LightGreen" Margin="20,5,20,5"/>
+            <Label x:Name="LabelMonitorOnOff" Content=""  Background="LightGreen" Margin="10,2,10,0" />
             <Label x:Name="LabelMonitorDma" Content="DMA"  Grid.Row="2" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="5,0,5,0" Background="LightPink" HorizontalContentAlignment="Center" />
         </Grid>
 
