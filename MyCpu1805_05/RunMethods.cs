@@ -174,6 +174,8 @@ namespace MyCpu1805_05
                                     {
                                         i = LoopSteps - 1;
                                         BreakpointReached = true;
+
+                                        LogFileAddLine(LogLine.Run, "Adr " + found.AdrHex, found.LogItems, false);
                                     }
                                     else if (found.Typ == "L")
                                     {
