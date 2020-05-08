@@ -114,7 +114,7 @@ namespace MyCpu1805_05
             List<string> listLines = new List<string>();
 
 
-            string[] strSplit13 = allText.Split('\u0010');
+            string[] strSplit13 = allText.Split('\u0010');  // CR - neue Zeile
 
             /* asdf
              * kjiojpiopoipipioipo
@@ -133,10 +133,11 @@ namespace MyCpu1805_05
             {
                 if (item.Length <= COL)
                 {
-                    listLines.Add(item);
+                    listLines.Add(item); // Zeilenlänge kleiner COL -> komplett in die Liste als eine Zeile
                 }
                 else
                 {
+                    // Zeilenlänge >= COL -> COL-Chars  in die Liste als eine Zeile
                     int a = 0;
                     int b = COL;
                     string s = item;

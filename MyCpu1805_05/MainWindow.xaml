@@ -226,15 +226,15 @@
                         <Label x:Name="LabelLineInfoTitle" Content="Line-Info" Grid.Row="4" Grid.ColumnSpan="2" Padding="5,0,9,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" FontWeight="Bold"/>
 
                         <TextBox x:Name="TextBoxLineInfo"  Grid.Row="5"  Grid.RowSpan="3"    Grid.ColumnSpan="2" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontFamily="Courier New" Visibility="Hidden"/>
-                        <StackPanel x:Name="StackPanelBreakLog" Orientation="Vertical"  Grid.Row="5"  Grid.RowSpan="3"    Grid.Column="1" Visibility="Visible">
+                        <StackPanel x:Name="StackPanelBreakLog" Orientation="Vertical" Background="Orange" Grid.Row="5"  Grid.RowSpan="3"    Grid.Column="1" Visibility="Visible">
 
                             <Label Content=" "/>
-                            <RadioButton x:Name="RadioButtonBreakpoint" Content="Break-Point" IsChecked="True"/>
-                            <RadioButton x:Name="RadioButtonLogpoint" Content="Log-Point"/>
+                            <RadioButton x:Name="RadioButtonBreakpoint" Content="Break-Point" IsChecked="True" Margin="10,0,0,0"/>
+                            <RadioButton x:Name="RadioButtonLogpoint" Content="Log-Point" Margin="10,0,0,0"/>
 
                             <Label Content=" "/>
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="ButtonBreakLogOk" Content="   OK    " Click="ButtonBreakLogOk_Click"/>
+                                <Button x:Name="ButtonBreakLogOk" Content="   OK    " Click="ButtonBreakLogOk_Click" Margin="20,-1,0,0"/>
                                 <Button x:Name="ButtonBreakLogCancel" Content="Cancel" Click="ButtonBreakLogCancel_Click"/>
                             </StackPanel>
                         </StackPanel>
@@ -282,7 +282,6 @@
                             <TextBox
                                 x:Name="TextBoxBreak2"
                                 HorizontalContentAlignment="Center"
-                                Background="White"
                                 BorderBrush="Gray"
                                 BorderThickness="1,1,1,0"
                                 Text="PXdQ&#10;01234567&#10;89ABCDEF&#10;IOe"
@@ -296,7 +295,7 @@
                                 Content="Ok"
                                 DockPanel.Dock="Top"
                                 FontSize="16"
-                               Margin="4,4,4,0" Click="ButtonBreakpointYes_Click" />
+                               Margin="4,4,4,0" Click="ButtonBreakpointYes_Click" Background="Orange" />
                             <Button
                                 x:Name="ButtonBreakpointNo"
                                 HorizontalContentAlignment="Center"

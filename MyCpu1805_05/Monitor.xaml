@@ -140,7 +140,7 @@
            
             </Grid.ColumnDefinitions>
         </Grid>
-        <Grid Grid.Column="2" Grid.Row="1" Background="Gray">
+        <Grid Grid.Column="2" Grid.Row="1" Background="DarkGray">
             <Grid.RowDefinitions>
                 <RowDefinition Height="12*"/>
                 <RowDefinition Height="77*"/>
