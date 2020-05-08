@@ -65,7 +65,11 @@ namespace MyCpu1805_05
 
         private void CreateMyMessageBox(IInputElement iinputElement,String title,string message)
         {
-            MyMessageBox myBox = new MyMessageBox(title,message);
+            Point location = System.Windows.Input.Mouse.GetPosition(iinputElement);
+            Point point = PointToScreen(location);
+
+
+            MyMessageBox myBox = new MyMessageBox(point,title,message);
 
             // Manually alter window height and width
             //this.SizeToContent = SizeToContent.Manual;
@@ -82,21 +86,19 @@ namespace MyCpu1805_05
 
 
 
-            Point location = System.Windows.Input.Mouse.GetPosition(iinputElement);
+          
 
             //var location = myBox.PointToScreen(new Point(0, 0));
 
 
 
-            Point point = PointToScreen(location);
+    
+
+            myBox.ShowDialog();
 
 
-            myBox.Show();
 
-
-
-            myBox.Left = point.X - myBox.ActualWidth;
-            myBox.Top = point.Y;// + myBox.ActualHeight;
+      
         }
 
         int TestR = 0;
