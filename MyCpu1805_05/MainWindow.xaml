@@ -289,6 +289,14 @@
                                 FontSize="16"
                                 Margin="4,4,4,0" ToolTip="Parameter für LogFile-Aufzeichnung&#10;jeder Buchstabe steht für entsprechendes CPU-Register&#10; d=AccuD  Q=Q   I=INP1-7 O=OUT1-7 e=EF1-EF4" AcceptsReturn="True" />
                             <Button
+                                x:Name="ButtonRecordAll"                           
+                                HorizontalContentAlignment="Center"
+                                BorderThickness="1,1,1,0"
+                                Content="Record All"
+                                DockPanel.Dock="Top"
+                                FontSize="16"
+                               Margin="4,4,4,0" Click="ButtonRecordAll_Click" />
+                            <Button
                                 x:Name="ButtonBreakpointYes"                           
                                 HorizontalContentAlignment="Center"
                                 BorderThickness="1,1,1,0"
@@ -304,6 +312,7 @@
                                 DockPanel.Dock="Top"
                                 FontSize="16"
                                 Margin="4,4,4,0" Click="ButtonBreakpointNo_Click" />
+                       
                             <ListView Margin="4" x:Name="ListViewMem"
                                 PreviewMouseLeftButtonUp="ListViewMem_PreviewMouseLeftButtonUp"
                                 PreviewMouseRightButtonUp="ListViewMem_PreviewMouseRightButtonUp" ScrollViewer.HorizontalScrollBarVisibility="Auto" ToolTip="Linksklick: Programmzeile  zeigen -  Rechtsklick: Break-/Logpoint  setzen">

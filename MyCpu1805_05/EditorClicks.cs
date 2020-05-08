@@ -27,7 +27,10 @@ namespace MyCpu1805_05
 
             SetNewBreakpoint(null, 1, memSelect);
         }
-
+        private void ButtonRecordAll_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxBreak2.Text = "PXdQ\n01234567\n89ABCDEF\nIOe";
+        }
         private void ButtonBreakpointNo_Click(object sender, RoutedEventArgs e)
         {
             CMemView memSelect = (CMemView)ListViewMem.SelectedItem;

@@ -59,13 +59,45 @@ namespace MyCpu1805_05
         //ToDo ButtonTest
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
-            MyMonitor = new Monitor();
-            MyMonitor.Show();
-
-
+            CreateMyMessageBox(this,"TTTTTTT","dies ist eine message");
 
         }
 
+        private void CreateMyMessageBox(IInputElement iinputElement,String title,string message)
+        {
+            MyMessageBox myBox = new MyMessageBox(title,message);
+
+            // Manually alter window height and width
+            //this.SizeToContent = SizeToContent.Manual;
+
+            // Automatically resize width relative to content
+            //this.SizeToContent = SizeToContent.Width;
+
+            // Automatically resize height relative to content
+            //this.SizeToContent = SizeToContent.Height;
+
+            // Automatically resize height and width relative to content
+            myBox.SizeToContent = SizeToContent.WidthAndHeight;
+
+
+
+
+            Point location = System.Windows.Input.Mouse.GetPosition(iinputElement);
+
+            //var location = myBox.PointToScreen(new Point(0, 0));
+
+
+
+            Point point = PointToScreen(location);
+
+
+            myBox.Show();
+
+
+
+            myBox.Left = point.X - myBox.ActualWidth;
+            myBox.Top = point.Y;// + myBox.ActualHeight;
+        }
 
         int TestR = 0;
         int TestC = 0;
@@ -73,6 +105,10 @@ namespace MyCpu1805_05
         bool TestBool = false;
         private void ButtonTest2_Click(object sender, RoutedEventArgs e)
         {
+            return;
+
+ 
+
             #region PIXL
             //#DAAADF	 0   
             //#D9DD8F	 1   
