@@ -502,8 +502,7 @@ namespace MyCpu1805_05
                 case OpCode.IDL:
                     #region 00: WAIT FOR DMA OR INTERRUPT;  M(R(0)) -> BUS
                     R[P]--;
-                    //ToDo  Monitor DMA-Aus
-                    Monitor.DmaOutActive = false;
+                    MyMonitor.DmaOutOnOff(false);
                     #endregion
                     break;
                 case OpCode.LDN1:

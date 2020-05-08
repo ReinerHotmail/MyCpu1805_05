@@ -168,87 +168,9 @@ namespace MyCpu1805_05
 
                 lineE -= 1;
             }
-
-
-
-            return;
-
-            string str = "";
-
-            for (int i = 0; i < ROW; i++)
-            {
-                str = allText.Substring(i * COL, COL).Replace("_", "__");
-
-
-
-                foreach (string item in strSplit13)
-                {
-                    listLines.Add(item);
-                }
-
-            }
-
-
-            string[] lines = allText.Split((char)13);
-
-            int charEnd = ROW * COL;
-
-            int lineStart = 0;
-            int lineLen = 0;
-
-            for (int i = lines.Length - 1; i >= 0; i--)
-            {
-                if (lines[i].Length == COL)
-                {
-                    lineStart = charEnd - COL;
-                    lineLen = COL;
-                }
-                else
-                {
-
-                }
-
-                lineLen = COL;
-
-                if (lines[i].Length < COL)
-                    lineLen = lines[i].Length;
-
-                for (int row = ROW - 1; row >= 0; row--)
-                {
-                    ScreenLines[row].Content = lines[i].Substring(lineStart, lineLen).Replace("_", "__"); //weil 1x'_' unterstreicht
-                    lineStart += lineLen;
-
-                }
-            }
-
-
-
-            //for (int row = 0; row < ROW; row++)
-            //{
-            //    ScreenLines[row].Content = allText.Substring(row * COL, COL).Replace("_","__"); //weil 1x'_' unterstreicht
-
-            //}
-
-
         }
 
-        private void ScrollMonitor()
-        {
-            //for (int r = 1; r < ROW; r++)
-            //{
-            //    for (int c = 0; c < COL; c++)
-            //    {
-            //        Fields[r - 1, c].Content = Fields[r, c].Content;
-            //    }
-            //}
-            //for (int c = 0; c < COL; c++)
-            //{
-            //    //Fields[31, c].Content = "";
-            //    Fields[(ROW - 1), c].Content = "";
-            //}
-        }
-
-
+ 
         public void DmaOutOnOff(bool on)
         {
             if (on)
