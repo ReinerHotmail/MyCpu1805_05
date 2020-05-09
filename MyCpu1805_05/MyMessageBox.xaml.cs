@@ -35,6 +35,12 @@ namespace MyCpu1805_05
 
             this.Left = PointToScreen.X - 2*this.ActualWidth;
             this.Top = PointToScreen.Y;// + myBox.ActualHeight;
+          
+        }
+
+        private void WindowMyMessageBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

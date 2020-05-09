@@ -63,6 +63,7 @@ namespace MyCpu1805_05
             IniInput();
             IniEfs();
             IniOutput();
+            MyMonitor = new Monitor(); //wegen statischer Variablen
         }
 
         public void Ini()
