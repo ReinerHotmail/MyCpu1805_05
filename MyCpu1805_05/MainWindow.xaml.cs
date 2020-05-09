@@ -283,6 +283,11 @@ namespace MyCpu1805_05
             ListViewOpCodeSortStandard();
         }
 
-     
+        private void WindowCpu1805Main_Closing(object sender, CancelEventArgs e)
+        {
+            MyMonitor.Close();
+
+
+        }
     }
 }

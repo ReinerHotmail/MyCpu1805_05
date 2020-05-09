@@ -115,7 +115,7 @@ namespace MyCpu1805_05
         /// <param name="e"></param>
         private void TimerExe_Tick(object sender, EventArgs e)
         {
-           
+
 
             DoExeLoop(ExeStop);
 
@@ -209,28 +209,32 @@ namespace MyCpu1805_05
                     break;
             }
 
+            if (BreakpointReached && CpuMode == Cycle.DebugLoop)
+            {
+                #region Breakpoints
 
-            if (!exeStop && !(M[R[P]] == 0x00))
+                BreakpointReached = false;
+                CpuLed = CycleColor.Orange;
+                LabelBeakpoints.Content = "Breakpoint !!";
+                LabelBeakpoints.Background = Brushes.Orange;
+
+                LogFileAddLine(LogLine.Break, "Break " , "PXD", false);
+
+                ShowDebugStatus(false);
+                #endregion
+            }
+            else if (!exeStop && !(M[R[P]] == 0x00))
             {
                 if (CpuMode != Cycle.Run)
                 {
-                    #region DEBUG / Breakpoints
+                    #region DEBUG 
+
                     ShowDebugStatus(false);
 
-                    if (BreakpointReached)
-                    {
-                        BreakpointReached = false;
-                        CpuLed = CycleColor.Orange;
-                        LabelBeakpoints.Content = "Breakpoint !!";
-                        LabelBeakpoints.Background = Brushes.Orange;
 
+                    if (CpuMode == Cycle.DebugLoop)
+                        TimerExe.Start();
 
-                    }
-                    else
-                    {
-                        if (CpuMode == Cycle.Run || CpuMode == Cycle.DebugLoop)
-                            TimerExe.Start();
-                    }
                     #endregion
                 }
                 else
@@ -3297,7 +3301,7 @@ namespace MyCpu1805_05
         }
 
 
- 
+
 
 
 

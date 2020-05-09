@@ -193,6 +193,35 @@ namespace MyCpu1805_05
                     File.WriteAllLines(PathLog + "\\LogFile.txt", bufferLine);
                     #endregion
                     break;
+                case LogLine.Break:
+                    #region mit jedem Break, Queue in LogFile schreiben
+                    max = QueueLogFile.Count;
+                    bufferLine = new string[max * 2 + 2];
+                    bufNum = 0;
+
+                    for (int i = 0; i < max; i++)
+                    {
+                        if (i == max - 1)//Break-Eintrag
+                        {
+                            bufferLine[bufNum] = "  ";
+                            bufferLine[bufNum + 1] = "    -- BREAK  --";
+                            bufNum += 2;
+                        }
+
+                        var queueItem = QueueLogFile.Dequeue();
+                        string[] two = queueItem.Split(';');
+                        bufferLine[bufNum] = two[0];
+                        bufferLine[bufNum + 1] = two[1];
+             
+                        bufNum += 2;
+
+
+                    }
+                    File.WriteAllLines(PathLog + "\\LogFile.txt", bufferLine);
+
+
+                    #endregion
+                    break;
                 default:
                     break;
             }

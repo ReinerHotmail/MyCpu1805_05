@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCpu1805_05"
         mc:Ignorable="d"
-        Title="MyCpu1805_05" Height="1000" Width="1700" Loaded="WindowCpu1805Main_Loaded">
+        Title="MyCpu1805_05" Height="1000" Width="1700" Loaded="WindowCpu1805Main_Loaded" Closing="WindowCpu1805Main_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="97*"/>

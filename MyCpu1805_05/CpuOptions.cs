@@ -14,7 +14,7 @@ namespace MyCpu1805_05
     {
         enum LogLine
         {
-            Start, Run, Stop, End
+            Start, Run, Stop, End,Break
         }
 
         Monitor MyMonitor;
@@ -62,14 +62,14 @@ namespace MyCpu1805_05
             CreateMyMessageBox(this,"TTTTTTT","dies ist eine message");
 
         }
-
+      
         private void CreateMyMessageBox(IInputElement iinputElement,String title,string message)
         {
             Point location = System.Windows.Input.Mouse.GetPosition(iinputElement);
             Point point = PointToScreen(location);
 
 
-            MyMessageBox myBox = new MyMessageBox(point,title,message);
+            MyMessageBox  myBox = new MyMessageBox(point,title,message);
 
             // Manually alter window height and width
             //this.SizeToContent = SizeToContent.Manual;
