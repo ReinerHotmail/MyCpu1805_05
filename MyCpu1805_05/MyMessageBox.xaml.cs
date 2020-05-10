@@ -33,20 +33,9 @@ namespace MyCpu1805_05
 
         private void WindowMyMessageBox_Loaded(object sender, RoutedEventArgs e)
         {
-            double  screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth ;
-            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight ;
-            this.Top = 0;
 
-            if (leftSide)
-                this.Left = 0;
-            else
-                this.Left = screenWidth - this.ActualWidth;
-             
+
        
-
-
-
-
         }
 
         private void WindowMyMessageBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

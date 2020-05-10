@@ -62,7 +62,7 @@ namespace MyCpu1805_05
            
 
     
-            OpenHelpBox(true,"Eingabemöglichkeiten", "") ;
+            OpenHelpBox(false,"Eingabemöglichkeiten", "") ;
 
         }
         MyMessageBox HelpBox;
@@ -84,8 +84,26 @@ namespace MyCpu1805_05
             //this.SizeToContent = SizeToContent.Height;
 
             // Automatically resize height and width relative to content
-            HelpBox.SizeToContent = SizeToContent.WidthAndHeight;
+            //HelpBox.SizeToContent = SizeToContent.WidthAndHeight;
+
+    
+
             HelpBox.Show();
+
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+
+            HelpBox.Width = screenWidth / 3.0;
+            HelpBox.Height = screenHeight;
+
+            HelpBox.Top = 0;
+
+            if (leftSide)
+                HelpBox.Left = 0;
+            else
+                HelpBox.Left = screenWidth - screenWidth / 3.0;
+
+
         }
 
         private void CloseHelpBox()
