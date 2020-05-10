@@ -59,10 +59,11 @@ namespace MyCpu1805_05
         //ToDo ButtonTest
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
-           
 
-    
-            OpenHelpBox(false,"Eingabemöglichkeiten", "") ;
+            string text = "Manually alter window height and width\n" +
+                          "this.SizeToContent = SizeToContent.Manual";
+
+            OpenHelpBox(false,"Eingabemöglichkeiten", text) ;
 
         }
         CHelpBox HelpBox;
