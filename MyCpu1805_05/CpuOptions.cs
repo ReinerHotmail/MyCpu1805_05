@@ -65,14 +65,14 @@ namespace MyCpu1805_05
             OpenHelpBox(false,"Eingabemöglichkeiten", "") ;
 
         }
-        MyMessageBox HelpBox;
+        CHelpBox HelpBox;
 
         private void OpenHelpBox(bool leftSide, String title,string message)
         {
             if (HelpBox != null)
                 CloseHelpBox();
 
-            HelpBox = new MyMessageBox(leftSide,title,message);
+            HelpBox = new CHelpBox(leftSide,title,message);
 
             // Manually alter window height and width
             //this.SizeToContent = SizeToContent.Manual;

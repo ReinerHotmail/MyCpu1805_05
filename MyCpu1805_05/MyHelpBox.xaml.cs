@@ -15,11 +15,11 @@ namespace MyCpu1805_05
     /// <summary>
     /// Interaktionslogik für MyMessageBox.xaml
     /// </summary>
-    public partial class MyMessageBox : Window
+    public partial class CHelpBox : Window
     {
         bool leftSide;
 
-        public MyMessageBox(bool leftSide,string title, string message)
+        public CHelpBox(bool leftSide,string title, string message)
         {  
             InitializeComponent();
             this.LabelTitle.Content = title;
@@ -31,16 +31,5 @@ namespace MyCpu1805_05
 
     
 
-        private void WindowMyMessageBox_Loaded(object sender, RoutedEventArgs e)
-        {
-
-
-       
-        }
-
-        private void WindowMyMessageBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
     }
 }
