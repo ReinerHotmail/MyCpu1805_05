@@ -59,17 +59,20 @@ namespace MyCpu1805_05
         //ToDo ButtonTest
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
-            CreateMyMessageBox(this,"TTTTTTT","dies ist eine message");
+           
+
+    
+            OpenHelpBox(true,"Eingabemöglichkeiten", "") ;
 
         }
-      
-        private void CreateMyMessageBox(IInputElement iinputElement,String title,string message)
+        MyMessageBox HelpBox;
+
+        private void OpenHelpBox(bool leftSide, String title,string message)
         {
-            Point location = System.Windows.Input.Mouse.GetPosition(iinputElement);
-            Point point = PointToScreen(location);
+            if (HelpBox != null)
+                CloseHelpBox();
 
-
-            MyMessageBox  myBox = new MyMessageBox(point,title,message);
+            HelpBox = new MyMessageBox(leftSide,title,message);
 
             // Manually alter window height and width
             //this.SizeToContent = SizeToContent.Manual;
@@ -81,25 +84,20 @@ namespace MyCpu1805_05
             //this.SizeToContent = SizeToContent.Height;
 
             // Automatically resize height and width relative to content
-            myBox.SizeToContent = SizeToContent.WidthAndHeight;
-
-
-
-
-          
-
-            //var location = myBox.PointToScreen(new Point(0, 0));
-
-
-
-    
-
-            myBox.ShowDialog();
-
-
-
-      
+            HelpBox.SizeToContent = SizeToContent.WidthAndHeight;
+            HelpBox.Show();
         }
+
+        private void CloseHelpBox()
+        {
+            if (HelpBox == null)
+                return;
+
+            HelpBox.Close();
+            HelpBox = null;
+        }
+
+
 
         int TestR = 0;
         int TestC = 0;
@@ -107,6 +105,12 @@ namespace MyCpu1805_05
         bool TestBool = false;
         private void ButtonTest2_Click(object sender, RoutedEventArgs e)
         {
+
+            CloseHelpBox();
+
+
+
+
             return;
 
  
@@ -197,5 +201,7 @@ namespace MyCpu1805_05
 
 
         }
+
+ 
     }
 }

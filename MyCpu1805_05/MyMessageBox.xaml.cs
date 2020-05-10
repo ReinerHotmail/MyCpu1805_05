@@ -17,25 +17,36 @@ namespace MyCpu1805_05
     /// </summary>
     public partial class MyMessageBox : Window
     {
-        Point PointToScreen;
-        public MyMessageBox(Point point ,string title, string message)
+        bool leftSide;
+
+        public MyMessageBox(bool leftSide,string title, string message)
         {  
             InitializeComponent();
             this.LabelTitle.Content = title;
             this.TextBlock_Message.Text = message;
-            string imageBig = "pack://siteoforigin:,,,/Resources/MyImage.jpg";
+            string imageBig = "pack://siteoforigin:,,,/Resources/HelpBoxBreak01.png";
             ImageBig.Source = new BitmapImage(new Uri(imageBig));
-            PointToScreen = point;
+            this.leftSide = leftSide;
         }
 
     
 
         private void WindowMyMessageBox_Loaded(object sender, RoutedEventArgs e)
         {
+            double  screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth ;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight ;
+            this.Top = 0;
 
-            this.Left = PointToScreen.X - 2*this.ActualWidth;
-            this.Top = PointToScreen.Y;// + myBox.ActualHeight;
-          
+            if (leftSide)
+                this.Left = 0;
+            else
+                this.Left = screenWidth - this.ActualWidth;
+             
+       
+
+
+
+
         }
 
         private void WindowMyMessageBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

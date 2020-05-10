@@ -5,17 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCpu1805_05"
         mc:Ignorable="d"
-        Title="MyMessageBox" Height="800" Width="200" Loaded="WindowMyMessageBox_Loaded" MouseLeftButtonDown="WindowMyMessageBox_MouseLeftButtonDown">
+        Title="HelpBox" Height="800" Width="200" Loaded="WindowMyMessageBox_Loaded" MouseLeftButtonDown="WindowMyMessageBox_MouseLeftButtonDown" Topmost="True">
     <StackPanel Margin="10,10,10,10" Background="LightGreen">
         <Label x:Name="LabelTitle" Content="Title" HorizontalContentAlignment="Center" FontSize="24" FontWeight="Bold" Background="LightGray" Margin="0,0,0,20"/>
         <TextBlock x:Name="TextBlock_Message" Text="abcdef\nzzz" TextWrapping="Wrap" FontSize="14" Margin="10,5,10,0" MinHeight="40"/>
-        <Image x:Name="ImageBig" Width="150" Height="150" Margin="5,5,5,5" Stretch="Fill"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            
-            <Button x:Name="OK" Content="   OK   " FontSize="16" MinHeight="30" MinWidth="60" Margin="5,5,15,5"/>
-         
-            <Button x:Name="o" Content="   C   " FontSize="16" MinHeight="30" MinWidth="60" Margin="15,5,5,5" />
-        </StackPanel>
+        <Image x:Name="ImageBig" Width="500" Height="800" Margin="5,5,5,5" />
+        
 
     </StackPanel>
 </Window>

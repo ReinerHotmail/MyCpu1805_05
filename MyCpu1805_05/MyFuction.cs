@@ -121,22 +121,22 @@ namespace MyCpu1805_05
                                 outline += "  " + "R[9]=" + R[9].ToString("X4");
                                 break;
                             case 'A':
-                                outline += "  " + "R[10]=" + R[10].ToString("X4");
+                                outline += "  " + "R[A]=" + R[10].ToString("X4");
                                 break;
                             case 'B':
-                                outline += "  " + "R[11]=" + R[11].ToString("X4");
+                                outline += "  " + "R[B]=" + R[11].ToString("X4");
                                 break;
                             case 'C':
-                                outline += "  " + "R[12]=" + R[12].ToString("X4");
+                                outline += "  " + "R[C]=" + R[12].ToString("X4");
                                 break;
                             case 'D':
-                                outline += "  " + "R[13]=" + R[13].ToString("X4");
+                                outline += "  " + "R[D]=" + R[13].ToString("X4");
                                 break;
                             case 'E':
-                                outline += "  " + "R[14]=" + R[14].ToString("X4");
+                                outline += "  " + "R[E]=" + R[14].ToString("X4");
                                 break;
                             case 'F':
-                                outline += "  " + "R[15]=" + R[15].ToString("X4");
+                                outline += "  " + "R[F]=" + R[15].ToString("X4");
                                 break;
                             case 'I':
                                 outline += "  " + "INP0=" + INP[0].ToString("X2") + " INP1=" + INP[1].ToString("X2") + " INP2=" + INP[2].ToString("X2") + " INP3=" + INP[3].ToString("X2") + " INP4=" + INP[4].ToString("X2") + " INP5=" + INP[5].ToString("X2") + " INP6=" + INP[6].ToString("X2") + " INP7=" + INP[7].ToString("X2");
@@ -201,13 +201,6 @@ namespace MyCpu1805_05
 
                     for (int i = 0; i < max; i++)
                     {
-                        if (i == max - 1)//Break-Eintrag
-                        {
-                            bufferLine[bufNum] = "  ";
-                            bufferLine[bufNum + 1] = "    -- BREAK  --";
-                            bufNum += 2;
-                        }
-
                         var queueItem = QueueLogFile.Dequeue();
                         string[] two = queueItem.Split(';');
                         bufferLine[bufNum] = two[0];
@@ -215,6 +208,12 @@ namespace MyCpu1805_05
              
                         bufNum += 2;
 
+                        if (i == max - 1)//Break-Eintrag
+                        {
+                            bufferLine[bufNum + 1] = "    -- BREAK  --";
+                            bufferLine[bufNum] = "  ";
+                            bufNum += 2;
+                        }
 
                     }
                     File.WriteAllLines(PathLog + "\\LogFile.txt", bufferLine);

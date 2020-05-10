@@ -287,6 +287,9 @@ namespace MyCpu1805_05
         {
             MyMonitor.Close();
 
+            if(HelpBox!=null)
+                HelpBox.Close();
+
 
         }
     }
