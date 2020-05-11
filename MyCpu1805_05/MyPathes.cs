@@ -40,7 +40,6 @@ namespace MyCpu1805_05
             bool dirErr = false;
 
 
-
             if (RcaFile.Path != "" && !Directory.Exists(RcaFile.Path))
                 dirErr = true;
 
@@ -51,21 +50,14 @@ namespace MyCpu1805_05
 
                 if (result == MessageBoxResult.Yes)
                 {
-
                     RcaFile.Path = FolderBrowserDialog("RcaFile-Directory");
 
                     if (RcaFile.Path=="")
-                    {
                         Application.Current.Shutdown();
-                    }
-
-
                 }
                 else
                 {
-
                     Application.Current.Shutdown();
-
                 }
             }
 

@@ -149,12 +149,15 @@ namespace MyCpu1805_05
 
         private void ShowFileName(string file)
         {
-            string s = file;
+            string s0 = file;
+           
 
             if (file.Length > 56)
-                s = file[0..36] + "  . . .  " + file[^20..];
+                s0 = file[0..36] + "  . . .  " + file[^20..];
 
-            LabelEditorProgName.Content = s;
+            s0 = s0.Replace("_", "__");
+
+            LabelEditorProgName.Content = s0;
 
 
         }

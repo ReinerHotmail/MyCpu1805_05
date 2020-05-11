@@ -20,10 +20,7 @@ namespace MyCpu1805_05
         Monitor MyMonitor;
 
 
-        private void ButtonOptionMonitor_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+   
         public IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
