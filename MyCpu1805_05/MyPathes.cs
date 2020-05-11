@@ -8,9 +8,12 @@ namespace MyCpu1805_05
 {
     public partial class MainWindow
     {
-        string Path0 = "";
+
+        // Long: MyDocument\\MyCpu1805\\RcaFile\\Prg01.rca
+        // Path: MyDocument\\MyCpu1805\\RcaFile
+        // Name: Prg01.rca
         (string Long, string Path, string Name) RcaFile;
-        string PathLog = "";
+       
 
 
         private void IniMyFolder()
@@ -19,7 +22,7 @@ namespace MyCpu1805_05
             if (!File.Exists("SettingFile.txt"))
             {
 
-                // SettingFile.Txt erzeugen
+                // SettingFile.Txt erzeugen im DEBUG oder RELEASE Pfad der EXE
                 using (StreamWriter stream = File.AppendText("SettingFile.txt"))
                 {
                     stream.WriteLine("key" + ";" + "content");
@@ -27,21 +30,16 @@ namespace MyCpu1805_05
             }
 
 
-            Path0 = GetSetting("Path0");
-            PathLog = GetSetting("PathLog");
+      
             RcaFile.Path = GetSetting("PathRca");
 
 
 
-            bool dirSettingEmty = Path0 == "" || PathLog == "" || RcaFile.Path == "";
+            bool dirSettingEmty =  RcaFile.Path == "" ;
 
             bool dirErr = false;
 
-            if (Path0 != "" && !Directory.Exists(Path0))
-                dirErr = true;
 
-            if (PathLog != "" && !Directory.Exists(PathLog))
-                dirErr = true;
 
             if (RcaFile.Path != "" && !Directory.Exists(RcaFile.Path))
                 dirErr = true;
@@ -49,47 +47,28 @@ namespace MyCpu1805_05
             if (dirSettingEmty || dirErr)
             {
                 MessageBoxResult result =
-                MessageBox.Show("Standard-Ordner im Dokumenten-Pfad erstellen ?", "Achtung", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBox.Show("Standard-Ordner für RCA-Files \nim Dokumenten-Pfad erstellen ?", "Achtung", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    Path0 = docPath + "\\MyCpu1805";
-                    PathLog = docPath + "\\MyCpu1805" + "\\Log";
-                    RcaFile.Path = docPath + "\\MyCpu1805" + "\\RcaFile";
 
-                    if (!Directory.Exists(Path0))
-                        Directory.CreateDirectory(Path0);
-                    if (!Directory.Exists(PathLog))
-                        Directory.CreateDirectory(PathLog);
-                    if (!Directory.Exists(RcaFile.Path))
-                        Directory.CreateDirectory(RcaFile.Path);
+                    RcaFile.Path = FolderBrowserDialog("RcaFile-Directory");
+
+                    if (RcaFile.Path=="")
+                    {
+                        Application.Current.Shutdown();
+                    }
+
+
                 }
                 else
                 {
-                    do
-                    {
-                        MessageBox.Show("Standard-Ordner  wählen oder neu erstellen");
-                        Path0 = FolderBrowserDialog("CPU1805-Directory");
-                    } while (Path0 == "");
 
+                    Application.Current.Shutdown();
 
-                    do
-                    {
-                        MessageBox.Show("LogDatei-Ordner  wählen oder neu erstellen");
-                        PathLog = FolderBrowserDialog("Log-Directory");
-                    } while (PathLog == "");
-
-                    do
-                    {
-                        MessageBox.Show("RcaFile-Ordner  wählen oder neu erstellen");
-                        RcaFile.Path = FolderBrowserDialog("RcaFile-Directory");
-                    } while (RcaFile.Path == "");
                 }
             }
 
-            PutSetting("Path0", Path0);
-            PutSetting("PathLog", PathLog);
             PutSetting("PathRca", RcaFile.Path);
 
 

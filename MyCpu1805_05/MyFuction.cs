@@ -22,12 +22,12 @@ namespace MyCpu1805_05
         private void LogFileAddLine(LogLine LineTyp, string runTimeAtEndOrText, string logItems, bool newLogFile)
         {
 
-            if (newLogFile || !File.Exists(PathLog + "\\LogFile.txt"))
+            if (newLogFile || !File.Exists(RcaFile.Path + "\\LogFile.txt"))
             {
-                if (File.Exists(PathLog + "\\LogFile.txt"))
-                    File.Delete(PathLog + "\\LogFile.txt");
+                if (File.Exists(RcaFile.Path + "\\LogFile.txt"))
+                    File.Delete(RcaFile.Path + "\\LogFile.txt");
 
-                var logFile = File.Create(PathLog + "\\LogFile.txt");
+                var logFile = File.Create(RcaFile.Path + "\\LogFile.txt");
                 logFile.Close();
             }
 
@@ -47,8 +47,7 @@ namespace MyCpu1805_05
                     QueueLogFile.Clear();
 
                     #region mit jedem START, LogFile lesen und in Queue füllen
-                    string[] buffer = File.ReadAllLines(PathLog + "\\LogFile.txt");
-
+                    string[] buffer = File.ReadAllLines(RcaFile.Path + "\\LogFile.txt");
                     int len = buffer.Length;
                     if (len > LogFileMaxLines)
                         len = LogFileMaxLines;
@@ -190,7 +189,7 @@ namespace MyCpu1805_05
                         bufferLine[bufNum + 1] = two[1];
                         bufNum += 2;
                     }
-                    File.WriteAllLines(PathLog + "\\LogFile.txt", bufferLine);
+                    File.WriteAllLines(RcaFile.Path + "\\LogFile.txt", bufferLine);
                     #endregion
                     break;
                 case LogLine.Break:
@@ -216,7 +215,7 @@ namespace MyCpu1805_05
                         }
 
                     }
-                    File.WriteAllLines(PathLog + "\\LogFile.txt", bufferLine);
+                    File.WriteAllLines(RcaFile.Path + "\\LogFile.txt", bufferLine);
 
 
                     #endregion

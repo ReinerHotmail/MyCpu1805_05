@@ -53,8 +53,8 @@ namespace MyCpu1805_05
                 if (result == MessageBoxResult.No)
                     return;
 
-                if (File.Exists(PathLog + "\\LogFile.txt"))
-                    File.Delete(PathLog + "\\LogFile.txt");
+                if (File.Exists(RcaFile.Path + "\\LogFile.txt"))
+                    File.Delete(RcaFile.Path + "\\LogFile.txt");
 
             }
 
@@ -93,9 +93,9 @@ namespace MyCpu1805_05
 
         private int LogFileLines()
         {
-            if (File.Exists(PathLog + "\\LogFile.txt"))
+            if (File.Exists(RcaFile.Path + "\\LogFile.txt"))
             {
-                string[] logLines = File.ReadAllLines(PathLog + "\\LogFile.txt");
+                string[] logLines = File.ReadAllLines(RcaFile.Path + "\\LogFile.txt");
                 int len = logLines.Length;
                 return len;
             }
@@ -178,11 +178,11 @@ namespace MyCpu1805_05
 
         private void ButtonLogFileRuntime_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(PathLog + "\\LogFile.txt"))
+            if (File.Exists(RcaFile.Path + "\\LogFile.txt"))
             {
                 Process process = new Process();
                 process.StartInfo.UseShellExecute = true;
-                process.StartInfo.FileName = PathLog + "\\LogFile.txt";
+                process.StartInfo.FileName = RcaFile.Path + "\\LogFile.txt";
                 process.Start();
             }
 
