@@ -1848,12 +1848,15 @@ namespace MyCpu1805_05
 
 
                 #region HelpBox
+                string text0 = "BREAKPOINT:    Programm wird bei Erreichen der Adresse, je nach Bedingung angehalten\n" +
+                               "LOGPOINT:        Bei Erreichen der Adresse, wird das Logfile mit den ausgewählten \n  " +
+                               "                           CPU-Daten beschrieben\n\n";
 
-                string text = "1. Breakpointbedingung eintragen (Standard=B - keine Bedingung)\n" +
-                              "2. Logfileeinträge filtern (Standard=alle)\n" +
+                string text = "1. Break-/Logpointbedingung eintragen (Standard = B/L - keine Bedingung)\n" +
+                              "2. Logfileeinträge filtern (Standard = alle)\n" +
                               "3. Break- oder Logbedingung abschliessen mit  'OK-Button'\n";
 
-                OpenHelpBox(false, "Eingabemöglichkeiten", text, "HelpBoxBreak01.png");
+                OpenHelpBox(false, "Eingabemöglichkeiten", text0+text, "HelpBoxBreak01.png");
 
                 #endregion
 
