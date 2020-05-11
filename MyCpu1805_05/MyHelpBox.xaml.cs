@@ -19,12 +19,12 @@ namespace MyCpu1805_05
     {
         bool leftSide;
 
-        public CHelpBox(bool leftSide,string title, string message)
+        public CHelpBox(bool leftSide,string title, string message,string imagePath)
         {  
             InitializeComponent();
             this.LabelTitle.Content = title;
             this.TextBlock_Message.Text = message;
-            string imageBig = "pack://siteoforigin:,,,/Resources/HelpBoxBreak01.png";
+            string imageBig = "pack://siteoforigin:,,,/Resources/" + "HelpBoxBreak01.png";
             ImageBig.Source = new BitmapImage(new Uri(imageBig));
             this.leftSide = leftSide;
         }

@@ -1801,29 +1801,33 @@ namespace MyCpu1805_05
                 if (chrTyp == "L")
                     strTyp = "Log";
 
-                #region neuen Break-/LogPoint hinzufügen
-                string text = "Eingabe der " + strTyp + "point-Bedingung:\n\n" +
-                              chrTyp + "\t" + strTyp + "point ohne Bedingung\n" +
-                              ">\tgrösser\n" +
-                              ">=\tgrösser/gleich\n" +
-                              "<\tkleiner\n" +
-                              "<=\tkleiner/gleich\n" +
-                              "==\tgleich\n\n" +
-                              "Beispiele:\n\n" +
-                              "R5>A12F\t\tRegister und Hexwert\n" +
-                              "R5>=A12F\n" +
-                              "R5<A12F\n" +
-                              "R5<=A12F\n" +
-                              "R5==A12F\n\n" +
-                              "R5>R6\t\tRegister und Register\n" +
-                              "R5>=R6\n" +
-                              "R5<R6\n" +
-                              "R5<=R6\n" +
-                              "R5==R6\n\n" +
-                              "möglich: R1..RF  RP  RX  und '4stellig-Hex' zB: A0F7"
-                              ;
 
-                MessageBoxResult result = MessageBox.Show(text, strTyp + "point  setzen bei Adresse '" + memSelect.Adr + "'", MessageBoxButton.YesNo);
+
+
+
+                #region neuen Break-/LogPoint hinzufügen
+                //string text = "Eingabe der " + strTyp + "point-Bedingung:\n\n" +
+                //              chrTyp + "\t" + strTyp + "point ohne Bedingung\n" +
+                //              ">\tgrösser\n" +
+                //              ">=\tgrösser/gleich\n" +
+                //              "<\tkleiner\n" +
+                //              "<=\tkleiner/gleich\n" +
+                //              "==\tgleich\n\n" +
+                //              "Beispiele:\n\n" +
+                //              "R5>A12F\t\tRegister und Hexwert\n" +
+                //              "R5>=A12F\n" +
+                //              "R5<A12F\n" +
+                //              "R5<=A12F\n" +
+                //              "R5==A12F\n\n" +
+                //              "R5>R6\t\tRegister und Register\n" +
+                //              "R5>=R6\n" +
+                //              "R5<R6\n" +
+                //              "R5<=R6\n" +
+                //              "R5==R6\n\n" +
+                //              "möglich: R1..RF  RP  RX  und '4stellig-Hex' zB: A0F7"
+                //              ;
+
+                MessageBoxResult result = MessageBox.Show("", strTyp + "point  setzen bei Adresse '" + memSelect.Adr + "'", MessageBoxButton.YesNo);
 
                 if (result == MessageBoxResult.No)
                 {
@@ -1839,6 +1843,23 @@ namespace MyCpu1805_05
                 TextBoxBreak.Text = chrTyp;
                 BreakLogTyp = chrTyp;
                 TextBoxBreak.CaretIndex = 1;
+
+
+
+
+                #region HelpBox
+
+                string text = "1. Breakpointbedingung eintragen (Standard=B - keine Bedingung)\n" +
+                              "2. Logfileeinträge filtern (Standard=alle)\n" +
+                              "3. Break- oder Logbedingung abschliessen mit  'OK-Button'\n";
+
+                OpenHelpBox(false, "Eingabemöglichkeiten", text, "HelpBoxBreak01.png");
+
+                #endregion
+
+
+
+
 
                 #endregion
 

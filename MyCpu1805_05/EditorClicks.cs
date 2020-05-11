@@ -26,6 +26,7 @@ namespace MyCpu1805_05
                 return;
 
             SetNewBreakpoint(null, 1, memSelect);
+            CloseHelpBox();
         }
         private void ButtonRecordAll_Click(object sender, RoutedEventArgs e)
         {
@@ -39,6 +40,7 @@ namespace MyCpu1805_05
                 return;
 
             SetNewBreakpoint(null, 2, memSelect);
+            CloseHelpBox();
         }
 
         private void ButtonLoadClipboard_Click(object sender, RoutedEventArgs e)

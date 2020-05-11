@@ -60,20 +60,21 @@ namespace MyCpu1805_05
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
 
-            string text = "Manually alter window height and width\n" +
-                          "this.SizeToContent = SizeToContent.Manual";
+            string text = "1. Breakpointbedingung eintragen (Standard=B - keine Bedingung)\n" +
+                          "2. Logfileeinträge filtern (Standard=alle)\n" +
+                          "3. Break- oder Logbedingung abschliessen mit  'OK-Button'\n";
 
-            OpenHelpBox(false,"Eingabemöglichkeiten", text) ;
+            OpenHelpBox(false,"Eingabemöglichkeiten", text, "HelpBoxBreak01.png") ;
 
         }
         CHelpBox HelpBox;
 
-        private void OpenHelpBox(bool leftSide, String title,string message)
+        private void OpenHelpBox(bool leftSide, String title,string message,string imagePath)
         {
             if (HelpBox != null)
                 CloseHelpBox();
 
-            HelpBox = new CHelpBox(leftSide,title,message);
+            HelpBox = new CHelpBox(leftSide,title,message,imagePath);
 
             // Manually alter window height and width
             //this.SizeToContent = SizeToContent.Manual;
