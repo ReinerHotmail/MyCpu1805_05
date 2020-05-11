@@ -285,9 +285,10 @@ namespace MyCpu1805_05
 
         private void WindowCpu1805Main_Closing(object sender, CancelEventArgs e)
         {
-            MyMonitor.Close();
+            if (MyMonitor != null)
+                MyMonitor.Close();
 
-            if(HelpBox!=null)
+            if (HelpBox != null)
                 HelpBox.Close();
 
 
