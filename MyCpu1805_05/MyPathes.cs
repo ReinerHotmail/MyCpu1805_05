@@ -71,7 +71,8 @@ namespace MyCpu1805_05
 
             PutSetting("PathRca", RcaFile.Path);
 
-
+            ShowFileName(RcaFile.Path);
+       
         }
 
 
