@@ -14,13 +14,13 @@ namespace MyCpu1805_05
     {
         enum LogLine
         {
-            Start, Run, Stop, End,Break
+            Start, Run, Stop, End, Break
         }
 
         Monitor MyMonitor;
 
 
-   
+
         public IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -57,6 +57,53 @@ namespace MyCpu1805_05
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
 
+
+            string target = "http://www.microsoft.com";    //Use no more than one assignment when you test this code. 
+                                                           //string target = "ftp://ftp.microsoft.com";
+                                                           //string target = "C:\\Program Files\\Microsoft Visual Studio\\INSTALL.HTM"; 
+
+
+            //Process process = new Process();
+            //process.StartInfo.UseShellExecute = true;
+            //process.StartInfo.FileName = RcaFile.Path + "\\LogFile.txt";
+            //process.Start();
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = true;
+            process.StartInfo.FileName = @"D:\MyDat\HelpNDoc\Output\html\Willkommen.html";
+
+
+            try
+            {
+                process.Start();
+            }
+            catch (System.Exception other)
+            {
+                MessageBox.Show(other.Message);
+            }
+
+            return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             string text0 = "BREAKPOINT:    Programm wird bei Erreichen der Adresse, je nach Bedingung angehalten\n" +
                              "LOGPOINT:        Bei Erreichen der Adresse, wird das Logfile mit den ausgewählten \n  " +
                              "                           CPU-Daten beschrieben\n\n";
@@ -70,12 +117,12 @@ namespace MyCpu1805_05
         }
         CHelpBox HelpBox;
 
-        private void OpenHelpBox(bool leftSide, String title,string message,string imagePath)
+        private void OpenHelpBox(bool leftSide, String title, string message, string imagePath)
         {
             if (HelpBox != null)
                 CloseHelpBox();
 
-            HelpBox = new CHelpBox(leftSide,title,message,imagePath);
+            HelpBox = new CHelpBox(leftSide, title, message, imagePath);
 
             // Manually alter window height and width
             //this.SizeToContent = SizeToContent.Manual;
@@ -89,7 +136,7 @@ namespace MyCpu1805_05
             // Automatically resize height and width relative to content
             //HelpBox.SizeToContent = SizeToContent.WidthAndHeight;
 
-    
+
 
             HelpBox.Show();
 
@@ -134,7 +181,7 @@ namespace MyCpu1805_05
 
             return;
 
- 
+
 
             #region PIXL
             //#DAAADF	 0   
@@ -223,6 +270,6 @@ namespace MyCpu1805_05
 
         }
 
- 
+
     }
 }

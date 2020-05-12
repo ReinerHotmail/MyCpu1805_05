@@ -231,7 +231,7 @@ namespace MyCpu1805_05
         private void CheckBoxDmaOut_Click(object sender, RoutedEventArgs e)
         {
             MonitorOnOff();
-         
+
 
         }
 
