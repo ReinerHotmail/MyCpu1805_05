@@ -6,11 +6,20 @@
         xmlns:local="clr-namespace:MyCpu1805_05"
         mc:Ignorable="d"
         Title="HelpBox" Height="1080" Width="640" Topmost="True">
-    <StackPanel Margin="10,10,10,10" Background="LightGreen">
-        <Label x:Name="LabelTitle" Content="Title" HorizontalContentAlignment="Center" FontSize="24" FontWeight="Bold" Background="LightGray" Margin="0,0,0,20"/>
-        <TextBlock x:Name="TextBlock_Message" Text="abcdef\nzzz" TextWrapping="Wrap" FontSize="14" Margin="10,5,10,0" MinHeight="40"/>
-        <Image x:Name="ImageBig"  Margin="5,5,5,5" />
+    <Grid Margin="10,10,10,10" Background="LightGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="485*"/>
+        </Grid.RowDefinitions>
+        <StackPanel  Grid.Row="0">
+            <Label x:Name="LabelTitle" Content="Title" HorizontalContentAlignment="Center" FontSize="24" FontWeight="Bold" Background="LightGray" Margin="0,0,0,3"/>
+            <TextBlock x:Name="TextBlock_Message" Text="abcdef\nzzz" TextWrapping="Wrap" FontSize="14" Margin="10,0,10,0" MinHeight="40"/>
+            <!--<Image x:Name="ImageBig"  Margin="5,5,5,5" />-->
+        </StackPanel>
+        <DocumentViewer x:Name="DocumentViewerHelp" Grid.Row="1"/>
+      
+
         
 
-    </StackPanel>
+    </Grid>
 </Window>

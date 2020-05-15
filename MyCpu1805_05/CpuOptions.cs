@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -54,8 +55,33 @@ namespace MyCpu1805_05
         }
 
         //ToDo ButtonTest
+
+        [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
+
+
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+
+
+
+            return;
+
+
+   
+
+
+
+
+
+
+
+
+
+
 
 
             string target = "http://www.microsoft.com";    //Use no more than one assignment when you test this code. 
@@ -67,14 +93,14 @@ namespace MyCpu1805_05
             //process.StartInfo.UseShellExecute = true;
             //process.StartInfo.FileName = RcaFile.Path + "\\LogFile.txt";
             //process.Start();
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = true;
-            process.StartInfo.FileName = @"D:\MyDat\HelpNDoc\Output\html\Willkommen.html";
+            Process _childp = new Process();
+            _childp.StartInfo.UseShellExecute = true;
+            _childp.StartInfo.FileName = @"D:\MyDat\HelpNDoc\Output\html\Willkommen.html";
 
 
             try
             {
-                process.Start();
+                _childp.Start();
             }
             catch (System.Exception other)
             {
@@ -104,25 +130,95 @@ namespace MyCpu1805_05
 
 
 
-            string text0 = "BREAKPOINT:    Programm wird bei Erreichen der Adresse, je nach Bedingung angehalten\n" +
-                             "LOGPOINT:        Bei Erreichen der Adresse, wird das Logfile mit den ausgewählten \n  " +
-                             "                           CPU-Daten beschrieben\n\n";
+            //string text0 = "BREAKPOINT:    Programm wird bei Erreichen der Adresse, je nach Bedingung angehalten\n" +
+            //                 "LOGPOINT:        Bei Erreichen der Adresse, wird das Logfile mit den ausgewählten \n  " +
+            //                 "                           CPU-Daten beschrieben\n\n";
 
-            string text = "1. Break-/Logpointbedingung eintragen (Standard = B/L - keine Bedingung)\n" +
-                          "2. Logfileeinträge filtern (Standard = alle)\n" +
-                          "3. Break- oder Logbedingung abschliessen mit  'OK-Button'\n";
+            //string text = "1. Break-/Logpointbedingung eintragen (Standard = B/L - keine Bedingung)\n" +
+            //              "2. Logfileeinträge filtern (Standard = alle)\n" +
+            //              "3. Break- oder Logbedingung abschliessen mit  'OK-Button'\n";
 
-            OpenHelpBox(false, "Eingabemöglichkeiten", text0 + text, "HelpBoxBreak01.png");
+            //OpenHelpBox(false, "Eingabemöglichkeiten", text0 + text, "HelpBoxBreak01.png");
 
         }
-        CHelpBox HelpBox;
+     
 
         private void OpenHelpBox(bool leftSide, String title, string message, string imagePath)
         {
-            if (HelpBox != null)
-                CloseHelpBox();
+            //if (HelpBox != null)
+            //    CloseHelpBox();
 
-            HelpBox = new CHelpBox(leftSide, title, message, imagePath);
+            //HelpBox = new CHelpBox(leftSide, title, message, imagePath);
+
+            // Manually alter window height and width
+            //this.SizeToContent = SizeToContent.Manual;
+
+            // Automatically resize width relative to content
+            //this.SizeToContent = SizeToContent.Width;
+
+            // Automatically resize height relative to content
+            //this.SizeToContent = SizeToContent.Height;
+
+            //// Automatically resize height and width relative to content
+            ////HelpBox.SizeToContent = SizeToContent.WidthAndHeight;
+
+
+
+            //HelpBox.Show();
+
+            //double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            //double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+
+            //HelpBox.Width = screenWidth / 3.0;
+            //HelpBox.Height = screenHeight;
+
+            //HelpBox.Top = 0;
+
+            //if (leftSide)
+            //    HelpBox.Left = 0;
+            //else
+            //    HelpBox.Left = screenWidth - screenWidth / 3.0;
+
+
+        }
+
+        private void CloseHelpBox()
+        {
+            if (HelpBoxNew == null)
+                return;
+
+            HelpBoxNew.Close();
+            HelpBoxNew = null;
+        }
+
+
+
+        int TestR = 0;
+        int TestC = 0;
+        bool TestBool1 = false;
+        bool TestBool = false;
+        private void ButtonTest2_Click(object sender, RoutedEventArgs e)
+        {
+            if (!TestBool1)
+            {
+                HelpBoxNew = new CHelpBox(false, "Titel-Neu", "", 0);
+                TestBool1 = true;
+            }
+            else
+            {
+                HelpBoxNew = new CHelpBox(true, "Titel-Neu", "", 4);
+            }
+
+
+
+            HelpBoxNew.Show();
+  
+
+            return;
+
+
+
+            //HelpBox = new CHelpBox(false, "Title", "message", "imagePath");
 
             // Manually alter window height and width
             //this.SizeToContent = SizeToContent.Manual;
@@ -138,43 +234,46 @@ namespace MyCpu1805_05
 
 
 
-            HelpBox.Show();
+            //HelpBox.Show();
 
-            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            //double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            //double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
 
-            HelpBox.Width = screenWidth / 3.0;
-            HelpBox.Height = screenHeight;
+            //HelpBox.Width = screenWidth *0.4;
+            //HelpBox.Height = screenHeight;
 
-            HelpBox.Top = 0;
+            //HelpBox.Top = 0;
 
-            if (leftSide)
-                HelpBox.Left = 0;
-            else
-                HelpBox.Left = screenWidth - screenWidth / 3.0;
-
-
-        }
-
-        private void CloseHelpBox()
-        {
-            if (HelpBox == null)
-                return;
-
-            HelpBox.Close();
-            HelpBox = null;
-        }
+            ////if (leftSide)
+            ////    HelpBox.Left = 0;
+            ////else
+            //    HelpBox.Left = screenWidth - HelpBox.Width;
 
 
 
-        int TestR = 0;
-        int TestC = 0;
-        bool TestBool1 = false;
-        bool TestBool = false;
-        private void ButtonTest2_Click(object sender, RoutedEventArgs e)
-        {
 
-            CloseHelpBox();
+            //string fileName = @"C:\Users\rsche\Desktop\Cpu1802.xps";
+            ////fileName = fileName.Remove(0, 6);
+            //System.Windows.Xps.Packaging.XpsDocument doc = new System.Windows.Xps.Packaging.XpsDocument(fileName, FileAccess.Read);
+            //HelpBox.DocumentViewerHelp.Document = doc.GetFixedDocumentSequence();
+            //HelpBox.DocumentViewerHelp.GoToPage(4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // CloseHelpBox();
 
 
 

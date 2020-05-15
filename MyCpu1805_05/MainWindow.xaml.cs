@@ -25,7 +25,7 @@ namespace MyCpu1805_05
     public partial class MainWindow : Window
     {
 
-
+        CHelpBox HelpBoxNew;
         List<CJump> ListJump = new List<CJump>();
         List<CProg> ListProg = new List<CProg>();
         List<CReplace> ListReplace = new List<CReplace>();
@@ -63,7 +63,34 @@ namespace MyCpu1805_05
             IniInput();
             IniEfs();
             IniOutput();
+            IniHelpBoxNew();
+
             MyMonitor = new Monitor(); //wegen statischer Variablen
+        }
+
+        private void IniHelpBoxNew()
+        {
+            //HelpBoxNew = new CHelpBox(false, "Titel-Neu", "", "");
+
+            //double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            //double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+
+            //HelpBoxNew.Width = screenWidth * 0.4;
+            //HelpBoxNew.Height = screenHeight;
+
+            //HelpBoxNew.Top = 0;
+           
+
+            ////if (leftSide)
+            ////    HelpBox.Left = 0;
+            ////else
+            //HelpBoxNew.Left = screenWidth - HelpBoxNew.Width;
+
+
+
+
+  
+          
         }
 
         public void Ini()
@@ -288,8 +315,8 @@ namespace MyCpu1805_05
             if (MyMonitor != null)
                 MyMonitor.Close();
 
-            if (HelpBox != null)
-                HelpBox.Close();
+            if (HelpBoxNew != null)
+                HelpBoxNew.Close();
 
 
         }
