@@ -143,41 +143,30 @@ namespace MyCpu1805_05
         }
      
 
-        private void OpenHelpBox(bool leftSide, String title, string message, string imagePath)
+        private void OpenHelpBox(bool leftSide, String title, string message)
         {
-            //if (HelpBox != null)
-            //    CloseHelpBox();
-
-            //HelpBox = new CHelpBox(leftSide, title, message, imagePath);
-
-            // Manually alter window height and width
-            //this.SizeToContent = SizeToContent.Manual;
-
-            // Automatically resize width relative to content
-            //this.SizeToContent = SizeToContent.Width;
-
-            // Automatically resize height relative to content
-            //this.SizeToContent = SizeToContent.Height;
-
-            //// Automatically resize height and width relative to content
-            ////HelpBox.SizeToContent = SizeToContent.WidthAndHeight;
+            if (HelpBoxNew != null)
+                CloseHelpBox();
 
 
+            //1  Break -/ Logpoint 3
+            //1.1  Break -/ Logpoint setzen    3
+            //1.1.1  Bedingungen 4
+            //1.1.2  Logfile Einträge    5
 
-            //HelpBox.Show();
+            string[] lines = File.ReadAllLines(@"C:\Users\rsche\Desktop\HelpList.txt");
+            foreach (string item in lines)
+            {
+                if (item.Contains(title))
+                {
+                    string[] s = item.Split('\t');
+                    HelpBoxNew = new CHelpBox(false, "Break-/Logpoint", "", Convert.ToInt32(s[1]));
+                    HelpBoxNew.Show();
+                    break;
+                }
+            }
 
-            //double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-            //double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
 
-            //HelpBox.Width = screenWidth / 3.0;
-            //HelpBox.Height = screenHeight;
-
-            //HelpBox.Top = 0;
-
-            //if (leftSide)
-            //    HelpBox.Left = 0;
-            //else
-            //    HelpBox.Left = screenWidth - screenWidth / 3.0;
 
 
         }
@@ -217,68 +206,6 @@ namespace MyCpu1805_05
             return;
 
 
-
-            //HelpBox = new CHelpBox(false, "Title", "message", "imagePath");
-
-            // Manually alter window height and width
-            //this.SizeToContent = SizeToContent.Manual;
-
-            // Automatically resize width relative to content
-            //this.SizeToContent = SizeToContent.Width;
-
-            // Automatically resize height relative to content
-            //this.SizeToContent = SizeToContent.Height;
-
-            // Automatically resize height and width relative to content
-            //HelpBox.SizeToContent = SizeToContent.WidthAndHeight;
-
-
-
-            //HelpBox.Show();
-
-            //double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-            //double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
-
-            //HelpBox.Width = screenWidth *0.4;
-            //HelpBox.Height = screenHeight;
-
-            //HelpBox.Top = 0;
-
-            ////if (leftSide)
-            ////    HelpBox.Left = 0;
-            ////else
-            //    HelpBox.Left = screenWidth - HelpBox.Width;
-
-
-
-
-            //string fileName = @"C:\Users\rsche\Desktop\Cpu1802.xps";
-            ////fileName = fileName.Remove(0, 6);
-            //System.Windows.Xps.Packaging.XpsDocument doc = new System.Windows.Xps.Packaging.XpsDocument(fileName, FileAccess.Read);
-            //HelpBox.DocumentViewerHelp.Document = doc.GetFixedDocumentSequence();
-            //HelpBox.DocumentViewerHelp.GoToPage(4);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // CloseHelpBox();
-
-
-
-
-            return;
 
 
 

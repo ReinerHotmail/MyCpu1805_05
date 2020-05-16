@@ -429,25 +429,7 @@ namespace MyCpu1805_05
             TextBoxLineInfo.Visibility = Visibility.Hidden;
 
 
-            return;
-
-
-            MessageBoxResult result2 =
-            MessageBox.Show("Breakpoint setzen\t\tYes\nLogpoint setzen\t\tNo\nAbbruch\t\t\tCancel", "Breakpoint oder Logpoint", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
-
-            if (result2 == MessageBoxResult.Yes)
-            {
-
-                SetBreakpoint("B", memSelect);
-                TextBoxBreak.Focus();
-            }
-
-            if (result2 == MessageBoxResult.No)
-            {
-
-                SetBreakpoint("L", memSelect);
-                TextBoxBreak.Focus();
-            }
+   
 
         }
 
