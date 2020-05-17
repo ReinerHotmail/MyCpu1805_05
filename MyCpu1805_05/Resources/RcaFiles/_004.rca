@@ -1,0 +1,9 @@
+#Prog ABC x0000
+#Replace COUNT = 1
+Start   :INC COUNT
+	INC COUNT / Dies ist ein Kommentar
+	INC COUNT
+ #Prog P12345678  x0000
+Start   :INC COUNT
+	INC COUNT / Dies ist ein Kommentar
+	INC COUNT      

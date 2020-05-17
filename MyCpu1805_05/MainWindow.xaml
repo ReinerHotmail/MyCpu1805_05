@@ -379,13 +379,12 @@
                                         Content="Hex-File Load"
                                         FontSize="14"
                                         ToolTip="Hex-File in Editor laden" />
-                            <Button
-                                        x:Name="ButtonLoadClipboard"
+                            <ComboBox
+                                        x:Name="ComboBoxManualRcaFiles"
                                         Margin="3"
-                                        Click="ButtonLoadClipboard_Click"
-                                        Content="File -&gt; Clipb."
+                                       
                                         FontSize="14"
-                                        ToolTip="RCA-File in Zwischenspeicher laden - zum Einfügen an Cursorposition" />
+                                        ToolTip="RCA-Files des Manuals laden" SelectionChanged="ComboBoxManualRcaFiles_SelectionChanged" />
 
                             <Label
 

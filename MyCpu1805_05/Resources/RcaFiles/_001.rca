@@ -1,0 +1,8 @@
+#Prog ABC x0000
+Start   :INC 1
+	INC 1 / Dies ist ein Kommentar
+	INC 1
+ #Prog P12345678  x0010
+Start   :INC 1
+	INC 1 / Dies ist ein Kommentar
+	INC 1      

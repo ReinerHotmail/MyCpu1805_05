@@ -53,6 +53,10 @@ namespace MyCpu1805_05
 
         }
 
-   
+        private void TextBoxPage_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(TextBoxPage.Text, out int page))
+                DocumentViewerHelp.GoToPage(page);
+        }
     }
 }

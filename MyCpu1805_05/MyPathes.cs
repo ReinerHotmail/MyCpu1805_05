@@ -63,6 +63,15 @@ namespace MyCpu1805_05
 
             PutSetting("PathRca", RcaFile.Path);
 
+            if (RcaFile.Name==null)
+            {
+                RcaFile.Name = "Temp";
+                RcaFile.Long = RcaFile.Path +"\\Temp";
+           
+            }
+
+
+
             ShowFileName(RcaFile.Path);
        
         }

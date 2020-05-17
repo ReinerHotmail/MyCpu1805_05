@@ -74,8 +74,9 @@ namespace MyCpu1805_05
                 CpuMode = Cycle.Run;
             }
 
-            if (RcaFile.Long == null)
+            if (DocPanelMemCpu.Background != Brushes.LightGreen)
             {
+                
                 MessageBox.Show("Kein startbares Programm im Speicher");
                 return;
             }

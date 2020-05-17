@@ -43,10 +43,7 @@ namespace MyCpu1805_05
             CloseHelpBox();
         }
 
-        private void ButtonLoadClipboard_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+  
 
         private void ButtonSaveProgr_Click(object sender, RoutedEventArgs e)
         {
@@ -85,6 +82,9 @@ namespace MyCpu1805_05
         {
             LoadRcaFile(true);
         }
+
+      
+
         private void ButtonFileNew_Click(object sender, RoutedEventArgs e)
         {
             string fileName = "Prog01";
@@ -133,13 +133,14 @@ namespace MyCpu1805_05
 
         }
 
+        bool EditorChanged = true;
         private void ButtonLoadMem_Click(object sender, RoutedEventArgs e)
         {
             if (DocPanelEditor.Background != Brushes.LightGreen)
                 return;
 
 
-            if (RcaFile.Name == null)
+            if (EditorChanged)
             {
                 MessageBox.Show("Programm muss zuerst gespeichert werde (Save)");
                 return;
@@ -246,6 +247,8 @@ namespace MyCpu1805_05
             if (e.Changes.Count == 0)
                 return;
 
+    
+            EditorChanged = true;
             DocPanelEditor.Background = Brushes.LightGray;
             ButtonLoadMem.IsEnabled = false;
         }

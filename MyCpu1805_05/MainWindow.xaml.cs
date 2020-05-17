@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Path = System.IO.Path;
 
 namespace MyCpu1805_05
 {
@@ -64,8 +65,25 @@ namespace MyCpu1805_05
             IniEfs();
             IniOutput();
             IniHelpBoxNew();
+            IniManualRcaFiles();
 
             MyMonitor = new Monitor(); //wegen statischer Variablen
+        }
+
+        private void IniManualRcaFiles()
+        {
+            string resPath = Path.GetFullPath("Resources");
+            string path = resPath + "\\RcaFiles";
+
+            ComboBoxManualRcaFiles.Items.Add("Manual RcaFiles");
+
+           string[] files=  Directory.GetFiles(path);
+
+            foreach (string file in files)
+            {
+                ComboBoxManualRcaFiles.Items.Add(file[(file.LastIndexOf('\\')+1)..]);
+            }
+            ComboBoxManualRcaFiles.SelectedIndex = 0;
         }
 
         private void IniHelpBoxNew()
@@ -318,6 +336,42 @@ namespace MyCpu1805_05
             if (HelpBoxNew != null)
                 HelpBoxNew.Close();
 
+
+        }
+   
+        private void ComboBoxManualRcaFiles_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ComboBoxManualRcaFiles.SelectedIndex<1)
+                return;  
+
+            MessageBoxResult result =
+            MessageBox.Show("RCA-File aus Manual laden?", "Achtung", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.No)
+                return;
+
+            string resPath = Path.GetFullPath("Resources");
+            string path = resPath + "\\RcaFiles";
+
+
+           string[] files =  Directory.GetFiles(path);
+
+            string[] lines = File.ReadAllLines(files[ComboBoxManualRcaFiles.SelectedIndex-1], Encoding.UTF8);
+
+
+
+            ListEditLines.Clear();
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                ListEditLines.Add(new CEditLine(i, lines[i].Trim()));
+            }
+
+
+
+            CompileFirstSteps();
+
+            ComboBoxManualRcaFiles.SelectedIndex = 0;
 
         }
     }

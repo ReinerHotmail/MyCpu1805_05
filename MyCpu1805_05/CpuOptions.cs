@@ -190,12 +190,12 @@ namespace MyCpu1805_05
         {
             if (!TestBool1)
             {
-                HelpBoxNew = new CHelpBox(false, "Titel-Neu", "", 0);
+                HelpBoxNew = new CHelpBox(false, "Manual CPU1802-Simulator", "", 0);
                 TestBool1 = true;
             }
             else
             {
-                HelpBoxNew = new CHelpBox(true, "Titel-Neu", "", 4);
+                HelpBoxNew = new CHelpBox(true, "Manual CPU1802-Simulator", "", 4);
             }
 
 

@@ -14,6 +14,11 @@
     <None Remove="Resources\A Short Course In Programming by Tom Pittman.pdf" />
     <None Remove="Resources\cdp1802.pdf" />
     <None Remove="Resources\cdp1806.pdf" />
+    <None Remove="Resources\RcaFiles\_001.rca" />
+    <None Remove="Resources\RcaFiles\_002.rca" />
+    <None Remove="Resources\RcaFiles\_003.rca" />
+    <None Remove="Resources\RcaFiles\_004.rca" />
+    <None Remove="Resources\RcaFiles\_005.rca" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +53,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\cdp1802.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\_005.rca">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\_004.rca">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\_003.rca">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\_001.rca">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\_002.rca">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -425,8 +425,6 @@ namespace MyCpu1805_05
 
         private void CompileFirstSteps()
         {
-            DocPanelEditor.Background = Brushes.LightGray;
-            ButtonLoadMem.IsEnabled = false;
 
             if (Compile1())
                 Compile2();
@@ -453,6 +451,7 @@ namespace MyCpu1805_05
             {
                 DocPanelEditor.Background = Brushes.LightGreen;
                 ButtonLoadMem.IsEnabled = true;
+                EditorChanged = false;
             }
 
         }
