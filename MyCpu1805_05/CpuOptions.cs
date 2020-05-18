@@ -62,10 +62,11 @@ namespace MyCpu1805_05
 
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
+            //DocumentViewerHelp.
 
-
-
-
+            var a = HelpBoxNew.DocumentViewerHelp;
+           
+        
 
 
             return;

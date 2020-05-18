@@ -1568,7 +1568,7 @@ namespace MyCpu1805_05
         private void ColorLine_Editor(CEditLine lineFound)
         {
 
-            if (EditLineSave.line != -1)
+            if (EditLineSave.line != -1 && ListEditLines.Count> EditLineSave.line)
                 ListEditLines[EditLineSave.line].Para.Background = EditLineSave.Color;
 
             EditLineSave.line = lineFound.Num;
@@ -1821,10 +1821,12 @@ namespace MyCpu1805_05
                 TextBoxBreak2.Visibility = Visibility.Visible;
                 ButtonBreakpointYes.Visibility = Visibility.Visible;
                 ButtonBreakpointNo.Visibility = Visibility.Visible;
+                ButtonRecordAll.Visibility = Visibility.Visible;
                 TextBoxBreak.Focus();
                 TextBoxBreak.Text = chrTyp;
                 BreakLogTyp = chrTyp;
                 TextBoxBreak.CaretIndex = 1;
+               
 
 
 

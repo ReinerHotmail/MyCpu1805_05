@@ -165,6 +165,7 @@ namespace MyCpu1805_05
             TextBoxBreak2.Visibility = Visibility.Collapsed;
             ButtonBreakpointYes.Visibility = Visibility.Collapsed;
             ButtonBreakpointNo.Visibility = Visibility.Collapsed;
+            ButtonRecordAll.Visibility = Visibility.Collapsed;
 
             TimerExe.Interval = TimeSpan.FromTicks(1);
             TimerExe.Tick += TimerExe_Tick;

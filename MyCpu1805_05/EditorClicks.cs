@@ -146,6 +146,12 @@ namespace MyCpu1805_05
                 return;
             }
 
+            if (LabelLedRun.Background != Brushes.Red)
+            {
+                MessageBox.Show("Programm läuft noch - RESET betätigen");
+                return;
+            }
+
             ListBreakpoints.Clear();
             ListViewBreakpoints.Items.Refresh();
 
@@ -754,7 +760,7 @@ namespace MyCpu1805_05
             TextBoxBreak2.Visibility = Visibility.Collapsed;
             ButtonBreakpointYes.Visibility = Visibility.Collapsed;
             ButtonBreakpointNo.Visibility = Visibility.Collapsed;
-
+            ButtonRecordAll.Visibility = Visibility.Collapsed;
 
             ListViewBreakpoints.Items.Refresh();
 

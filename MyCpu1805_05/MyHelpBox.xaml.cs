@@ -49,6 +49,7 @@ namespace MyCpu1805_05
             System.Windows.Xps.Packaging.XpsDocument doc = new System.Windows.Xps.Packaging.XpsDocument(fileName, FileAccess.Read);
             this.DocumentViewerHelp.Document = doc.GetFixedDocumentSequence();
             this.DocumentViewerHelp.GoToPage(page);
+       
 
 
         }

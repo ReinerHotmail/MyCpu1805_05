@@ -1,0 +1,7 @@
+#Prog Prog01 x0000
+Start   :SEQ                
+         NOP                
+         LBR  *Prog02.Start 
+#Prog Prog02 x0123
+Start   :REQ                
+         LBR  *Prog01.Start    

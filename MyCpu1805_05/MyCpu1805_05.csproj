@@ -19,6 +19,8 @@
     <None Remove="Resources\RcaFiles\_003.rca" />
     <None Remove="Resources\RcaFiles\_004.rca" />
     <None Remove="Resources\RcaFiles\_005.rca" />
+    <None Remove="Resources\RcaFiles\_006.rca" />
+    <None Remove="Resources\RcaFiles\_007.rca" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,6 +55,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\cdp1802.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\_007.rca">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\_006.rca">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\RcaFiles\_005.rca">

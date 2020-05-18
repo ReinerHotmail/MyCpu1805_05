@@ -2,6 +2,6 @@
 Start   :SEQ       
          NOP       
          BR   xF0  
-#Prog Prog02 x00F0
+#Prog Prog02 x0123
 Start   :REQ       
-         BR x00     
+         LBR x0000     
