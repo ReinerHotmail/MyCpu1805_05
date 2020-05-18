@@ -187,113 +187,12 @@ namespace MyCpu1805_05
         int TestC = 0;
         bool TestBool1 = false;
         bool TestBool = false;
-        private void ButtonTest2_Click(object sender, RoutedEventArgs e)
+        private void ButtonManual_Click(object sender, RoutedEventArgs e)
         {
-            if (!TestBool1)
-            {
-                HelpBoxNew = new CHelpBox(false, "Manual CPU1802-Simulator", "", 0);
-                TestBool1 = true;
-            }
-            else
-            {
-                HelpBoxNew = new CHelpBox(true, "Manual CPU1802-Simulator", "", 4);
-            }
-
-
-
+            HelpBoxNew = new CHelpBox(false, "Manual CPU1802-Simulator", "", 0);
             HelpBoxNew.Show();
-  
-
+ 
             return;
-
-
-
-
-
-            #region PIXL
-            //#DAAADF	 0   
-            //#D9DD8F	 1   
-            //#9EDB8F	 2
-            //#9EDE9F	 3
-            //#EAA8EF	 4
-            //#8B9E9F	 5
-            //#CB9ADF	 6
-            //#8EDBBF    7
-            //#DADADF	 8
-            //#DACEDF	 9
-
-            //MyMonitor.WriteTerm(-1, -1, "DAAADF");
-            //MyMonitor.WriteTerm(-1, -1, "D9DD8F");
-            //MyMonitor.WriteTerm(-1, -1, "9EDB8F");
-            //MyMonitor.WriteTerm(-1, -1, "9EDE9F");
-            //MyMonitor.WriteTerm(-1, -1, "EAA8EF");
-            //MyMonitor.WriteTerm(-1, -1, "8B9E9F");
-            //MyMonitor.WriteTerm(-1, -1, "CB9ADF");
-            //MyMonitor.WriteTerm(-1, -1, "8EDBBF");
-            //MyMonitor.WriteTerm(-1, -1, "DADADF");
-            //MyMonitor.WriteTerm(-1, -1, "DACEDF");
-
-            //if (!TestBool)
-            //{
-            //    TestBool = true;
-            //    for (int i = 0; i < 320; i++)
-            //    {
-            //        MyMonitor.WriteTerm(TestR, TestC, "DADA");
-            //    }
-            //}
-            //else
-            //{
-            //    for (int i = 0; i < 20; i++)
-            //    {
-            //        MyMonitor.WriteTerm(TestR, TestC, "F10B");
-            //    }
-            //}
-
-            //TestC++;
-
-            //if (MyMonitor.PixlColNow >= 120)
-            //{
-            //    TestR= MyMonitor.PixlRowNow+1;
-            //    TestC = 0;
-            //}
-
-            //MyMonitor.WriteTerm(TestR, TestC, "D9DD8F");
-            //TestC++;
-
-            //if (MyMonitor.PixlColNow>=127)
-            //{
-            //    TestR+=6;
-            //    TestC = 0;
-            //}
-            //var a = MyMonitor.PixlRowNow;
-            //var b = MyMonitor.PixlColNow;
-            #endregion
-
-
-            int iMax = Monitor.ROW * Monitor.COL;
-
-            for (int i = 0; i < iMax; i++)
-            {
-                string iStr = i.ToString().PadLeft(3, '0');
-
-                if (!TestBool)
-                {
-                    MyMonitor.DmaValues[i] = (byte)(iStr[1]);
-
-                }
-                else
-                {
-                    MyMonitor.DmaValues[i] = (byte)(iStr[2]);
-
-                }
-            }
-
-            MyMonitor.SetText();
-
-            TestBool = !TestBool;
-
-
-
 
         }
 

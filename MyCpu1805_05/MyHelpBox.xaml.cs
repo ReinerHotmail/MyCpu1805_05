@@ -20,8 +20,8 @@ namespace MyCpu1805_05
     {
         bool leftSide;
 
-        public CHelpBox(bool leftSide,string title, string message,int page)
-        {  
+        public CHelpBox(bool leftSide, string title, string message, int page)
+        {
             InitializeComponent();
             this.LabelTitle.Content = title;
             this.TextBlock_Message.Text = message;
@@ -48,8 +48,10 @@ namespace MyCpu1805_05
             //fileName = fileName.Remove(0, 6);
             System.Windows.Xps.Packaging.XpsDocument doc = new System.Windows.Xps.Packaging.XpsDocument(fileName, FileAccess.Read);
             this.DocumentViewerHelp.Document = doc.GetFixedDocumentSequence();
+
+
             this.DocumentViewerHelp.GoToPage(page);
-       
+
 
 
         }
@@ -58,6 +60,36 @@ namespace MyCpu1805_05
         {
             if (int.TryParse(TextBoxPage.Text, out int page))
                 DocumentViewerHelp.GoToPage(page);
+        }
+
+        private void RadioButtonLeft_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.Left = 0;
+            this.Top = 0;
+
+        }
+
+        private void RadioButtonRight_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.Left = System.Windows.SystemParameters.PrimaryScreenWidth - this.Width;
+            this.Top = 0;
+        }
+
+        private void ButtonFocus_Click(object sender, RoutedEventArgs e)
+        {
+            this.DocumentViewerHelp.Find();
+        }
+
+        private void ButtonUp_Click(object sender, RoutedEventArgs e)
+        {
+            this.DocumentViewerHelp.PreviousPage();
+        }
+
+        private void ButtonDown_Click(object sender, RoutedEventArgs e)
+        {
+            this.DocumentViewerHelp.NextPage();
         }
     }
 }

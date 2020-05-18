@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MyCpu1805_05"
         mc:Ignorable="d"
         Title="MyCpu1805_05" Height="1000" Width="1700" Loaded="WindowCpu1805Main_Loaded" Closing="WindowCpu1805Main_Closing">
-   
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="97*"/>
@@ -313,7 +313,7 @@
                                 DockPanel.Dock="Top"
                                 FontSize="16"
                                 Margin="4,4,4,0" Click="ButtonBreakpointNo_Click" />
-                       
+
                             <ListView Margin="4" x:Name="ListViewMem"
                                 PreviewMouseLeftButtonUp="ListViewMem_PreviewMouseLeftButtonUp"
                                 PreviewMouseRightButtonUp="ListViewMem_PreviewMouseRightButtonUp" ScrollViewer.HorizontalScrollBarVisibility="Auto" ToolTip="Linksklick: Programmzeile  zeigen -  Rechtsklick: Break-/Logpoint  setzen">
@@ -1818,14 +1818,7 @@
                             Grid.Column="4"
                             Click="ButtonTest_Click"
                             Content="Button" />
-                        <Button
-                            x:Name="ButtonTest2"
-                            Grid.Row="2"
-                            Grid.Column="4"
-                            Click="ButtonTest2_Click"
-                            Content="GibZahl"
-                            RenderTransformOrigin="2.085,1.567" />
-                   
+
                     </Grid>
 
                     <Label
@@ -1854,6 +1847,16 @@
                                     Content="Documentation"
                                     FontWeight="Bold" />
                         <Button
+                            x:Name="ButtonManual"
+                            Click="ButtonManual_Click"
+                            Content="Manual Simulator"
+                            RenderTransformOrigin="2.085,1.567" Margin="2,2,5,2" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" />
+                        <Label
+                                    HorizontalContentAlignment="Center"
+                                    Content="" />
+                                   
+
+                        <Button
                                     x:Name="ButtonDocCpd1802"
                                     Margin="2"
                                     Content="CPU1802-Manual" Click="ButtonDocCpd1802_Click" />
@@ -1875,6 +1878,7 @@
                                     Content="ASCII-Table" Click="ButtonDocAscii_Click" />
 
                     </StackPanel>
+                  
 
 
 

@@ -15,8 +15,16 @@
             <Label x:Name="LabelTitle" Content="Manual CPU1802-Simulator" HorizontalContentAlignment="Center" FontSize="24" FontWeight="Bold" Background="LightGray" Margin="0,0,0,3"/>
             <TextBlock x:Name="TextBlock_Message"  TextWrapping="Wrap" FontSize="14" Margin="10,0,10,0" MinHeight="40"/>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <RadioButton x:Name="RadioButtonLeft" Content="left   " VerticalContentAlignment="Center" VerticalAlignment="Center" Click="RadioButtonLeft_Click"/>
+                <RadioButton x:Name="RadioButtonRight" Content="right        " VerticalContentAlignment="Center" VerticalAlignment="Center" IsChecked="True" Click="RadioButtonRight_Click"/>
                 <Label Content="  Seite   " VerticalAlignment="Center"/>
-                <TextBox x:Name="TextBoxPage" Text="  " VerticalAlignment="Center" Background="LightGray" TextChanged="TextBoxPage_TextChanged"/>
+                <TextBox x:Name="TextBoxPage" Text="     " VerticalAlignment="Center" Background="LightGray" TextChanged="TextBoxPage_TextChanged"/>
+                <Label Content="    "/>
+                <Button x:Name="ButtonFocus"  Content="Go Search"  Click="ButtonFocus_Click"/>
+                <Label Content="    "/>
+                <Button x:Name="ButtonUp"  Content="  Up  "  Click="ButtonUp_Click"/>
+                <Label Content="    "/>
+                <Button x:Name="ButtonDown"  Content="Down"  Click="ButtonDown_Click"/>
             </StackPanel>
         </StackPanel>
         <DocumentViewer x:Name="DocumentViewerHelp"  Grid.Row="1" Grid.RowSpan="1"/>
