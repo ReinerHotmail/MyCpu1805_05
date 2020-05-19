@@ -167,13 +167,14 @@ namespace MyCpu1805_05
                 if (item.Contains(title))
                 {
                     string[] s = item.Split('\t');
-                    HelpBoxNew = new CHelpBox(false, "Break-/Logpoint", "", Convert.ToInt32(s[1]));
+                    HelpBoxNew = new CHelpBox(false, title, "", Convert.ToInt32(s[1]));
                     HelpBoxNew.Show();
-                    break;
+                    return; ;
                 }
             }
 
-
+            HelpBoxNew = new CHelpBox(false, title, "", 0);
+            HelpBoxNew.Show();
 
 
         }
@@ -195,10 +196,10 @@ namespace MyCpu1805_05
         bool TestBool = false;
         private void ButtonManual_Click(object sender, RoutedEventArgs e)
         {
-            HelpBoxNew = new CHelpBox(false, "Manual CPU1802-Simulator", "", 0);
-            HelpBoxNew.Show();
- 
-            return;
+
+            OpenHelpBox(false, "Manual CPU1802-Simulator", "");
+
+
 
         }
 
