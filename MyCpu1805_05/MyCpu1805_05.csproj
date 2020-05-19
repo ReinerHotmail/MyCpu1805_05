@@ -14,6 +14,8 @@
     <None Remove="Resources\A Short Course In Programming by Tom Pittman.pdf" />
     <None Remove="Resources\cdp1802.pdf" />
     <None Remove="Resources\cdp1806.pdf" />
+    <None Remove="Resources\Cpu1802.xps" />
+    <None Remove="Resources\HelpList.txt" />
     <None Remove="Resources\RcaFiles\_001.rca" />
     <None Remove="Resources\RcaFiles\_002.rca" />
     <None Remove="Resources\RcaFiles\_003.rca" />
@@ -55,6 +57,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\cdp1802.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cpu1802.xps">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HelpList.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\RcaFiles\_007.rca">

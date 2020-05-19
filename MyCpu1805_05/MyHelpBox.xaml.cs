@@ -44,8 +44,11 @@ namespace MyCpu1805_05
             else
                 this.Left = screenWidth - this.Width;
 
-            string fileName = @"C:\Users\rsche\Desktop\Cpu1802.xps";
-            //fileName = fileName.Remove(0, 6);
+            //string fileName = @"C:\Users\rsche\Desktop\Cpu1802.xps";
+
+            string resPath = System.IO.Path.GetFullPath("Resources");
+            string fileName = resPath + "\\Cpu1802.xps";
+
             System.Windows.Xps.Packaging.XpsDocument doc = new System.Windows.Xps.Packaging.XpsDocument(fileName, FileAccess.Read);
             this.DocumentViewerHelp.Document = doc.GetFixedDocumentSequence();
 

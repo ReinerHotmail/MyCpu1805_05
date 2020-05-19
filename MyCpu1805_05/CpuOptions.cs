@@ -155,7 +155,13 @@ namespace MyCpu1805_05
             //1.1.1  Bedingungen 4
             //1.1.2  Logfile Einträge    5
 
-            string[] lines = File.ReadAllLines(@"C:\Users\rsche\Desktop\HelpList.txt");
+            string resPath = System.IO.Path.GetFullPath("Resources");
+            string fileName = resPath + "\\HelpList.txt";
+            string[] lines = File.ReadAllLines(fileName);
+
+            //string[] lines = File.ReadAllLines(@"C:\Users\rsche\Desktop\HelpList.txt");
+
+
             foreach (string item in lines)
             {
                 if (item.Contains(title))

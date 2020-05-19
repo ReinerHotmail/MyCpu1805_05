@@ -1,0 +1,29 @@
+Lernprogramm	3
+Beispiel laden	3
+Beispiel ausführen	4
+CPU Status	6
+Programmablauf beobachten	8
+Compiler	10
+Bezeichner	10
+Programmadressen	10
+Replace	13
+Sprungziele (1Byte)	13
+Sprungziele (2Byte)	16
+Sprungziele durch Namen	17
+LDI – Befehle mit Adressen	18
+Programmhandhabung	19
+Neu erstellen - Editieren	19
+Laden der Manual-Beispielprogramme	20
+Laden eigener Programme	20
+Laden eines HexFiles	21
+Compilieren	22
+Sichern auf Festplatte	22
+In den CPU-Simulator-Speicher übertragen	22
+Cpu Run	25
+Break-/Logpoint	25
+Break-/Logpoint setzen	25
+Bedingungen	26
+Logfile Filter	27
+Record All	27
+Break-/Logpoint OK-Button	28
+Break-/Logpoint aktivieren	28
