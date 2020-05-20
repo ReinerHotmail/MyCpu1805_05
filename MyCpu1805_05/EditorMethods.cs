@@ -1831,7 +1831,7 @@ namespace MyCpu1805_05
 
 
 
-                OpenHelpBox(false, "Break-/Logpoint","");
+                OpenHelpBox(false, "Bedingungen","");
              
 
 

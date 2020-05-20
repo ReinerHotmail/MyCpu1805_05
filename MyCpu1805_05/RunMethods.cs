@@ -280,7 +280,11 @@ namespace MyCpu1805_05
             int iLeft = 0;
             int iRight = 0;
 
-            if (found.Term1.Length == 2)
+            if (found.Term1=="D")
+            {
+                iLeft = D;
+            }
+            else if (found.Term1.Length == 2)
             {
                 if (found.Term1[1] == 'P')
                     iLeft = R[P];

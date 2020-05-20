@@ -167,7 +167,7 @@ namespace MyCpu1805_05
                 if (item.Contains(title))
                 {
                     string[] s = item.Split('\t');
-                    HelpBoxNew = new CHelpBox(false, title, "", Convert.ToInt32(s[1]));
+                    HelpBoxNew = new CHelpBox(false, title, "", Convert.ToInt32(s[1])+1);
                     HelpBoxNew.Show();
                     return; ;
                 }

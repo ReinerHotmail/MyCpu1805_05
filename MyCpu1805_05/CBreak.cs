@@ -50,9 +50,9 @@ namespace MyCpu1805_05
 
             string[] signs = sign.Split();
 
-            string t1 = "";
+            string termLinks = "";
             string v = "";
-            string t2 = "";
+            string termRechts = "";
 
             bool found = false;
 
@@ -61,61 +61,80 @@ namespace MyCpu1805_05
                 string[] s = term.Split(signs[i]);
                 if (s.Length == 2)
                 {
-                    t1 = s[0];
+                    termLinks = s[0];
                     v = signs[i];
-                    t2 = s[1];
+                    termRechts = s[1];
                     found = true;
                     break;
                 }
             }
 
-            //if (found.Term1[1] == 'P')
-            //    iLeft = R[P];
-            //else if (found.Term1[1] == 'X')
-            //    iLeft = R[X];
-            //else if (CStat.IsHex(found.Term1[1].ToString()))
-            //    iLeft = R[Convert.ToInt32(found.Term1[1].ToString())];
+//          mögliche Einträge für Register:			        möglicher Eintrag: 
+//          R1..RF  RP RX                                   Akku D
 
+//          mögliche Einträge für Adressen:
+//          '4stellig-Hex' zB: A0F7
+
+//          Beispieleinträge für Register und Hexwert       D und Hexwert
+
+//          R5 > A12F                                       D > A12F
+//          R5 >= A12F                                      D >= A12F
+//          R5 < A12F                                       D < A12F
+//          R5 <= A12F                                      D <= A12F
+//          R5 == A12F                                      D == A12F
+
+//          Beispieleinträge für  Register und Register
+
+//          R5 > R6
+//          R5 >= R6
+//          R5 < R6
+//          R5 <= R6
+//          R5 == R6
 
 
             if (!found)
                 return ("", "", "");
 
-            bool t1Ok = false;
-            bool t2Ok = false;
+            bool term1Ok = false;
+            bool term2Ok = false;
 
 
-            if (t1.Length == 2 && t1.StartsWith("R"))
+            if (termLinks.Length == 2 && termLinks.StartsWith("R"))
             {
-                if (t1[1] == 'P')
-                    t1Ok = true;
-                else if (t1[1] == 'X')
-                    t1Ok = true;
-                else if (CStat.IsHex(t1[1].ToString()))
-                    t1Ok = true;
+                if (termLinks[1] == 'P')        // RP
+                    term1Ok = true;
+                else if (termLinks[1] == 'X')   // RX
+                    term1Ok = true;
+                else if (CStat.IsHex(termLinks[1].ToString())) //Rn
+                    term1Ok = true;
             }
 
 
-            if (t1.Length == 4 && CStat.IsHex(t1))
-                t1Ok = true;
+            if (termLinks.Length == 4 && CStat.IsHex(termLinks))
+                term1Ok = true;
+
+            if (termLinks =="D")
+                term1Ok = true;
 
 
-            if (t2.Length == 2 && t2.StartsWith("R"))
+            if (termRechts.Length == 2 && termRechts.StartsWith("R"))
             {
-                if (t2[1] == 'P')
-                    t2Ok = true;
-                else if (t2[1] == 'X')
-                    t2Ok = true;
-                else if (CStat.IsHex(t2[1].ToString()))
-                    t2Ok = true;
+                if (termRechts[1] == 'P')        // RP
+                    term2Ok = true;
+                else if (termRechts[1] == 'X')   // RX
+                    term2Ok = true;
+                else if (CStat.IsHex(termRechts[1].ToString())) //Rn
+                    term2Ok = true;
             }
 
-            if (t2.Length == 4 && CStat.IsHex(t2))
-                t2Ok = true;
+            if (termRechts.Length == 4 && CStat.IsHex(termRechts))
+                term2Ok = true;
 
 
-            if (t1Ok && t2Ok)
-                return (t1, v, t2);
+
+
+            if (term1Ok && term2Ok)
+                return (termLinks, v, termRechts);
             else
                 return ("", "", "");
 
