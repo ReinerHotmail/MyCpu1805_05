@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Brushes = System.Windows.Media.Brushes;
 
 namespace MyCpu1805_05
 {
@@ -58,25 +60,11 @@ namespace MyCpu1805_05
 
             }
 
-
-            if (CheckBoxDebug.IsChecked == true)
-            {
-                if (RadioButtonCpuModeRun.IsChecked == true)
-                    CpuMode = Cycle.DebugLoop;
-                if (RadioButtonCpuModeSingleStep.IsChecked == true)
-                    CpuMode = Cycle.DebugStep;
-                if (RadioButtonCpuModeFetchExecute.IsChecked == true)
-                    CpuMode = Cycle.DebugFetchExecute;
-
-            }
-            else
-            {
-                CpuMode = Cycle.Run;
-            }
+            GetCpuMode();
 
             if (DocPanelMemCpu.Background != Brushes.LightGreen)
             {
-                
+
                 MessageBox.Show("Kein startbares Programm im Speicher");
                 return;
             }
@@ -91,6 +79,8 @@ namespace MyCpu1805_05
             ExeStop = false;
             TimerExe.Start();
         }
+
+     
 
         private int LogFileLines()
         {

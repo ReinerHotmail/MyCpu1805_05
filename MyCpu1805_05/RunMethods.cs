@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -105,6 +106,8 @@ namespace MyCpu1805_05
             ShowDebugStatus(false);
 
             ShowCpuExeData();
+
+            GetCpuMode();
         }
 
 
@@ -3306,7 +3309,47 @@ namespace MyCpu1805_05
 
 
 
+        private void GetCpuMode()
+        {
+            if (CheckBoxDebug.IsChecked == true)
+            {
+                if (RadioButtonCpuModeRun.IsChecked == true)
+                    CpuMode = Cycle.DebugLoop;
+                if (RadioButtonCpuModeSingleStep.IsChecked == true)
+                    CpuMode = Cycle.DebugStep;
+                if (RadioButtonCpuModeFetchExecute.IsChecked == true)
+                    CpuMode = Cycle.DebugFetchExecute;
 
+            }
+            else
+            {
+                CpuMode = Cycle.Run;
+            }
+
+            CheckBoxDebug.FontWeight = FontWeights.Normal;
+            RadioButtonCpuModeRun.FontWeight = FontWeights.Normal;
+            RadioButtonCpuModeSingleStep.FontWeight = FontWeights.Normal;
+            RadioButtonCpuModeSingleStep.FontWeight = FontWeights.Normal;
+
+            switch (CpuMode)
+            {
+                case Cycle.Run:
+                    RadioButtonCpuModeRun.FontWeight = FontWeights.Bold;
+                    break;
+                case Cycle.DebugLoop:
+                    CheckBoxDebug.FontWeight = FontWeights.Bold;
+                    RadioButtonCpuModeRun.FontWeight = FontWeights.Bold;
+                    break;
+                case Cycle.DebugStep:
+                    RadioButtonCpuModeSingleStep.FontWeight = FontWeights.Bold;
+                    break;
+                case Cycle.DebugFetchExecute:
+                    RadioButtonCpuModeSingleStep.FontWeight = FontWeights.Bold;
+                    break;
+                default:
+                    break;
+            }
+        }
 
 
 
