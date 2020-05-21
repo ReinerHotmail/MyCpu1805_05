@@ -16,6 +16,7 @@
     <None Remove="Resources\cdp1806.pdf" />
     <None Remove="Resources\Cpu1802.xps" />
     <None Remove="Resources\HelpList.txt" />
+    <None Remove="Resources\RcaFiles\Tut001.rca" />
     <None Remove="Resources\RcaFiles\_001.rca" />
     <None Remove="Resources\RcaFiles\_002.rca" />
     <None Remove="Resources\RcaFiles\_003.rca" />
@@ -63,6 +64,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\HelpList.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RcaFiles\Tut001.rca">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\RcaFiles\_007.rca">

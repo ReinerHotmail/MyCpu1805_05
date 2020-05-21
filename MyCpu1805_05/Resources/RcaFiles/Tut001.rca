@@ -1,0 +1,6 @@
+#Prog Prog01 x0000
+Start   :BN1  x00  
+         SEQ       
+         B1   x03  
+         REQ       
+         BR   x00     

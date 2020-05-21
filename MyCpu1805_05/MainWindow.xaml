@@ -1622,7 +1622,7 @@
                                 Content="Loop"
                                 DockPanel.Dock="Left"
                                 GroupName="CpuMode"
-                                IsChecked="True" />
+                                IsChecked="True" FontWeight="Normal" />
                             <RadioButton
                                 x:Name="RadioButtonCpuModeSingleStep"
                                 Content="SingleStep"
