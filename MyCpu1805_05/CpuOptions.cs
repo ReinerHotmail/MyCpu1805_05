@@ -64,11 +64,11 @@ namespace MyCpu1805_05
         {
             //DocumentViewerHelp.
 
-            var a = HelpBoxNew.DocumentViewerHelp;
+            //  var a = HelpBoxNew.DocumentViewerHelp;
+
+            HelpBoxNew.DocumentViewerHelp.GoToPage(10);
+
            
-        
-
-
             return;
 
 
@@ -162,6 +162,7 @@ namespace MyCpu1805_05
             //string[] lines = File.ReadAllLines(@"C:\Users\rsche\Desktop\HelpList.txt");
 
 
+            #region HelpBox anzeigen, ab der  Seite, auf der der Titel gefunden wurde
             foreach (string item in lines)
             {
                 if (item.Contains(title))
@@ -172,9 +173,12 @@ namespace MyCpu1805_05
                     return; ;
                 }
             }
+            #endregion
 
+            #region HelpBox ab Startseite anzeigen, wenn  Titel  nicht gefunden
             HelpBoxNew = new CHelpBox(false, title, "", 0);
             HelpBoxNew.Show();
+            #endregion 
 
 
         }

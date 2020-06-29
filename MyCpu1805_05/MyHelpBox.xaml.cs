@@ -55,8 +55,8 @@ namespace MyCpu1805_05
 
             this.DocumentViewerHelp.GoToPage(page);
 
-
-
+         
+         
         }
 
         private void TextBoxPage_TextChanged(object sender, TextChangedEventArgs e)

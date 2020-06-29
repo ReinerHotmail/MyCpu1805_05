@@ -1,23 +1,13 @@
-﻿<Window x:Name="WindowCpu1805Main" x:Class="MyCpu1805_05.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyCpu1805_05"
-        mc:Ignorable="d"
-        Title="MyCpu1805_05" Height="1000" Width="1700" Loaded="WindowCpu1805Main_Loaded" Closing="WindowCpu1805Main_Closing">
+﻿<Window x:Name="WindowCpu1805Main" x:Class="MyCpu1805_05.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:MyCpu1805_05" mc:Ignorable="d" Title="MyCpu1805_05" Height="1000" Width="1700" Loaded="WindowCpu1805Main_Loaded" Closing="WindowCpu1805Main_Closing">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="97*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="97*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <TabControl Grid.ColumnSpan="2">
             <TabItem Header="CPU and Programming">
-                <Grid
-                    x:Name="GridTab1Cpu"
-                    Margin="4"
-                    Background="White">
+                <Grid x:Name="GridTab1Cpu" Margin="4" Background="White">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="121*" />
                         <RowDefinition Height="20*" />
@@ -29,7 +19,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="421*" />
                         <ColumnDefinition Width="261*" />
-                        <ColumnDefinition Width="161*"/>
+                        <ColumnDefinition Width="161*" />
                         <ColumnDefinition Width="126*" />
                         <ColumnDefinition Width="234*" />
                         <ColumnDefinition Width="276*" />
@@ -37,23 +27,8 @@
                     </Grid.ColumnDefinitions>
 
                     <!--  OpCodeLis t  -->
-                    <DockPanel
-                        x:Name="DocPanelOpCodeList"
-                        Grid.Row="0"
-                        Grid.RowSpan="3"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="1"
-                        Margin="4,4,4,4" Background="LightGray">
-                        <Label
-                            Margin="1"
-                            HorizontalContentAlignment="Center"
-                            Background="White"
-                            BorderBrush="Gray"
-                            BorderThickness="1,1,1,0"
-                            Content="OpCode-List"
-                            DockPanel.Dock="Top"
-                            FontSize="16"
-                            FontWeight="Bold" />
+                    <DockPanel x:Name="DocPanelOpCodeList" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="1" Margin="4,4,4,4" Background="LightGray">
+                        <Label Margin="1" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1,1,1,0" Content="OpCode-List" DockPanel.Dock="Top" FontSize="16" FontWeight="Bold" />
                         <Grid Margin="1" DockPanel.Dock="Top">
 
                             <Grid.RowDefinitions>
@@ -65,22 +40,15 @@
                                     <ColumnDefinition Width="10*" />
                                     <ColumnDefinition Width="2*" />
                                 </Grid.ColumnDefinitions>
-                                <TextBox
-                                x:Name="TextBoxOpCodeInfo"
-                                FontSize="12"
-                                FontWeight="Bold"
-                                Text=" " Background="LightBlue" />
-                                <Button x:Name="ButtonListViewOpCodeStandard"   Grid.Column="1" ToolTip="Info Clear" Content="Standard" Click="ButtonListViewOpCodeStandard_Click"/>
+                                <TextBox x:Name="TextBoxOpCodeInfo" FontSize="12" FontWeight="Bold" Text=" " Background="LightBlue" />
+                                <Button x:Name="ButtonListViewOpCodeStandard" Grid.Column="1" ToolTip="Info Clear" Content="Standard" Click="ButtonListViewOpCodeStandard_Click" />
 
                             </Grid>
 
                             <ListBox x:Name="ListBoxOpCodeInfo" Grid.Row="1" Background="LightBlue" />
 
                         </Grid>
-                        <ListView
-                            x:Name="ListViewOpCode"
-                            Margin="1"
-                            MouseLeftButtonUp="ListViewOpCode_MouseLeftButtonUp" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible" Loaded="ListViewOpCode_Loaded">
+                        <ListView x:Name="ListViewOpCode" Margin="1" MouseLeftButtonUp="ListViewOpCode_MouseLeftButtonUp" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible" Loaded="ListViewOpCode_Loaded">
 
                             <ListView.View>
                                 <GridView>
@@ -129,7 +97,7 @@
 
                                     <GridViewColumn x:Name="GridViewColumn8ListViewOpCode" DisplayMemberBinding="{Binding OrderByFunction}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader  x:Name="ListViewOpCodeColumnHeaderStandard"  Click="ListViewOpCodeColumnHeader_Click" Tag="OrderByFunction">ObF</GridViewColumnHeader>
+                                            <GridViewColumnHeader x:Name="ListViewOpCodeColumnHeaderStandard" Click="ListViewOpCodeColumnHeader_Click" Tag="OrderByFunction">ObF</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
 
@@ -160,7 +128,7 @@
                         BorderBrush="Gray"
                         BorderThickness="1">-->
 
-                    <Grid Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="1" Background="LightGray" Margin="4,4,4,4" >
+                    <Grid Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="1" Background="LightGray" Margin="4,4,4,4">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -177,21 +145,16 @@
                             <RowDefinition Height="5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Label Content="Programm-List" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" Padding="5,0,5,0" HorizontalContentAlignment="Center" FontWeight="Bold" BorderThickness="0,0,0,0" />
-                        <ListView 
-                                Grid.Row="1" Grid.Column="0"
-                                x:Name="ListViewProg"
-                                PreviewMouseLeftButtonUp="ListViewProg_PreviewMouseLeftButtonUp" BorderThickness="1,1,1,1">
+                        <ListView Grid.Row="1" Grid.Column="0" x:Name="ListViewProg" PreviewMouseLeftButtonUp="ListViewProg_PreviewMouseLeftButtonUp" BorderThickness="1,1,1,1">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn x:Name="GridViewColumn0ListViewProg" Header="Prog" Width="140"  DisplayMemberBinding="{Binding ProgName}" />
+                                    <GridViewColumn x:Name="GridViewColumn0ListViewProg" Header="Prog" Width="140" DisplayMemberBinding="{Binding ProgName}" />
                                     <GridViewColumn Header="Adr" Width="40" DisplayMemberBinding="{Binding Adr}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>
                         <Label Content="Jump-List" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" Padding="5,0,5,0" VerticalContentAlignment="Stretch" FontWeight="Bold" />
-                        <ListView Grid.Row="1" Grid.Column="1"
-                                x:Name="ListViewJump"
-                                PreviewMouseLeftButtonUp="ListViewJump_PreviewMouseLeftButtonUp">
+                        <ListView Grid.Row="1" Grid.Column="1" x:Name="ListViewJump" PreviewMouseLeftButtonUp="ListViewJump_PreviewMouseLeftButtonUp">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn x:Name="GridViewColumn0ListViewJump" Header="Prog" Width="70" DisplayMemberBinding="{Binding ProgName}" />
@@ -202,21 +165,19 @@
                         </ListView>
 
                         <Label Content="Break-/Log-Points" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" Padding="5,0,5,0" VerticalContentAlignment="Stretch" FontWeight="Bold" />
-                        <ListView Grid.Row="3" Grid.Column="1"
-                                x:Name="ListViewBreakpoints" PreviewMouseLeftButtonUp="ListViewBreakpoints_PreviewMouseLeftButtonUp">
+                        <ListView Grid.Row="3" Grid.Column="1" x:Name="ListViewBreakpoints" PreviewMouseLeftButtonUp="ListViewBreakpoints_PreviewMouseLeftButtonUp">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn  Header="Typ" Width="30" DisplayMemberBinding="{Binding Typ}" />
-                                    <GridViewColumn  Header="Adr" Width="40" DisplayMemberBinding="{Binding AdrHex}" />
-                                    <GridViewColumn  Header="Condition" Width="80" DisplayMemberBinding="{Binding Condition}" />
-                                    <GridViewColumn  Header="LogItem" Width="180" DisplayMemberBinding="{Binding LogItems}" />
+                                    <GridViewColumn Header="Typ" Width="30" DisplayMemberBinding="{Binding Typ}" />
+                                    <GridViewColumn Header="Adr" Width="40" DisplayMemberBinding="{Binding AdrHex}" />
+                                    <GridViewColumn Header="Condition" Width="80" DisplayMemberBinding="{Binding Condition}" />
+                                    <GridViewColumn Header="LogItem" Width="180" DisplayMemberBinding="{Binding LogItems}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>
 
                         <Label Content="Replace-List" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" Padding="5,0,5,0" VerticalContentAlignment="Stretch" FontWeight="Bold" />
-                        <ListView Grid.Row="3" Grid.Column="0"
-                                x:Name="ListViewReplace">
+                        <ListView Grid.Row="3" Grid.Column="0" x:Name="ListViewReplace">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn x:Name="GridViewColumn0ListViewReplace" Header="NickName" Width="80" DisplayMemberBinding="{Binding NickName}" />
@@ -224,32 +185,26 @@
                                 </GridView>
                             </ListView.View>
                         </ListView>
-                        <Label x:Name="LabelLineInfoTitle" Content="Line-Info" Grid.Row="4" Grid.ColumnSpan="2" Padding="5,0,9,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                        <Label x:Name="LabelLineInfoTitle" Content="Line-Info" Grid.Row="4" Grid.ColumnSpan="2" Padding="5,0,9,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" FontWeight="Bold" />
 
-                        <TextBox x:Name="TextBoxLineInfo"  Grid.Row="5"  Grid.RowSpan="3"    Grid.ColumnSpan="2" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontFamily="Courier New" Visibility="Hidden"/>
-                        <StackPanel x:Name="StackPanelBreakLog" Orientation="Vertical" Background="Orange" Grid.Row="5"  Grid.RowSpan="3"    Grid.Column="1" Visibility="Visible">
+                        <TextBox x:Name="TextBoxLineInfo" Grid.Row="5" Grid.RowSpan="3" Grid.ColumnSpan="2" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontFamily="Courier New" Visibility="Hidden" />
+                        <StackPanel x:Name="StackPanelBreakLog" Orientation="Vertical" Background="Orange" Grid.Row="5" Grid.RowSpan="3" Grid.Column="1" Visibility="Visible">
 
-                            <Label Content=" "/>
-                            <RadioButton x:Name="RadioButtonBreakpoint" Content="Break-Point" IsChecked="True" Margin="10,0,0,0"/>
-                            <RadioButton x:Name="RadioButtonLogpoint" Content="Log-Point" Margin="10,0,0,0"/>
+                            <Label Content=" " />
+                            <RadioButton x:Name="RadioButtonBreakpoint" Content="Break-Point" IsChecked="True" Margin="10,0,0,0" />
+                            <RadioButton x:Name="RadioButtonLogpoint" Content="Log-Point" Margin="10,0,0,0" />
 
-                            <Label Content=" "/>
+                            <Label Content=" " />
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="ButtonBreakLogOk" Content="   OK    " Click="ButtonBreakLogOk_Click" Margin="20,-1,0,0"/>
-                                <Button x:Name="ButtonBreakLogCancel" Content="Cancel" Click="ButtonBreakLogCancel_Click"/>
+                                <Button x:Name="ButtonBreakLogOk" Content="   OK    " Click="ButtonBreakLogOk_Click" Margin="20,-1,0,0" />
+                                <Button x:Name="ButtonBreakLogCancel" Content="Cancel" Click="ButtonBreakLogCancel_Click" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
                     <!--</Border>-->
 
                     <!--  PanelButtons / Editor / Lines / Mem  -->
-                    <Grid x:Name="GridEditor"
-                        Grid.Row="3"
-                        Grid.RowSpan="2"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                   
-                        Background="LightGray" Margin="4,4,4,4" Height="Auto">
+                    <Grid x:Name="GridEditor" Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" Background="LightGray" Margin="4,4,4,4" Height="Auto">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="35*" />
                             <ColumnDefinition Width="160*" />
@@ -258,76 +213,26 @@
                         </Grid.ColumnDefinitions>
                         <!--  MemNew  -->
                         <DockPanel x:Name="DocPanelMemNew" Grid.Row="0" Grid.Column="2" Margin="4,4,12,4">
-                            <Label
-                                x:Name="LabelMem"
-                              
-                                HorizontalContentAlignment="Center"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1,1,1,0"
-                                Content="Mem"
-                                DockPanel.Dock="Top"
-                                FontSize="16"
-                                FontWeight="Bold" Margin="4,4,4,0" />
+                            <Label x:Name="LabelMem" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1,1,1,0" Content="Mem" DockPanel.Dock="Top" FontSize="16" FontWeight="Bold" Margin="4,4,4,0" />
 
-                            <TextBox
-                                x:Name="TextBoxBreak"
-                                HorizontalContentAlignment="Center"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1,1,1,0"
-                                Text=""
-                                DockPanel.Dock="Top"
-                                FontSize="16"
-                                Margin="4,4,4,0" KeyUp="TextBoxBreak_KeyUp" />
-                            <TextBox
-                                x:Name="TextBoxBreak2"
-                                HorizontalContentAlignment="Center"
-                                BorderBrush="Gray"
-                                BorderThickness="1,1,1,0"
-                                Text="PXdQ&#10;01234567&#10;89ABCDEF&#10;IOe"
-                                DockPanel.Dock="Top"
-                                FontSize="16"
-                                Margin="4,4,4,0" ToolTip="Parameter für LogFile-Aufzeichnung&#10;jeder Buchstabe steht für entsprechendes CPU-Register&#10; d=AccuD  Q=Q   I=INP1-7 O=OUT1-7 e=EF1-EF4" AcceptsReturn="True" />
-                            <Button
-                                x:Name="ButtonRecordAll"                           
-                                HorizontalContentAlignment="Center"
-                                BorderThickness="1,1,1,0"
-                                Content="Record All"
-                                DockPanel.Dock="Top"
-                                FontSize="16"
-                               Margin="4,4,4,0" Click="ButtonRecordAll_Click" />
-                            <Button
-                                x:Name="ButtonBreakpointYes"                           
-                                HorizontalContentAlignment="Center"
-                                BorderThickness="1,1,1,0"
-                                Content="Ok"
-                                DockPanel.Dock="Top"
-                                FontSize="16"
-                               Margin="4,4,4,0" Click="ButtonBreakpointYes_Click" Background="Orange" />
-                            <Button
-                                x:Name="ButtonBreakpointNo"
-                                HorizontalContentAlignment="Center"
-                                BorderThickness="1,1,1,0"
-                                Content="Cancel"
-                                DockPanel.Dock="Top"
-                                FontSize="16"
-                                Margin="4,4,4,0" Click="ButtonBreakpointNo_Click" />
+                            <TextBox x:Name="TextBoxBreak" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1,1,1,0" Text="" DockPanel.Dock="Top" FontSize="16" Margin="4,4,4,0" KeyUp="TextBoxBreak_KeyUp" />
+                            <TextBox x:Name="TextBoxBreak2" HorizontalContentAlignment="Center" BorderBrush="Gray" BorderThickness="1,1,1,0" Text="PXdQ&#10;01234567&#10;89ABCDEF&#10;IOe" DockPanel.Dock="Top" FontSize="16" Margin="4,4,4,0" ToolTip="Parameter für LogFile-Aufzeichnung&#10;jeder Buchstabe steht für entsprechendes CPU-Register&#10; d=AccuD  Q=Q   I=INP1-7 O=OUT1-7 e=EF1-EF4" AcceptsReturn="True" />
+                            <Button x:Name="ButtonRecordAll" HorizontalContentAlignment="Center" BorderThickness="1,1,1,0" Content="Record All" DockPanel.Dock="Top" FontSize="16" Margin="4,4,4,0" Click="ButtonRecordAll_Click" />
+                            <Button x:Name="ButtonBreakpointYes" HorizontalContentAlignment="Center" BorderThickness="1,1,1,0" Content="Ok" DockPanel.Dock="Top" FontSize="16" Margin="4,4,4,0" Click="ButtonBreakpointYes_Click" Background="Orange" />
+                            <Button x:Name="ButtonBreakpointNo" HorizontalContentAlignment="Center" BorderThickness="1,1,1,0" Content="Cancel" DockPanel.Dock="Top" FontSize="16" Margin="4,4,4,0" Click="ButtonBreakpointNo_Click" />
 
-                            <ListView Margin="4" x:Name="ListViewMem"
-                                PreviewMouseLeftButtonUp="ListViewMem_PreviewMouseLeftButtonUp"
-                                PreviewMouseRightButtonUp="ListViewMem_PreviewMouseRightButtonUp" ScrollViewer.HorizontalScrollBarVisibility="Auto" ToolTip="Linksklick: Programmzeile  zeigen -  Rechtsklick: Break-/Logpoint  setzen">
+                            <ListView Margin="4" x:Name="ListViewMem" PreviewMouseLeftButtonUp="ListViewMem_PreviewMouseLeftButtonUp" PreviewMouseRightButtonUp="ListViewMem_PreviewMouseRightButtonUp" ScrollViewer.HorizontalScrollBarVisibility="Auto" ToolTip="Linksklick: Programmzeile  zeigen -  Rechtsklick: Break-/Logpoint  setzen">
 
-                                <ListView.ItemTemplate >
+                                <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <WrapPanel>
                                             <!--<TextBlock Text="Name: " />-->
                                             <TextBlock Text="{Binding Adr}" Background="{Binding AdrBrush}" />
                                             <TextBlock Text="  " />
                                             <!--<TextBlock Text="Age: " />-->
-                                            <TextBlock Text="{Binding Data}"  Background="{Binding DataBrush}" />
+                                            <TextBlock Text="{Binding Data}" Background="{Binding DataBrush}" />
                                             <TextBlock Text=" " />
-                                            <TextBlock Text="{Binding Break}"   />
+                                            <TextBlock Text="{Binding Break}" />
                                             <!--<TextBlock Text=")" />-->
 
                                         </WrapPanel>
@@ -337,176 +242,48 @@
                         </DockPanel>
 
                         <!--  PanelButtons  -->
-                        <StackPanel Background="Gray" Margin="4,4,4,4" >
-                            <Button
-                                        x:Name="ButtonFileNew"
-                                        Margin="3,3,3,3"
-                                        Click="ButtonFileNew_Click"
-                                        Content="New File"
-                                        FontSize="14"
-                                        ToolTip="erste Programmzeile erstellen" />
-                            <TextBox x:Name="TextBoxNewFileName"  Margin="3,3,3,3" Text="Prog01" VerticalContentAlignment="Center" FontSize="14" MouseEnter="TextBoxNewFileName_MouseEnter" />
-                            <Label
-                                    HorizontalContentAlignment="Center"
-                                    Background="LightGray"
-                                    Content=""
-                                    FontSize="6"
-                                    FontWeight="Bold" />
-                            <Button
-                                        x:Name="ButtonLoadProgr"
-                                        Margin="3"
-                                        Click="ButtonLoadProgr_Click"
-                                        Content="RCA-File Load"
-                                        FontSize="14"
-                                        ToolTip="RCA-File in Editor laden" />
-                            <Button
-                                        x:Name="ButtonSaveProgr"
-                                        Margin="3"
-                                        Click="ButtonSaveProgr_Click"
-                                        Content="RCA-File Save"
-                                        FontSize="14"
-                                        ToolTip="RCA-File speichern" />
-                            <Label
-                                    HorizontalContentAlignment="Center"
-                                   Background="LightGray"
-                                    Content=""
-                                    FontSize="6"
-                                    FontWeight="Bold" />
-                            <Button
-                                        x:Name="ButtonLoadHex"
-                                        Margin="3"
-                                        Click="ButtonLoadHex_Click"
-                                        Content="Hex-File Load"
-                                        FontSize="14"
-                                        ToolTip="Hex-File in Editor laden" />
-                            <ComboBox
-                                        x:Name="ComboBoxManualRcaFiles"
-                                        Margin="3"
-                                       
-                                        FontSize="14"
-                                        ToolTip="RCA-Files des Manuals laden" SelectionChanged="ComboBoxManualRcaFiles_SelectionChanged" />
+                        <StackPanel Background="Gray" Margin="4,4,4,4">
+                            <Button x:Name="ButtonFileNew" Margin="3,3,3,3" Click="ButtonFileNew_Click" Content="New File" FontSize="14" ToolTip="erste Programmzeile erstellen" />
+                            <TextBox x:Name="TextBoxNewFileName" Margin="3,3,3,3" Text="Prog01" VerticalContentAlignment="Center" FontSize="14" MouseEnter="TextBoxNewFileName_MouseEnter" />
+                            <Label HorizontalContentAlignment="Center" Background="LightGray" Content="" FontSize="6" FontWeight="Bold" />
+                            <Button x:Name="ButtonLoadProgr" Margin="3" Click="ButtonLoadProgr_Click" Content="RCA-File Load" FontSize="14" ToolTip="RCA-File in Editor laden" />
+                            <Button x:Name="ButtonSaveProgr" Margin="3" Click="ButtonSaveProgr_Click" Content="RCA-File Save" FontSize="14" ToolTip="RCA-File speichern" />
+                            <Label HorizontalContentAlignment="Center" Background="LightGray" Content="" FontSize="6" FontWeight="Bold" />
+                            <Button x:Name="ButtonLoadHex" Margin="3" Click="ButtonLoadHex_Click" Content="Hex-File Load" FontSize="14" ToolTip="Hex-File in Editor laden" />
+                            <ComboBox x:Name="ComboBoxManualRcaFiles" Margin="3" FontSize="14" ToolTip="RCA-Files des Manuals laden" SelectionChanged="ComboBoxManualRcaFiles_SelectionChanged" />
 
-                            <Label
-
-                                    HorizontalContentAlignment="Center"
-                                   Background="LightGray"
-                                    Content=""
-                                    FontSize="6"
-                                    FontWeight="Bold" />
+                            <Label HorizontalContentAlignment="Center" Background="LightGray" Content="" FontSize="6" FontWeight="Bold" />
 
 
-                            <Button
-                                        x:Name="ButtonEditorFind"
-                                        Margin="3"
-                                        Click="ButtonEditorFind_Click"
-                                        Content="Find String"
-                                        FontFamily="Segoe UI"
-                                        FontSize="14"
-                                        ToolTip="Suche -  Start am Anfang" />
-                            <TextBox
-                                        x:Name="TexBoxEditorFind"
-                                        Margin="3"
-                                        HorizontalContentAlignment="Stretch"
-                                        VerticalContentAlignment="Center"
-                                        FontFamily="Courier New"
-                                        FontSize="16"
-                                        KeyUp="TexBoxEditorFind_KeyUp"
-                                        Text=""
-                                        TextWrapping="NoWrap"
-                                        ToolTip="Suchbegriff eingeben" />
-                            <Button
-                                        x:Name="ButtonEditorFindNext"
-                                        Margin="3"
-                                        Click="ButtonEditorFindNext_Click"
-                                        Content="Find Next"
-                                        FontFamily="Segoe UI"
-                                        FontSize="14"
-                                        ToolTip="Suche - ab letzter gefundener Position" />
+                            <Button x:Name="ButtonEditorFind" Margin="3" Click="ButtonEditorFind_Click" Content="Find String" FontFamily="Segoe UI" FontSize="14" ToolTip="Suche -  Start am Anfang" />
+                            <TextBox x:Name="TexBoxEditorFind" Margin="3" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Courier New" FontSize="16" KeyUp="TexBoxEditorFind_KeyUp" Text="" TextWrapping="NoWrap" ToolTip="Suchbegriff eingeben" />
+                            <Button x:Name="ButtonEditorFindNext" Margin="3" Click="ButtonEditorFindNext_Click" Content="Find Next" FontFamily="Segoe UI" FontSize="14" ToolTip="Suche - ab letzter gefundener Position" />
 
-                            <Label
-                                        Margin="3,3,3,3"
-                                        HorizontalContentAlignment="Center"
-                                        Background="Gray"
-                                        Content="" />
-                            <Button
-                                        x:Name="ButtonEditorClear"
-                                        Margin="3"
-                                        Click="ButtonEditorClear_Click"
-                                        Content="Clear"
-                                        FontFamily="Segoe UI"
-                                        FontSize="14"
-                                        ToolTip="Editor löschen" />
-                            <Label
-                                    HorizontalContentAlignment="Center"
-                                    Background="LightGray"
-                                    Content="" />
-                            <Label
-                                    HorizontalContentAlignment="Center"
-                                      Background="LightGray"
-                                    Content="" />
-                            <Button
-                                    x:Name="ButtonCompile"
-                                    Margin="3"
-                                    Click="ButtonCompile_Click"
-                                    Content="Compile"
-                                    DockPanel.Dock="Bottom"
-                                    FontSize="14"
-                                    ToolTip="Daten des Editors kompilieren" />
+                            <Label Margin="3,3,3,3" HorizontalContentAlignment="Center" Background="Gray" Content="" />
+                            <Button x:Name="ButtonEditorClear" Margin="3" Click="ButtonEditorClear_Click" Content="Clear" FontFamily="Segoe UI" FontSize="14" ToolTip="Editor löschen" />
+                            <Label HorizontalContentAlignment="Center" Background="LightGray" Content="" />
+                            <Label HorizontalContentAlignment="Center" Background="LightGray" Content="" />
+                            <Button x:Name="ButtonCompile" Margin="3" Click="ButtonCompile_Click" Content="Compile" DockPanel.Dock="Bottom" FontSize="14" ToolTip="Daten des Editors kompilieren" />
 
 
 
 
-                            <Button
-                                    x:Name="ButtonLoadMem"
-                                    Margin="3"
-                                    Click="ButtonLoadMem_Click"
-                                    Content="-&gt; Memory"
-                                    FontSize="14"
-                                    ToolTip="CPU-Speicher laden" />
+                            <Button x:Name="ButtonLoadMem" Margin="3" Click="ButtonLoadMem_Click" Content="-&gt; Memory" FontSize="14" ToolTip="CPU-Speicher laden" />
 
 
 
                         </StackPanel>
 
                         <!--  Editor  -->
-                        <DockPanel
-                            x:Name="DocPanelEditor"
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Margin="4,4,4,4">
+                        <DockPanel x:Name="DocPanelEditor" Grid.Row="0" Grid.Column="1" Margin="4,4,4,4">
                             <DockPanel DockPanel.Dock="Top" Margin="4,4,4,4">
-                                <Button x:Name="ButtonEditorDirectory"
-                                    Margin="0,0,0,0"
-                                    BorderThickness="1,1,1,0"
-                                    Content="Editor"
-                                    DockPanel.Dock="Left"
-                                    FontSize="16"
-                                    FontWeight="Bold" Click="ButtonEditorDirectory_Click" />
-                                <Label
-                                    x:Name="LabelEditorProgName"
-                                    Margin="0,0,0,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1,1,1,0"
-                                    Content=""
-                                    DockPanel.Dock="Right" />
+                                <Button x:Name="ButtonEditorDirectory" Margin="0,0,0,0" BorderThickness="1,1,1,0" Content="Editor" DockPanel.Dock="Left" FontSize="16" FontWeight="Bold" Click="ButtonEditorDirectory_Click" />
+                                <Label x:Name="LabelEditorProgName" Margin="0,0,0,0" Background="White" BorderBrush="Gray" BorderThickness="1,1,1,0" Content="" DockPanel.Dock="Right" />
 
                             </DockPanel>
 
 
-                            <RichTextBox
-                                x:Name="RichTextBoxEditor"
-                                Margin="4"
-                                HorizontalContentAlignment="Stretch"
-                                VerticalContentAlignment="Stretch"
-                                FontFamily="Courier New"
-                                FontSize="16"
-                                GotFocus="RichTextBoxEditor_GotFocus"
-                                HorizontalScrollBarVisibility="Auto"
-                                KeyUp="RichTextBoxEditor_KeyUp"
-                                PreviewMouseLeftButtonDown="RichTextBoxEditor_PreviewMouseLeftButtonDown"
-                                ScrollViewer.ScrollChanged="Editor_ScrollChanged"
-                                VerticalScrollBarVisibility="Auto" TextChanged="RichTextBoxEditor_TextChanged" PreviewMouseLeftButtonUp="RichTextBoxEditor_PreviewMouseLeftButtonUp">
+                            <RichTextBox x:Name="RichTextBoxEditor" Margin="4" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontFamily="Courier New" FontSize="16" GotFocus="RichTextBoxEditor_GotFocus" HorizontalScrollBarVisibility="Auto" KeyUp="RichTextBoxEditor_KeyUp" PreviewMouseLeftButtonDown="RichTextBoxEditor_PreviewMouseLeftButtonDown" ScrollViewer.ScrollChanged="Editor_ScrollChanged" VerticalScrollBarVisibility="Auto" TextChanged="RichTextBoxEditor_TextChanged" PreviewMouseLeftButtonUp="RichTextBoxEditor_PreviewMouseLeftButtonUp">
                                 <RichTextBox.Resources>
                                     <Style TargetType="{x:Type Paragraph}">
                                         <Setter Property="Margin" Value="0" />
@@ -522,11 +299,7 @@
                         </DockPanel>
 
                         <!--  Lines  -->
-                        <DockPanel
-                            x:Name="DocPanelLines"
-                            Grid.Row="0"
-                            Grid.Column="2"
-                            Margin="4,4,4,4"/>
+                        <DockPanel x:Name="DocPanelLines" Grid.Row="0" Grid.Column="2" Margin="4,4,4,4" />
                     </Grid>
 
 
@@ -534,13 +307,7 @@
 
 
                     <!--  Grid-CPU neu  -->
-                    <Grid
-                        Grid.Row="1"
-                        Grid.RowSpan="4"
-                        Grid.Column="4"
-                        Grid.ColumnSpan="2"
-                        Margin="0,22,0,106"
-                        Background="LightBlue">
+                    <Grid Grid.Row="1" Grid.RowSpan="4" Grid.Column="4" Grid.ColumnSpan="2" Margin="0,22,0,106" Background="LightBlue">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="80*" />
                             <ColumnDefinition Width="4*" />
@@ -554,585 +321,147 @@
                             <RowDefinition Height="189*" />
                             <RowDefinition Height="207*" />
                         </Grid.RowDefinitions>
-                        <Border
-                            Grid.RowSpan="4"
-                            Grid.ColumnSpan="5"
-                            BorderBrush="Gray"
-                            BorderThickness="1,0,1,1" >
+                        <Border Grid.RowSpan="4" Grid.ColumnSpan="5" BorderBrush="Gray" BorderThickness="1,0,1,1">
 
                         </Border>
                         <StackPanel x:Name="StackPanelInputConfig" Background="YellowGreen" Grid.ColumnSpan="2" Margin="0,0,7,230" Grid.RowSpan="2">
                             <ComboBox Name="ComboBoxInputNum" Margin="10,2,10,0" SelectionChanged="ComboBoxInputNum_SelectionChanged">
-                                <ComboBoxItem Content=""/>
-                                <ComboBoxItem Content="Input 1  Setting" IsSelected="true"/>
-                                <ComboBoxItem Content="Input 2  Setting"/>
-                                <ComboBoxItem Content="Input 3  Setting"/>
-                                <ComboBoxItem Content="Input 4  Setting"/>
-                                <ComboBoxItem Content="Input 5  Setting"/>
-                                <ComboBoxItem Content="Input 6  Setting"/>
-                                <ComboBoxItem Content="Input 7  Setting"/>
+                                <ComboBoxItem Content="" />
+                                <ComboBoxItem Content="Input 1  Setting" IsSelected="true" />
+                                <ComboBoxItem Content="Input 2  Setting" />
+                                <ComboBoxItem Content="Input 3  Setting" />
+                                <ComboBoxItem Content="Input 4  Setting" />
+                                <ComboBoxItem Content="Input 5  Setting" />
+                                <ComboBoxItem Content="Input 6  Setting" />
+                                <ComboBoxItem Content="Input 7  Setting" />
                             </ComboBox>
                             <ComboBox x:Name="ComboBoxInputSetting" Margin="10,0,10,2" SelectionChanged="ComboBoxInputSetting_SelectionChanged">
-                                <ComboBoxItem Content="Input -> CPU" IsSelected="true"/>
-                                <ComboBoxItem Content="Input (EF1/OUT1)   Strobe EF1=1 Quitt Out1=1"/>
-                                <ComboBoxItem Content="Input (EF2/OUT2)   Strobe EF2=1 Quitt Out2=1"/>
-                                <ComboBoxItem Content="Input (EF3/OUT3)   Strobe EF3=1 Quitt Out3=1"/>
-                                <ComboBoxItem Content="Input (EF4/OUT4)   Strobe EF4=1 Quitt Out4=1"/>
+                                <ComboBoxItem Content="Input -> CPU" IsSelected="true" />
+                                <ComboBoxItem Content="Input (EF1/OUT1)   Strobe EF1=1 Quitt Out1=1" />
+                                <ComboBoxItem Content="Input (EF2/OUT2)   Strobe EF2=1 Quitt Out2=1" />
+                                <ComboBoxItem Content="Input (EF3/OUT3)   Strobe EF3=1 Quitt Out3=1" />
+                                <ComboBoxItem Content="Input (EF4/OUT4)   Strobe EF4=1 Quitt Out4=1" />
 
                             </ComboBox>
 
                         </StackPanel>
                         <!--  Stackpanel Inputs  -->
-                        <StackPanel
-                            x:Name="StackPanelInputs"
-                            Grid.Row="1"
-                            Grid.RowSpan="3"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="1"
-                            Margin="2,2,2,6"
-                            Background="LightGray" MouseEnter="StackPanelInputs_MouseEnter" MouseLeave="StackPanelInputs_MouseLeave">
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content="Inputs"
-                                DockPanel.Dock="Left"
-                                FontWeight="Bold" />
-                            <Border
-                                Margin="1"
-                                BorderBrush="Gray"
-                                BorderThickness="1">
+                        <StackPanel x:Name="StackPanelInputs" Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="1" Margin="2,2,2,6" Background="LightGray" MouseEnter="StackPanelInputs_MouseEnter" MouseLeave="StackPanelInputs_MouseLeave">
+                            <Label Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="Inputs" DockPanel.Dock="Left" FontWeight="Bold" />
+                            <Border Margin="1" BorderBrush="Gray" BorderThickness="1">
                                 <DockPanel Background="White">
 
-                                    <RadioButton
-                                        x:Name="RadioButtonInputHex"
-                                        Margin="0,0,4,0"
-                                        Padding="0,-1,0,0"
-                                        VerticalContentAlignment="Center"
-                                        Background="White"
-                                        Content="Hex"
-                                        IsChecked="True" />
-                                    <RadioButton
-                                        x:Name="RadioButtonInputBin"
-                                        Margin="0,0,4,0"
-                                        Padding="0,-1,0,0"
-                                        VerticalContentAlignment="Center"
-                                        Background="White"
-                                        Content="Bin" />
-                                    <RadioButton
-                                        x:Name="RadioButtonInputChar"
-                                        Margin="0,0,4,0"
-                                        Padding="0,-1,0,0"
-                                        VerticalContentAlignment="Center"
-                                        Background="White"
-                                        Content="Chr" />
-                                    <Button
-                                        x:Name="ButtonInputConfig"
-                                        Click="ButtonInputConfig_Click"
-                                        Content="Config" ToolTip="Konfiguration&#10;mit INPn kann automatisch EFn zur CPU gesendet werden&#10;im RCA-Programm muss dann OUTn auf 1 gesetzt werden&#10;wenn der Wert übernommen wurde&#10;damit wird dann EFn zurückgenommem" />
+                                    <RadioButton x:Name="RadioButtonInputHex" Margin="0,0,4,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Content="Hex" IsChecked="True" />
+                                    <RadioButton x:Name="RadioButtonInputBin" Margin="0,0,4,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Content="Bin" />
+                                    <RadioButton x:Name="RadioButtonInputChar" Margin="0,0,4,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Content="Chr" />
+                                    <Button x:Name="ButtonInputConfig" Click="ButtonInputConfig_Click" Content="Config" ToolTip="Konfiguration&#10;mit INPn kann automatisch EFn zur CPU gesendet werden&#10;im RCA-Programm muss dann OUTn auf 1 gesetzt werden&#10;wenn der Wert übernommen wurde&#10;damit wird dann EFn zurückgenommem" />
                                 </DockPanel>
                             </Border>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelInput1"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="1"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelINP1"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00"
-                                    DockPanel.Dock="Right"  />
+                                <Label x:Name="LabelInput1" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="1" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelINP1" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Right" />
 
-                                <TextBox
-                                    x:Name="TextBoxInput1"
-                                    Margin="1"
-                                    DockPanel.Dock="Left"
-                                    KeyUp="TextBoxInputN_KeyUp"
-                                    TextWrapping="NoWrap" MaxLines="1" Tag="1" />
+                                <TextBox x:Name="TextBoxInput1" Margin="1" DockPanel.Dock="Left" KeyUp="TextBoxInputN_KeyUp" TextWrapping="NoWrap" MaxLines="1" Tag="1" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelInput2"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="2"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelINP2"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00"
-                                     DockPanel.Dock="Right"  />
-                                <TextBox
-                                    x:Name="TextBoxInput2"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    KeyUp="TextBoxInputN_KeyUp"
-                                    TextWrapping="NoWrap" Tag="2" />
+                                <Label x:Name="LabelInput2" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="2" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelINP2" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Right" />
+                                <TextBox x:Name="TextBoxInput2" Margin="1" DockPanel.Dock="Right" KeyUp="TextBoxInputN_KeyUp" TextWrapping="NoWrap" Tag="2" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelInput3"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="3"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelINP3"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00"
-                                    DockPanel.Dock="Right"  />
-                                <TextBox
-                                    x:Name="TextBoxInput3"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    KeyUp="TextBoxInputN_KeyUp"
-                                    TextWrapping="NoWrap" Tag="3" />
+                                <Label x:Name="LabelInput3" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="3" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelINP3" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Right" />
+                                <TextBox x:Name="TextBoxInput3" Margin="1" DockPanel.Dock="Right" KeyUp="TextBoxInputN_KeyUp" TextWrapping="NoWrap" Tag="3" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelInput4"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="4"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelINP4"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00"
-                                   DockPanel.Dock="Right"  />
-                                <TextBox
-                                    x:Name="TextBoxInput4"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    KeyUp="TextBoxInputN_KeyUp"
-                                    TextWrapping="NoWrap" Tag="4" />
+                                <Label x:Name="LabelInput4" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="4" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelINP4" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Right" />
+                                <TextBox x:Name="TextBoxInput4" Margin="1" DockPanel.Dock="Right" KeyUp="TextBoxInputN_KeyUp" TextWrapping="NoWrap" Tag="4" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelInput5"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="5"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelINP5"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00"
-                                  DockPanel.Dock="Right"  />
-                                <TextBox
-                                    x:Name="TextBoxInput5"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    KeyUp="TextBoxInputN_KeyUp"
-                                    TextWrapping="NoWrap" Tag="5" />
+                                <Label x:Name="LabelInput5" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="5" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelINP5" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Right" />
+                                <TextBox x:Name="TextBoxInput5" Margin="1" DockPanel.Dock="Right" KeyUp="TextBoxInputN_KeyUp" TextWrapping="NoWrap" Tag="5" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelInput6"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="6"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelINP6"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00"
-                                 DockPanel.Dock="Right" Tag="7"  />
-                                <TextBox
-                                    x:Name="TextBoxInput6"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    KeyUp="TextBoxInputN_KeyUp"
-                                    TextWrapping="NoWrap" Tag="6" />
+                                <Label x:Name="LabelInput6" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="6" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelINP6" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Right" Tag="7" />
+                                <TextBox x:Name="TextBoxInput6" Margin="1" DockPanel.Dock="Right" KeyUp="TextBoxInputN_KeyUp" TextWrapping="NoWrap" Tag="6" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelInput7"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="7"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelINP7"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00"
-                               DockPanel.Dock="Right"  />
-                                <TextBox
-                                    x:Name="TextBoxInput7"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    KeyUp="TextBoxInputN_KeyUp"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelInput7" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="7" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelINP7" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Right" />
+                                <TextBox x:Name="TextBoxInput7" Margin="1" DockPanel.Dock="Right" KeyUp="TextBoxInputN_KeyUp" TextWrapping="NoWrap" />
                             </DockPanel>
 
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="LightGray"
-                                Content=" "
-                                DockPanel.Dock="Left" FontSize="8" />
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content="Serial In"
-                                DockPanel.Dock="Left"
-                                FontWeight="Bold" />
+                            <Label Margin="1" Padding="5,0" Background="LightGray" Content=" " DockPanel.Dock="Left" FontSize="8" />
+                            <Label Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="Serial In" DockPanel.Dock="Left" FontWeight="Bold" />
 
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelEF1"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="EF1"
-                                    DockPanel.Dock="Right" />
-                                <Label
-                                    x:Name="LabelEF1Value"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Right" />
-                                <CheckBox
-                                    x:Name="CheckBoxEF1"
-                                    Margin="1"
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Left" Click="Ef_Click" />
+                                <Label x:Name="LabelEF1" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="EF1" DockPanel.Dock="Right" />
+                                <Label x:Name="LabelEF1Value" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Right" />
+                                <CheckBox x:Name="CheckBoxEF1" Margin="1" VerticalContentAlignment="Center" DockPanel.Dock="Left" Click="Ef_Click" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelEF2"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="EF2"
-                                    DockPanel.Dock="Right" />
-                                <Label
-                                    x:Name="LabelEF2Value"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Right" />
-                                <CheckBox
-                                    x:Name="CheckBoxEF2"
-                                    Margin="1"
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Left" Click="Ef_Click" />
+                                <Label x:Name="LabelEF2" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="EF2" DockPanel.Dock="Right" />
+                                <Label x:Name="LabelEF2Value" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Right" />
+                                <CheckBox x:Name="CheckBoxEF2" Margin="1" VerticalContentAlignment="Center" DockPanel.Dock="Left" Click="Ef_Click" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelEF3"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="EF3"
-                                    DockPanel.Dock="Right" />
-                                <Label
-                                    x:Name="LabelEF3Value"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Right" />
-                                <CheckBox
-                                    x:Name="CheckBoxEF3"
-                                    Margin="1"
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Left" Click="Ef_Click" />
+                                <Label x:Name="LabelEF3" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="EF3" DockPanel.Dock="Right" />
+                                <Label x:Name="LabelEF3Value" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Right" />
+                                <CheckBox x:Name="CheckBoxEF3" Margin="1" VerticalContentAlignment="Center" DockPanel.Dock="Left" Click="Ef_Click" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelEF4"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="EF4"
-                                    DockPanel.Dock="Right" />
-                                <Label
-                                    x:Name="LabelEF4Value"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Right" />
-                                <CheckBox
-                                    x:Name="CheckBoxEF4"
-                                    Margin="1"
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Left" Click="Ef_Click" />
+                                <Label x:Name="LabelEF4" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="EF4" DockPanel.Dock="Right" />
+                                <Label x:Name="LabelEF4Value" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Right" />
+                                <CheckBox x:Name="CheckBoxEF4" Margin="1" VerticalContentAlignment="Center" DockPanel.Dock="Left" Click="Ef_Click" />
                             </DockPanel>
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="LightGray"
-                                Content=" "
-                                DockPanel.Dock="Left" FontSize="6" />
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content="Interrupt"
-                                DockPanel.Dock="Left"
-                                FontWeight="Bold" />
-                            <CheckBox
-                                    x:Name="CheckBoxIe"
-                                    Margin="1"
-                                    Content="Interrupt Enable IE"
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Right" Click="CheckBoxIe_Click" />
-                            <CheckBox
-                                    x:Name="CheckBoxIntr"
-                                    Margin="1"
-                                    Content="Interrupt "
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Right" Click="CheckBoxIntr_Click" />
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="LightGray"
-                                Content=" "
-                                DockPanel.Dock="Left" FontSize="6" />
-                            <Label x:Name="LabelDmaIn"
-                                Margin="1"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content="DMA"
-                                DockPanel.Dock="Left"
-                                FontWeight="Bold" />
-                            <CheckBox
-                                    x:Name="CheckBoxDmaIn"
-                                    Margin="1"
-                                    Content="In"
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Right" Click="CheckBoxDmaIn_Click" />
+                            <Label Margin="1" Padding="5,0" Background="LightGray" Content=" " DockPanel.Dock="Left" FontSize="6" />
+                            <Label Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="Interrupt" DockPanel.Dock="Left" FontWeight="Bold" />
+                            <CheckBox x:Name="CheckBoxIe" Margin="1" Content="Interrupt Enable IE" VerticalContentAlignment="Center" DockPanel.Dock="Right" Click="CheckBoxIe_Click" />
+                            <CheckBox x:Name="CheckBoxIntr" Margin="1" Content="Interrupt " VerticalContentAlignment="Center" DockPanel.Dock="Right" Click="CheckBoxIntr_Click" />
+                            <Label Margin="1" Padding="5,0" Background="LightGray" Content=" " DockPanel.Dock="Left" FontSize="6" />
+                            <Label x:Name="LabelDmaIn" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="DMA" DockPanel.Dock="Left" FontWeight="Bold" />
+                            <CheckBox x:Name="CheckBoxDmaIn" Margin="1" Content="In" VerticalContentAlignment="Center" DockPanel.Dock="Right" Click="CheckBoxDmaIn_Click" />
                         </StackPanel>
 
 
 
                         <!--  StackPanel Accu Mitte  -->
-                        <StackPanel
-                            Grid.Row="0"
-                            Grid.RowSpan="3"
-                            Grid.Column="2"
-                            Margin="2,2,2,126"
-                            Background="Gray">
+                        <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" Margin="2,2,2,126" Background="Gray">
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelI"
-                                    Margin="4,2,2,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Left" FontWeight="Bold" />
-                                <Label
-                                    x:Name="LabelITitle"
-                                    Margin="2,2,4,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="I - Instruction Register"
-                                    DockPanel.Dock="Left" />
+                                <Label x:Name="LabelI" Margin="4,2,2,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Left" FontWeight="Bold" />
+                                <Label x:Name="LabelITitle" Margin="2,2,4,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="I - Instruction Register" DockPanel.Dock="Left" />
 
 
 
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelN"
-                                    Margin="4,2,2,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Left" FontWeight="Bold" />
-                                <Label
-                                    x:Name="LabelNTitle"
-                                    Margin="2,2,4,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="N - Register"
-                                    DockPanel.Dock="Left" />
+                                <Label x:Name="LabelN" Margin="4,2,2,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Left" FontWeight="Bold" />
+                                <Label x:Name="LabelNTitle" Margin="2,2,4,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="N - Register" DockPanel.Dock="Left" />
 
 
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelP"
-                                    Margin="4,2,2,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Left" FontWeight="Bold" />
-                                <Label
-                                    x:Name="LabelPTitle"
-                                    Margin="2,2,4,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="P - Register (ProgCounter)"
-                                    DockPanel.Dock="Left" />
+                                <Label x:Name="LabelP" Margin="4,2,2,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Left" FontWeight="Bold" />
+                                <Label x:Name="LabelPTitle" Margin="2,2,4,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="P - Register (ProgCounter)" DockPanel.Dock="Left" />
 
 
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelX"
-                                    Margin="4,2,2,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="0"
-                                    DockPanel.Dock="Left" FontWeight="Bold" />
-                                <Label
-                                    x:Name="LabelXTitle"
-                                    Margin="2,2,4,2"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="X - Register (Daten)"
-                                    DockPanel.Dock="Left" />
+                                <Label x:Name="LabelX" Margin="4,2,2,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Left" FontWeight="Bold" />
+                                <Label x:Name="LabelXTitle" Margin="2,2,4,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="X - Register (Daten)" DockPanel.Dock="Left" />
 
 
                             </DockPanel>
-                            <Label
-                                x:Name="LabelSpace1"
-                                Margin="4,2,4,2"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content=""
-                                DockPanel.Dock="Left" />
+                            <Label x:Name="LabelSpace1" Margin="4,2,4,2" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="" DockPanel.Dock="Left" />
                             <Border BorderThickness="2,2,2,2" Background="Gray">
                                 <StackPanel>
-                                    <Label
-                                        x:Name="LabelDTitle"
-                                        Margin="4,2,4,0"
-                                        Padding="5,0"
-                                        Background="LightGray"
-                                        BorderBrush="Gray"
-                                        BorderThickness="1"
-                                        Content="D - Register (Accumulator)"
-                                        DockPanel.Dock="Left" />
-                                    <Label
-                                        x:Name="LabelD"
-                                        Margin="4,0,4,2"
-                                        Padding="5,0"
-                                        HorizontalContentAlignment="Center"
-                                        Background="White"
-                                        BorderBrush="Gray"
-                                        BorderThickness="1"
-                                        Content="00"
-                                        DockPanel.Dock="Left"
-                                        FontWeight="Bold" />
-                                    <Label
-                                        x:Name="LabelDFTitle"
-                                        Margin="4,2,4,0"
-                                        Padding="5,0"
-                                        Background="LightGray"
-                                        BorderBrush="Gray"
-                                        BorderThickness="1"
-                                        Content="DF - Data Flag"
-                                        DockPanel.Dock="Right" />
-                                    <Label
-                                        x:Name="LabelDF"
-                                        Margin="4,0,4,2"
-                                        Padding="5,0"
-                                        HorizontalContentAlignment="Center"
-                                        Background="White"
-                                        BorderBrush="Gray"
-                                        BorderThickness="1"
-                                        Content="0"
-                                        DockPanel.Dock="Left"
-                                        FontWeight="Bold" />
+                                    <Label x:Name="LabelDTitle" Margin="4,2,4,0" Padding="5,0" Background="LightGray" BorderBrush="Gray" BorderThickness="1" Content="D - Register (Accumulator)" DockPanel.Dock="Left" />
+                                    <Label x:Name="LabelD" Margin="4,0,4,2" Padding="5,0" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" DockPanel.Dock="Left" FontWeight="Bold" />
+                                    <Label x:Name="LabelDFTitle" Margin="4,2,4,0" Padding="5,0" Background="LightGray" BorderBrush="Gray" BorderThickness="1" Content="DF - Data Flag" DockPanel.Dock="Right" />
+                                    <Label x:Name="LabelDF" Margin="4,0,4,2" Padding="5,0" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1" Content="0" DockPanel.Dock="Left" FontWeight="Bold" />
                                 </StackPanel>
                             </Border>
                             <Grid DockPanel.Dock="Left">
@@ -1140,26 +469,8 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Label
-                                    x:Name="LabelTTitle"
-                                    Grid.Column="0"
-                                    Margin="4,0,4,2"
-                                    Padding="5,0"
-                                    HorizontalContentAlignment="Center"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="T" />
-                                <Label
-                                    x:Name="LabelBTitle"
-                                    Grid.Column="1"
-                                    Margin="4,0,4,2"
-                                    Padding="5,0"
-                                    HorizontalContentAlignment="Center"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="B" />
+                                <Label x:Name="LabelTTitle" Grid.Column="0" Margin="4,0,4,2" Padding="5,0" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1" Content="T" />
+                                <Label x:Name="LabelBTitle" Grid.Column="1" Margin="4,0,4,2" Padding="5,0" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1" Content="B" />
 
                             </Grid>
                             <Grid DockPanel.Dock="Left">
@@ -1167,313 +478,75 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Label
-                                    x:Name="LabelT"
-                                    Grid.Column="0"
-                                    Margin="4,0,4,2"
-                                    Padding="5,0"
-                                    HorizontalContentAlignment="Center"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00" FontWeight="Bold" />
-                                <Label
-                                    x:Name="LabelB"
-                                    Grid.Column="1"
-                                    Margin="4,0,4,2"
-                                    Padding="5,0"
-                                    HorizontalContentAlignment="Center"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="00" FontWeight="Bold" />
+                                <Label x:Name="LabelT" Grid.Column="0" Margin="4,0,4,2" Padding="5,0" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" FontWeight="Bold" />
+                                <Label x:Name="LabelB" Grid.Column="1" Margin="4,0,4,2" Padding="5,0" HorizontalContentAlignment="Center" Background="White" BorderBrush="Gray" BorderThickness="1" Content="00" FontWeight="Bold" />
                             </Grid>
 
-                            <StackPanel
-                                Margin="4,2,4,2"
-                                Background="White"
-                                Orientation="Horizontal">
-                                <Label
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="White"
-                                    BorderThickness="1"
-                                    Content=" " />
-                                <RadioButton
-                                    x:Name="RadioButtonAccuHex"
-                                    Margin="0,0,8,0"
-                                    Padding="0,-1,0,0"
-                                    VerticalContentAlignment="Center"
-                                    Background="White"
-                                    Click="RadioButtonAccuHex_Click"
-                                    Content="Hex"
-                                    IsChecked="True" />
-                                <RadioButton
-                                    x:Name="RadioButtonAccuBin"
-                                    Margin="0,0,8,0"
-                                    Padding="0,-1,0,0"
-                                    VerticalContentAlignment="Center"
-                                    Background="White"
-                                    Click="RadioButtonAccuBin_Click"
-                                    Content="Bin" />
-                                <RadioButton
-                                    x:Name="RadioButtonAccuDec"
-                                    Margin="0,0,8,0"
-                                    Padding="0,-1,0,0"
-                                    VerticalContentAlignment="Center"
-                                    Background="White"
-                                    Click="RadioButtonAccuDec_Click"
-                                    Content="Dec" />
+                            <StackPanel Margin="4,2,4,2" Background="White" Orientation="Horizontal">
+                                <Label Padding="5,0" Background="White" BorderBrush="White" BorderThickness="1" Content=" " />
+                                <RadioButton x:Name="RadioButtonAccuHex" Margin="0,0,8,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Click="RadioButtonAccuHex_Click" Content="Hex" IsChecked="True" />
+                                <RadioButton x:Name="RadioButtonAccuBin" Margin="0,0,8,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Click="RadioButtonAccuBin_Click" Content="Bin" />
+                                <RadioButton x:Name="RadioButtonAccuDec" Margin="0,0,8,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Click="RadioButtonAccuDec_Click" Content="Dec" />
 
                             </StackPanel>
 
                         </StackPanel>
 
                         <!--  Stack-Panel Outputs  -->
-                        <StackPanel
-                            x:Name="StackPanelOutputs"
-                            Grid.Row="1"
-                            Grid.RowSpan="2"
-                            Grid.Column="4"
-                            Grid.ColumnSpan="1"
-                            Margin="2,2,2,6"
-                            Background="LightGray">
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content="Outputs"
-                                DockPanel.Dock="Left"
-                                FontWeight="Bold" />
-                            <Border
-                                Margin="1"
-                                BorderBrush="Gray"
-                                BorderThickness="1">
+                        <StackPanel x:Name="StackPanelOutputs" Grid.Row="1" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="1" Margin="2,2,2,6" Background="LightGray">
+                            <Label Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="Outputs" DockPanel.Dock="Left" FontWeight="Bold" />
+                            <Border Margin="1" BorderBrush="Gray" BorderThickness="1">
                                 <DockPanel Background="White">
 
-                                    <RadioButton
-                                        x:Name="RadioButtonOutputHex"
-                                        Margin="0,0,4,0"
-                                        Padding="0,-1,0,0"
-                                        VerticalContentAlignment="Center"
-                                        Background="White"
-                                        Click="RadioButtonOutputHex_Click"
-                                        Content="Hex"
-                                        IsChecked="True" />
-                                    <RadioButton
-                                        x:Name="RadioButtonOutputBin"
-                                        Margin="0,0,4,0"
-                                        Padding="0,-1,0,0"
-                                        VerticalContentAlignment="Center"
-                                        Background="White"
-                                        Click="RadioButtonOutputBin_Click"
-                                        Content="Bin" />
-                                    <RadioButton
-                                        x:Name="RadioButtonOutputChar"
-                                        Margin="0,0,4,0"
-                                        Padding="0,-1,0,0"
-                                        VerticalContentAlignment="Center"
-                                        Background="White"
-                                        Click="RadioButtonOutputChar_Click"
-                                        Content="Char" />
+                                    <RadioButton x:Name="RadioButtonOutputHex" Margin="0,0,4,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Click="RadioButtonOutputHex_Click" Content="Hex" IsChecked="True" />
+                                    <RadioButton x:Name="RadioButtonOutputBin" Margin="0,0,4,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Click="RadioButtonOutputBin_Click" Content="Bin" />
+                                    <RadioButton x:Name="RadioButtonOutputChar" Margin="0,0,4,0" Padding="0,-1,0,0" VerticalContentAlignment="Center" Background="White" Click="RadioButtonOutputChar_Click" Content="Char" />
 
                                 </DockPanel>
                             </Border>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelOutput1"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="1"
-                                    DockPanel.Dock="Left" />
-                                <TextBox
-                                    x:Name="TextBoxOutput1"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    IsReadOnly="True"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelOutput1" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="1" DockPanel.Dock="Left" />
+                                <TextBox x:Name="TextBoxOutput1" Margin="1" DockPanel.Dock="Right" IsReadOnly="True" TextWrapping="NoWrap" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelOutput2"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="2"
-                                    DockPanel.Dock="Left" />
-                                <TextBox
-                                    x:Name="TextBoxOutput2"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    IsReadOnly="True"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelOutput2" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="2" DockPanel.Dock="Left" />
+                                <TextBox x:Name="TextBoxOutput2" Margin="1" DockPanel.Dock="Right" IsReadOnly="True" TextWrapping="NoWrap" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelOutput3"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="3"
-                                    DockPanel.Dock="Left" />
-                                <TextBox
-                                    x:Name="TextBoxOutput3"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    IsReadOnly="True"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelOutput3" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="3" DockPanel.Dock="Left" />
+                                <TextBox x:Name="TextBoxOutput3" Margin="1" DockPanel.Dock="Right" IsReadOnly="True" TextWrapping="NoWrap" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelOutput4"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="4"
-                                    DockPanel.Dock="Left" />
-                                <TextBox
-                                    x:Name="TextBoxOutput4"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    IsReadOnly="True"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelOutput4" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="4" DockPanel.Dock="Left" />
+                                <TextBox x:Name="TextBoxOutput4" Margin="1" DockPanel.Dock="Right" IsReadOnly="True" TextWrapping="NoWrap" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelOutput5"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="5"
-                                    DockPanel.Dock="Left" />
-                                <TextBox
-                                    x:Name="TextBoxOutput5"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    IsReadOnly="True"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelOutput5" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="5" DockPanel.Dock="Left" />
+                                <TextBox x:Name="TextBoxOutput5" Margin="1" DockPanel.Dock="Right" IsReadOnly="True" TextWrapping="NoWrap" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelOutput6"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="6"
-                                    DockPanel.Dock="Left" />
-                                <TextBox
-                                    x:Name="TextBoxOutput6"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    IsReadOnly="True"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelOutput6" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="6" DockPanel.Dock="Left" />
+                                <TextBox x:Name="TextBoxOutput6" Margin="1" DockPanel.Dock="Right" IsReadOnly="True" TextWrapping="NoWrap" />
                             </DockPanel>
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelOutput7"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="7"
-                                    DockPanel.Dock="Left" />
-                                <TextBox
-                                    x:Name="TextBoxOutput7"
-                                    Margin="1"
-                                    DockPanel.Dock="Right"
-                                    IsReadOnly="True"
-                                    TextWrapping="NoWrap" />
+                                <Label x:Name="LabelOutput7" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="7" DockPanel.Dock="Left" />
+                                <TextBox x:Name="TextBoxOutput7" Margin="1" DockPanel.Dock="Right" IsReadOnly="True" TextWrapping="NoWrap" />
                             </DockPanel>
 
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="LightGray"
-                                Content=" "
-                                DockPanel.Dock="Left" />
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content="Serial Out"
-                                DockPanel.Dock="Left"
-                                FontWeight="Bold" />
+                            <Label Margin="1" Padding="5,0" Background="LightGray" Content=" " DockPanel.Dock="Left" />
+                            <Label Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="Serial Out" DockPanel.Dock="Left" FontWeight="Bold" />
                             <DockPanel>
-                                <Label
-                                    x:Name="LabelQTitle"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content="Q"
-                                    DockPanel.Dock="Left" />
-                                <Label
-                                    x:Name="LabelQ"
-                                    Margin="1"
-                                    Padding="5,0"
-                                    HorizontalAlignment="Left"
-                                    Background="White"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1"
-                                    Content=" "
-                                    DockPanel.Dock="Left" />
+                                <Label x:Name="LabelQTitle" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="Q" DockPanel.Dock="Left" />
+                                <Label x:Name="LabelQ" Margin="1" Padding="5,0" HorizontalAlignment="Left" Background="White" BorderBrush="Gray" BorderThickness="1" Content=" " DockPanel.Dock="Left" />
                             </DockPanel>
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="LightGray"
-                                Content=" "
-                                DockPanel.Dock="Left" FontSize="40" />
-                            <Label
-                                Margin="1"
-                                Padding="5,0"
-                                Background="LightGray"
-                                Content=" "
-                                DockPanel.Dock="Left" FontSize="40" />
-                            <Label x:Name="LabelDmaOut"
-                                Margin="1"
-                                Padding="5,0"
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                Content="DMA Out"
-                                DockPanel.Dock="Left"
-                                FontWeight="Bold" />
-                            <CheckBox
-                                    x:Name="CheckBoxDmaOut"
-                                    Margin="1"
-                                    Content="Monitor"
-                                    VerticalContentAlignment="Center"
-                                    DockPanel.Dock="Right" Click="CheckBoxDmaOut_Click" MouseEnter="CheckBoxDmaOut_MouseEnter" />
+                            <Label Margin="1" Padding="5,0" Background="LightGray" Content=" " DockPanel.Dock="Left" FontSize="40" />
+                            <Label Margin="1" Padding="5,0" Background="LightGray" Content=" " DockPanel.Dock="Left" FontSize="40" />
+                            <Label x:Name="LabelDmaOut" Margin="1" Padding="5,0" Background="White" BorderBrush="Gray" BorderThickness="1" Content="DMA Out" DockPanel.Dock="Left" FontWeight="Bold" />
+                            <CheckBox x:Name="CheckBoxDmaOut" Margin="1" Content="Monitor" VerticalContentAlignment="Center" DockPanel.Dock="Right" Click="CheckBoxDmaOut_Click" MouseEnter="CheckBoxDmaOut_MouseEnter" />
                         </StackPanel>
 
                         <!--  Register  -->
-                        <Grid
-                            Grid.Row="2"
-                            Grid.RowSpan="2"
-                            Grid.Column="2"
-                            Grid.ColumnSpan="1"
-                            Margin="2,0,2,2"
-                            Background="Gray">
+                        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="1" Margin="2,0,2,2" Background="Gray">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="18*" />
                                 <ColumnDefinition Width="32*" />
@@ -1485,22 +558,8 @@
                                 <RowDefinition Height="276*" />
                                 <RowDefinition Height="9*" />
                             </Grid.RowDefinitions>
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                Grid.ColumnSpan="2"
-                                Margin="0"
-                                Padding="5,0"
-                                HorizontalContentAlignment="Center"
-                                Background="White"
-                                Content="Register" />
-                            <ListView
-                                x:Name="ListViewRegister"
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                Grid.ColumnSpan="2"
-                                PreviewMouseLeftButtonUp="ListViewRegister_PreviewMouseLeftButtonUp"
-                                ToolTip="">
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0" Padding="5,0" HorizontalContentAlignment="Center" Background="White" Content="Register" />
+                            <ListView x:Name="ListViewRegister" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" PreviewMouseLeftButtonUp="ListViewRegister_PreviewMouseLeftButtonUp" ToolTip="">
                                 <ListView.ItemContainerStyle>
                                     <Style TargetType="{x:Type ListViewItem}">
                                         <Setter Property="Background" Value="White" />
@@ -1544,46 +603,23 @@
                                 </ListView.View>
                             </ListView>
                         </Grid>
-                        <DockPanel x:Name="DocPanelMemCpu"
-                            Grid.Row="3"
-                            Margin="2,2,2,2"
-                            Background="Gray">
-                            <Label
-                                x:Name="LabelMemCpu"
-                                Margin="4,4,4,4"
-                                HorizontalContentAlignment="Center"
-                                Background="White"
-                                BorderThickness="2"
-                                Content="Mem"
-                                DockPanel.Dock="Top"
-                                FontWeight="Bold" />
-                            <ListView
-                                x:Name="ListViewMemCpu"
-                                Margin="4,4,4,4">
+                        <DockPanel x:Name="DocPanelMemCpu" Grid.Row="3" Margin="2,2,2,2" Background="Gray">
+                            <Label x:Name="LabelMemCpu" Margin="4,4,4,4" HorizontalContentAlignment="Center" Background="White" BorderThickness="2" Content="Mem" DockPanel.Dock="Top" FontWeight="Bold" />
+                            <ListView x:Name="ListViewMemCpu" Margin="4,4,4,4">
                                 <ListView.View>
                                     <GridView>
-                                        <GridViewColumn Header="" Width="100"/>
+                                        <GridViewColumn Header="" Width="100" />
                                     </GridView>
                                 </ListView.View>
                             </ListView>
 
                         </DockPanel>
-                        <Label
-                            x:Name="LabelFetchExecute"
-                            Grid.Column="3"
-                            Grid.ColumnSpan="2"
-                         
-                            Content="" Margin="0,0,0,230" Grid.RowSpan="2" />
+                        <Label x:Name="LabelFetchExecute" Grid.Column="3" Grid.ColumnSpan="2" Content="" Margin="0,0,0,230" Grid.RowSpan="2" />
 
 
                     </Grid>
                     <!--  Bedienfeld  -->
-                    <Grid
-                        Grid.Row="4"
-                        Grid.Column="3"
-                        Grid.ColumnSpan="4"
-                        Margin="4,4,4,4"
-                        Background="LightGray">
+                    <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" Margin="4,4,4,4" Background="LightGray">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="38*" />
                             <ColumnDefinition Width="45*" />
@@ -1600,86 +636,31 @@
                             <RowDefinition Height="69*" />
                             <RowDefinition Height="5*" />
                         </Grid.RowDefinitions>
-                        <Border
-                            Grid.Row="1"
-                            Grid.ColumnSpan="2"
-                            Margin="10,2,2,2"
-                            BorderBrush="Gray"
-                            BorderThickness="1" />
-                        <StackPanel
-                            Grid.Row="1"
-                            Grid.ColumnSpan="2"
-                            Margin="20,6,4,4">
-                            <CheckBox
-                                x:Name="CheckBoxDebug"
-                                Margin="10,0,0,0"
-                                Click="CheckBoxDebug_Click"
-                                Content="Debug"
-                                DockPanel.Dock="Right"
-                                ToolTip="Funktion nur mit compiliertem Programm möglich" />
-                            <RadioButton
-                                x:Name="RadioButtonCpuModeRun"
-                                Content="Loop"
-                                DockPanel.Dock="Left"
-                                GroupName="CpuMode"
-                                IsChecked="True" FontWeight="Normal" />
-                            <RadioButton
-                                x:Name="RadioButtonCpuModeSingleStep"
-                                Content="SingleStep"
-                                GroupName="CpuMode"
-                                IsEnabled="true" />
+                        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="10,2,2,2" BorderBrush="Gray" BorderThickness="1" />
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="20,6,4,4">
+                            <CheckBox x:Name="CheckBoxDebug" Margin="10,0,0,0" Click="CheckBoxDebug_Click" Content="Debug" DockPanel.Dock="Right" ToolTip="Funktion nur mit compiliertem Programm möglich" />
+                            <RadioButton x:Name="RadioButtonCpuModeRun" Content="Loop" DockPanel.Dock="Left" GroupName="CpuMode" IsChecked="True" FontWeight="Normal" />
+                            <RadioButton x:Name="RadioButtonCpuModeSingleStep" Content="SingleStep" GroupName="CpuMode" IsEnabled="true" />
                             <StackPanel Orientation="Horizontal">
-                                <RadioButton
-                                    x:Name="RadioButtonCpuModeFetchExecute"
-                                    Content="FetchExecute "
-                                    GroupName="CpuMode"
-                                    IsEnabled="true" />
-                                <Label
-                                    x:Name="LabelFetchExecuteStep"
-                                    Padding="0,0,0,0"
-                                    VerticalAlignment="Stretch"
-                                    Background="White"
-                                    Content=" "
-                                    FontFamily="Segoe UI"
-                                    FontSize="12"
-                                    FontStretch="Normal"
-                                    FontStyle="Normal"
-                                    FontWeight="Bold" />
+                                <RadioButton x:Name="RadioButtonCpuModeFetchExecute" Content="FetchExecute " GroupName="CpuMode" IsEnabled="true" />
+                                <Label x:Name="LabelFetchExecuteStep" Padding="0,0,0,0" VerticalAlignment="Stretch" Background="White" Content=" " FontFamily="Segoe UI" FontSize="12" FontStretch="Normal" FontStyle="Normal" FontWeight="Bold" />
                             </StackPanel>
 
                         </StackPanel>
-                        <StackPanel
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            Margin="4">
+                        <StackPanel Grid.Row="1" Grid.Column="2" Margin="4">
                             <Label x:Name="LabelStepFetch" Padding="5,0" Content="" HorizontalContentAlignment="Center" />
-                            <Button
-                                x:Name="ButtonStart"
-                                Click="ButtonStart_Click"
-                                Content="Start" />
-                            <Button
-                                x:Name="ButtonStop"
-                                Click="ButtonStop_Click"
-                                Content="Stop" />
-                            <Button
-                                x:Name="ButtonReset"
-                                Click="ButtonReset_Click"
-                                Content="Reset" />
+                            <Button x:Name="ButtonStart" Click="ButtonStart_Click" Content="Start" />
+                            <Button x:Name="ButtonStop" Click="ButtonStop_Click" Content="Stop" />
+                            <Button x:Name="ButtonReset" Click="ButtonReset_Click" Content="Reset" />
                         </StackPanel>
-                        <StackPanel
-                            Grid.Row="1"
-                            Grid.Column="3"
-                            Margin="4">
+                        <StackPanel Grid.Row="1" Grid.Column="3" Margin="4">
                             <Label x:Name="LabelStepFetchEx" Padding="0,0" Content="" />
 
 
 
                         </StackPanel>
 
-                        <Grid
-                            Grid.Row="1"
-                            Grid.Column="4"
-                            Background="LightGray">
+                        <Grid Grid.Row="1" Grid.Column="4" Background="LightGray">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="11*" />
                                 <ColumnDefinition Width="12*" />
@@ -1693,110 +674,35 @@
                                 <RowDefinition Height="20*" />
                                 <RowDefinition Height="20*" />
                             </Grid.RowDefinitions>
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="3"
-                                Grid.ColumnSpan="1" />
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="4"
-                                Padding="1,0,1,0"
-                                Content="hh-mm-ss.ms" />
+                            <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="1" />
+                            <Label Grid.Row="0" Grid.Column="4" Padding="1,0,1,0" Content="hh-mm-ss.ms" />
 
-                            <Label
-                                Grid.Row="1"
-                                Grid.Column="3"
-                                Grid.ColumnSpan="1"
-                                Padding="1"
-                                Content="Start" />
-                            <Label
-                                x:Name="LabelRunTimeStart"
-                                Grid.Row="1"
-                                Grid.Column="4"
-                                Padding="1" />
-                            <Label
-                                Grid.Row="2"
-                                Grid.Column="3"
-                                Grid.ColumnSpan="1"
-                                Padding="1"
-                                Content="Stop" />
+                            <Label Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" Padding="1" Content="Start" />
+                            <Label x:Name="LabelRunTimeStart" Grid.Row="1" Grid.Column="4" Padding="1" />
+                            <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" Padding="1" Content="Stop" />
 
-                            <Label
-                                x:Name="LabelRunTimeStop"
-                                Grid.Row="2"
-                                Grid.Column="4"
-                                Padding="1,0" />
+                            <Label x:Name="LabelRunTimeStop" Grid.Row="2" Grid.Column="4" Padding="1,0" />
 
 
-                            <Label
-                                x:Name="LabelRunTimeTitle"
-                                Grid.Row="3"
-                                Grid.Column="3"
-                                Grid.ColumnSpan="1"
-                                Padding="1"
-                                Content="Runtime" />
+                            <Label x:Name="LabelRunTimeTitle" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" Padding="1" Content="Runtime" />
 
-                            <Label
-                                x:Name="LabelRunTime"
-                                Grid.Row="3"
-                                Grid.Column="4"
-                                Padding="1,0" />
-                            <Label
-                                x:Name="LabelLedRun"
-                                Grid.Row="1"
-                                Grid.RowSpan="2"
-                                Grid.ColumnSpan="2"
-                                Margin="10"
-                                Background="Red"
-                                Content="" />
+                            <Label x:Name="LabelRunTime" Grid.Row="3" Grid.Column="4" Padding="1,0" />
+                            <Label x:Name="LabelLedRun" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10" Background="Red" Content="" />
 
                         </Grid>
-                        <DockPanel
-                            Grid.Row="1"
-                            Grid.Column="7"
-                            Background="LightGray">
-                            <Label
-                                HorizontalContentAlignment="Center"
-                                Content="Log-Files"
-                                DockPanel.Dock="Top" />
-                            <Button
-                                x:Name="ButtonLogFileRuntime"
-                                Click="ButtonLogFileRuntime_Click"
-                                Content="Runtime"
-                                DockPanel.Dock="Top" />
+                        <DockPanel Grid.Row="1" Grid.Column="7" Background="LightGray">
+                            <Label HorizontalContentAlignment="Center" Content="Log-Files" DockPanel.Dock="Top" />
+                            <Button x:Name="ButtonLogFileRuntime" Click="ButtonLogFileRuntime_Click" Content="Runtime" DockPanel.Dock="Top" />
                             <Button Content="Button" DockPanel.Dock="Top" Click="Button_Click_1" />
-                            <Button
-                                Click="Button_Click"
-                                Content="Button"
-                                DockPanel.Dock="Top" />
+                            <Button Click="Button_Click" Content="Button" DockPanel.Dock="Top" />
                         </DockPanel>
-                        <DockPanel
-                            Grid.Row="1"
-                            Grid.Column="5"
-                            Background="LightGray"
-                            LastChildFill="False">
-                            <CheckBox
-                                x:Name="CheckBoxBreakpoints"
-                                Margin="2,2,2,0"
-                                Content="Enable"
-                                DockPanel.Dock="Top"
-                                ToolTip="Aktivieren der Break-/Logpoints in der Liste &#10;Setzen von Break-/Logpoints mit Rechtsklick auf Memory-Adresse" Click="CheckBoxBreakpoints_Click" />
+                        <DockPanel Grid.Row="1" Grid.Column="5" Background="LightGray" LastChildFill="False">
+                            <CheckBox x:Name="CheckBoxBreakpoints" Margin="2,2,2,0" Content="Enable" DockPanel.Dock="Top" ToolTip="Aktivieren der Break-/Logpoints in der Liste &#10;Setzen von Break-/Logpoints mit Rechtsklick auf Memory-Adresse" Click="CheckBoxBreakpoints_Click" />
 
-                            <Label
-                                x:Name="LabelBeakpoints"
-                                Content="Break-/Logpoints"
-                                DockPanel.Dock="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                            <Label x:Name="LabelBeakpoints" Content="Break-/Logpoints" DockPanel.Dock="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
 
-                            <ComboBox
-                                x:Name="ComboBoxBreakpoints"
-                                Margin="2,2,2,0"
-                                DockPanel.Dock="Top"
-                                ToolTip="Liste aller Breakpoints &#10;Setzen und Löschen von Breakpoints &#10; mit Rechtsklick auf Memory-Adresse" />
-                            <Button
-                                x:Name="ButtonClearAllBeakpoints"
-                                Margin="2,2,2,0"
-                                Content=""
-                                DockPanel.Dock="Top" />
+                            <ComboBox x:Name="ComboBoxBreakpoints" Margin="2,2,2,0" DockPanel.Dock="Top" ToolTip="Liste aller Breakpoints &#10;Setzen und Löschen von Breakpoints &#10; mit Rechtsklick auf Memory-Adresse" />
+                            <Button x:Name="ButtonClearAllBeakpoints" Margin="2,2,2,0" Content="" DockPanel.Dock="Top" />
                         </DockPanel>
                     </Grid>
                     <Grid Grid.Column="4" Grid.ColumnSpan="2" Margin="0,0,0,24" Grid.RowSpan="2">
@@ -1813,72 +719,27 @@
                             <RowDefinition Height="10*" />
                             <RowDefinition Height="10*" />
                         </Grid.RowDefinitions>
-                        <Button
-                            x:Name="ButtonTest"
-                            Grid.Column="4"
-                            Click="ButtonTest_Click"
-                            Content="Button" />
+                        <Button x:Name="ButtonTest" Grid.Column="4" Click="ButtonTest_Click" Content="Button" />
 
                     </Grid>
 
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="4"
-                        Grid.ColumnSpan="2"
-                        Padding="0"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center"
-                        Background="LightBlue"
-                        BorderBrush="Gray"
-                        BorderThickness="1,1,1,0"
-                        Content="CPU 1802"
-                        FontSize="16"
-                        FontWeight="ExtraBold" />
+                    <Label Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="LightBlue" BorderBrush="Gray" BorderThickness="1,1,1,0" Content="CPU 1802" FontSize="16" FontWeight="ExtraBold" />
 
-                    <StackPanel
-                                Grid.Row="1"
-                                   Grid.Column="6"
-  
-                                Margin="20,24,20,0"
-                                Background="White" Grid.RowSpan="2">
+                    <StackPanel Grid.Row="1" Grid.Column="6" Margin="20,24,20,0" Background="White" Grid.RowSpan="2">
 
-                        <Label
-                                    HorizontalContentAlignment="Center"
-                                    Content="Documentation"
-                                    FontWeight="Bold" />
-                        <Button
-                            x:Name="ButtonManual"
-                            Click="ButtonManual_Click"
-                            Content="Manual Simulator"
-                            RenderTransformOrigin="2.085,1.567" Margin="2,2,5,2" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" />
-                        <Label
-                                    HorizontalContentAlignment="Center"
-                                    Content="" />
-                                   
+                        <Label HorizontalContentAlignment="Center" Content="Documentation" FontWeight="Bold" />
+                        <Button x:Name="ButtonManual" Click="ButtonManual_Click" Content="Manual Simulator" RenderTransformOrigin="2.085,1.567" Margin="2,2,5,2" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" />
+                        <Label HorizontalContentAlignment="Center" Content="" />
 
-                        <Button
-                                    x:Name="ButtonDocCpd1802"
-                                    Margin="2"
-                                    Content="CPU1802-Manual" Click="ButtonDocCpd1802_Click" />
-                        <Button
-                                    x:Name="ButtonDocCpd1806"
-                                    Margin="2"
-                                    Content="CPU1806-Manual" Click="ButtonDocCpd1806_Click" />
-                        <Button
-                                    x:Name="ButtonDocDataSheets"
-                                    Margin="2"
-                                    Content="DataSheets" Click="ButtonDocDataSheets_Click" />
-                        <Button
-                                    x:Name="ButtonDocShortCourse"
-                                    Margin="2"
-                                    Content="Short Cours" Click="ButtonDocShortCourse_Click" />
-                        <Button
-                                    x:Name="ButtonDocAscii"
-                                    Margin="2"
-                                    Content="ASCII-Table" Click="ButtonDocAscii_Click" />
+
+                        <Button x:Name="ButtonDocCpd1802" Margin="2" Content="CPU1802-Manual" Click="ButtonDocCpd1802_Click" />
+                        <Button x:Name="ButtonDocCpd1806" Margin="2" Content="CPU1806-Manual" Click="ButtonDocCpd1806_Click" />
+                        <Button x:Name="ButtonDocDataSheets" Margin="2" Content="DataSheets" Click="ButtonDocDataSheets_Click" />
+                        <Button x:Name="ButtonDocShortCourse" Margin="2" Content="Short Cours" Click="ButtonDocShortCourse_Click" />
+                        <Button x:Name="ButtonDocAscii" Margin="2" Content="ASCII-Table" Click="ButtonDocAscii_Click" />
 
                     </StackPanel>
-                  
+
 
 
 
@@ -1896,97 +757,97 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="54*" />
                         <ColumnDefinition Width="160*" />
-                        <ColumnDefinition Width="316*"/>
+                        <ColumnDefinition Width="316*" />
                         <ColumnDefinition Width="259*" />
                         <ColumnDefinition Width="759*" />
                         <ColumnDefinition Width="147*" />
                     </Grid.ColumnDefinitions>
-                    <Border  Grid.Column="1" Grid.Row="1" BorderBrush="Gray" BorderThickness="2"/>
+                    <Border Grid.Column="1" Grid.Row="1" BorderBrush="Gray" BorderThickness="2" />
                     <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="4,4,4,4">
-                        <Label Content="Breakpoint-Condition" FontWeight="Bold"/>
-                        <CheckBox x:Name="CheckBoxBreakCondition" Content="On" HorizontalAlignment="Center"/>
+                        <Label Content="Breakpoint-Condition" FontWeight="Bold" />
+                        <CheckBox x:Name="CheckBoxBreakCondition" Content="On" HorizontalAlignment="Center" />
                         <Label Content="    " />
 
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="10*"/>
-                                <ColumnDefinition Width="10*"/>
-                                <ColumnDefinition Width="15*"/>
+                                <ColumnDefinition Width="10*" />
+                                <ColumnDefinition Width="10*" />
+                                <ColumnDefinition Width="15*" />
 
                             </Grid.ColumnDefinitions>
-                            <ComboBox x:Name="ComboBoxBreakVal1" Grid.Row="0" Grid.Column="0" >
+                            <ComboBox x:Name="ComboBoxBreakVal1" Grid.Row="0" Grid.Column="0">
 
-                                <ComboBoxItem Content="R0"/>
-                                <ComboBoxItem Content="R1"/>
-                                <ComboBoxItem Content="R2"/>
-                                <ComboBoxItem Content="R3"/>
-                                <ComboBoxItem Content="R4"/>
-                                <ComboBoxItem Content="R5"/>
-                                <ComboBoxItem Content="R6"/>
-                                <ComboBoxItem Content="R7"/>
-                                <ComboBoxItem Content="R8"/>
-                                <ComboBoxItem Content="R9"/>
-                                <ComboBoxItem Content="RA"/>
-                                <ComboBoxItem Content="RB"/>
-                                <ComboBoxItem Content="RC"/>
-                                <ComboBoxItem Content="RD"/>
-                                <ComboBoxItem Content="RE"/>
-                                <ComboBoxItem Content="RF"/>
-                                <ComboBoxItem Content="RX" IsSelected="True"/>
+                                <ComboBoxItem Content="R0" />
+                                <ComboBoxItem Content="R1" />
+                                <ComboBoxItem Content="R2" />
+                                <ComboBoxItem Content="R3" />
+                                <ComboBoxItem Content="R4" />
+                                <ComboBoxItem Content="R5" />
+                                <ComboBoxItem Content="R6" />
+                                <ComboBoxItem Content="R7" />
+                                <ComboBoxItem Content="R8" />
+                                <ComboBoxItem Content="R9" />
+                                <ComboBoxItem Content="RA" />
+                                <ComboBoxItem Content="RB" />
+                                <ComboBoxItem Content="RC" />
+                                <ComboBoxItem Content="RD" />
+                                <ComboBoxItem Content="RE" />
+                                <ComboBoxItem Content="RF" />
+                                <ComboBoxItem Content="RX" IsSelected="True" />
                             </ComboBox>
-                            <ComboBox x:Name="ComboBoxBreakOperation" Grid.Row="0" Grid.Column="1" >
-                                <ComboBoxItem Content=">"/>
-                                <ComboBoxItem Content=">="/>
-                                <ComboBoxItem Content="==" IsSelected="True"/>
-                                <ComboBoxItem Content="&lt;"/>
-                                <ComboBoxItem Content="&lt;="/>
+                            <ComboBox x:Name="ComboBoxBreakOperation" Grid.Row="0" Grid.Column="1">
+                                <ComboBoxItem Content=">" />
+                                <ComboBoxItem Content=">=" />
+                                <ComboBoxItem Content="==" IsSelected="True" />
+                                <ComboBoxItem Content="&lt;" />
+                                <ComboBoxItem Content="&lt;=" />
                             </ComboBox>
-                            <ComboBox x:Name="ComboBoxBreakVal2" Grid.Row="0" Grid.Column="2" >
+                            <ComboBox x:Name="ComboBoxBreakVal2" Grid.Row="0" Grid.Column="2">
 
-                                <ComboBoxItem Content="R0"/>
-                                <ComboBoxItem Content="R1"/>
-                                <ComboBoxItem Content="R2"/>
-                                <ComboBoxItem Content="R3"/>
-                                <ComboBoxItem Content="R4"/>
-                                <ComboBoxItem Content="R5"/>
-                                <ComboBoxItem Content="R6"/>
-                                <ComboBoxItem Content="R7"/>
-                                <ComboBoxItem Content="R8"/>
-                                <ComboBoxItem Content="R9"/>
-                                <ComboBoxItem Content="RA"/>
-                                <ComboBoxItem Content="RB"/>
-                                <ComboBoxItem Content="RC"/>
-                                <ComboBoxItem Content="RD"/>
-                                <ComboBoxItem Content="RE"/>
-                                <ComboBoxItem Content="RF"/>
-                                <ComboBoxItem Content="RX"/>
-                                <ComboBoxItem Content="Value" IsSelected="True"/>
+                                <ComboBoxItem Content="R0" />
+                                <ComboBoxItem Content="R1" />
+                                <ComboBoxItem Content="R2" />
+                                <ComboBoxItem Content="R3" />
+                                <ComboBoxItem Content="R4" />
+                                <ComboBoxItem Content="R5" />
+                                <ComboBoxItem Content="R6" />
+                                <ComboBoxItem Content="R7" />
+                                <ComboBoxItem Content="R8" />
+                                <ComboBoxItem Content="R9" />
+                                <ComboBoxItem Content="RA" />
+                                <ComboBoxItem Content="RB" />
+                                <ComboBoxItem Content="RC" />
+                                <ComboBoxItem Content="RD" />
+                                <ComboBoxItem Content="RE" />
+                                <ComboBoxItem Content="RF" />
+                                <ComboBoxItem Content="RX" />
+                                <ComboBoxItem Content="Value" IsSelected="True" />
                             </ComboBox>
-                            <Label Content="   " Grid.Row="1"/>
-                            <Label   Grid.Column="0" Grid.Row="3"  Content="Value"  />
-                            <Label   Grid.Column="1" Grid.Row="3"  Content="hex: " HorizontalContentAlignment="Right"  />
-                            <TextBox x:Name="TextBoxBreakValue" Grid.Column="2"    Grid.Row="3" Text="0000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <Label   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Content="Bits: " HorizontalContentAlignment="Left"  />
+                            <Label Content="   " Grid.Row="1" />
+                            <Label Grid.Column="0" Grid.Row="3" Content="Value" />
+                            <Label Grid.Column="1" Grid.Row="3" Content="hex: " HorizontalContentAlignment="Right" />
+                            <TextBox x:Name="TextBoxBreakValue" Grid.Column="2" Grid.Row="3" Text="0000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Content="Bits: " HorizontalContentAlignment="Left" />
 
-                            <ComboBox x:Name ="ComboBoxFilterBits" Grid.Column="2" Grid.Row="4" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch">
-                                <ComboBoxItem Content="Word" IsSelected="True"/>
-                                <ComboBoxItem Content="ByteLeft"/>
+                            <ComboBox x:Name="ComboBoxFilterBits" Grid.Column="2" Grid.Row="4" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch">
+                                <ComboBoxItem Content="Word" IsSelected="True" />
+                                <ComboBoxItem Content="ByteLeft" />
                                 <ComboBoxItem Content="ByteRight" />
                             </ComboBox>
 
 
                         </Grid>
 
-                        <Button x:Name="ButtonTestBreak" Content="Test" Click="ButtonTestBreak_Click"/>
+                        <Button x:Name="ButtonTestBreak" Content="Test" Click="ButtonTestBreak_Click" />
 
                     </StackPanel>
 
